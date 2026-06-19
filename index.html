@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark" data-lang="ar">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"/>
+<meta name="referrer" content="no-referrer"/>
+
+<!-- Identity & SEO -->
+<title>يوسف عبدالعال — مطوّر برمجيات ومنشئ منتجات AI</title>
+<meta name="description" content="Yousef Abdulaal — Full-Stack Engineer and founder shipping production AI products: SaaS platforms, mobile apps, and Arabic-first software built for real users."/>
+<meta name="author" content="Yousef Abdulaal"/>
+<meta name="theme-color" content="#06060F" id="metaThemeColor"/>
+
+<!-- Favicon — inline SVG, no external dependency -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23818CF8'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter%2Csans-serif' font-size='13' font-weight='700' letter-spacing='.04em' fill='%2306060F'%3EYA%3C/text%3E%3C/svg%3E"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile"/>
+<meta property="og:title" content="Yousef Abdulaal — Full-Stack Engineer & AI Product Builder"/>
+<meta property="og:description" content="Software engineer and founder shipping production AI products — SaaS platforms, mobile apps, and Arabic-first software used by real people."/>
+<meta property="og:site_name" content="Yousef Abdulaal"/>
+<meta property="og:locale" content="ar_SA"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Yousef Abdulaal — Full-Stack Engineer & AI Product Builder"/>
+<meta name="twitter:description" content="Software engineer and founder shipping production AI products — SaaS platforms, mobile apps, and Arabic-first software."/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ─── TOKENS ─── */
+:root {
+  --accent:        #818CF8;
+  --accent-light:  #A5B4FC;
+  --accent-dim:    rgba(129,140,248,0.11);
+  --accent-border: rgba(129,140,248,0.24);
+  --emerald:       #34D399;
+  --emerald-dim:   rgba(52,211,153,0.1);
+
+  --bg:          #06060F;
+  --bg2:         #0A0A18;
+  --bg3:         #0F0F22;
+  --bg4:         #151530;
+  --text:        #E8E8F8;
+  --text-muted:  #8080B0;
+  --text-dim:    #404060;
+  --border:      rgba(129,140,248,0.2);
+  --border-dim:  rgba(255,255,255,0.055);
+  --shadow:      0 20px 60px rgba(0,0,0,0.55);
+  --shadow-sm:   0 4px 20px rgba(0,0,0,0.4);
+  --glass:       rgba(10,10,24,0.82);
+
+  --radius: 12px;
+  --font-ar: 'Cairo', sans-serif;
+  --font-en: 'Inter', sans-serif;
+}
+
+[data-theme="light"] {
+  --bg:         #F2F2FF;
+  --bg2:        #FFFFFF;
+  --bg3:        #EAEAF8;
+  --bg4:        #E0E0F2;
+  --text:       #08081A;
+  --text-muted: #505080;
+  --text-dim:   #9090B8;
+  --border:     rgba(99,102,241,0.28);
+  --border-dim: rgba(0,0,0,0.07);
+  --shadow:     0 20px 60px rgba(129,140,248,0.13);
+  --shadow-sm:  0 4px 20px rgba(129,140,248,0.09);
+  --glass:      rgba(242,242,255,0.88);
+}
+
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--font-ar);
+  line-height:1.7;overflow-x:hidden;transition:background .3s,color .3s;
+}
+[data-lang="en"] body{font-family:var(--font-en);}
+
+/* language */
+[data-lang="ar"] .en{display:none!important;}
+[data-lang="en"] .ar{display:none!important;}
+
+/* noise */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.3;
+}
+[data-theme="light"] body::before{opacity:.05;}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 60px;
+  background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border-dim);transition:all .3s;
+}
+nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
+
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{
+  width:36px;height:36px;background:var(--accent-dim);
+  border:1px solid var(--accent-border);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-en);font-size:.8rem;font-weight:700;
+  color:var(--accent);letter-spacing:.04em;transition:all .3s;flex-shrink:0;
+}
+.nav-logo:hover .logo-mark{background:var(--accent);color:#06060F;border-color:var(--accent);}
+.logo-name{font-size:.95rem;font-weight:700;color:var(--text);font-family:var(--font-ar);}
+[data-lang="en"] .logo-name{font-family:var(--font-en);font-size:.88rem;}
+
+.nav-links{display:flex;gap:30px;list-style:none;font-size:.87rem;font-weight:400;}
+.nav-links a{
+  color:var(--text-muted);text-decoration:none;
+  position:relative;transition:color .2s;padding-bottom:2px;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;
+  height:1.5px;background:var(--accent);
+  transform:scaleX(0);
+  transition:transform .18s ease-out;
+  transform-origin:start;
+}
+.nav-links a:hover{color:var(--accent);}
+.nav-links a:hover::after{transform:scaleX(1);}
+
+.nav-controls{display:flex;align-items:center;gap:8px;}
+.ctrl-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;background:var(--bg3);border:1px solid var(--border-dim);
+  border-radius:8px;cursor:pointer;color:var(--text-muted);
+  font-size:.72rem;font-weight:600;font-family:var(--font-en);
+  letter-spacing:.06em;transition:all .2s;
+}
+.ctrl-btn:hover{border-color:var(--border);color:var(--accent);background:var(--accent-dim);}
+.ctrl-btn svg{width:15px;height:15px;}
+.lang-btn{width:auto;padding:0 14px;border-radius:8px;}
+
+.hamburger{
+  display:none;flex-direction:column;gap:4px;
+  background:var(--bg3);border:1px solid var(--border-dim);
+  border-radius:8px;padding:9px;cursor:pointer;
+  width:36px;height:36px;align-items:center;justify-content:center;
+}
+.hamburger span{
+  display:block;width:16px;height:1.5px;
+  background:var(--text-muted);border-radius:2px;transition:all .3s;
+}
+
+.mobile-menu{
+  display:none;position:fixed;top:66px;left:0;right:0;
+  background:var(--glass);backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border-dim);
+  padding:16px 24px;z-index:99;flex-direction:column;gap:2px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{
+  color:var(--text-muted);text-decoration:none;font-size:.95rem;font-weight:500;
+  padding:11px 16px;border-radius:8px;transition:all .2s;
+}
+.mobile-menu a:hover{color:var(--accent);background:var(--accent-dim);}
+
+/* ─── HERO ─── */
+#hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:130px 60px 90px;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(129,140,248,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(129,140,248,.05) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+}
+
+.hero-inner{position:relative;z-index:1;text-align:center;max-width:920px;}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-en);font-size:.72rem;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-dim);
+  border:1px solid var(--accent-border);
+  padding:8px 20px;border-radius:100px;margin-bottom:32px;
+  opacity:0;animation:fadeUp .8s .2s forwards;
+}
+[data-lang="ar"] .hero-eyebrow{font-family:var(--font-ar);letter-spacing:0;font-size:.8rem;}
+.hero-eyebrow::before{
+  content:'';width:6px;height:6px;background:var(--accent);
+  border-radius:50%;animation:blink 2s infinite;flex-shrink:0;
+}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
+
+.hero-name{
+  font-family:var(--font-ar);font-size:clamp(3rem,8vw,7rem);font-weight:900;
+  line-height:1.05;color:var(--text);letter-spacing:-.02em;
+  margin-bottom:10px;opacity:0;animation:fadeUp .8s .4s forwards;
+}
+[data-lang="en"] .hero-name{font-family:var(--font-en);font-size:clamp(2.6rem,7vw,6rem);}
+.hero-name .hl{color:var(--accent);}
+
+.hero-title{
+  font-family:var(--font-en);font-size:clamp(.9rem,1.8vw,1.1rem);font-weight:300;
+  color:var(--text-muted);letter-spacing:.05em;margin-bottom:28px;
+  opacity:0;animation:fadeUp .8s .6s forwards;
+}
+[data-lang="ar"] .hero-title{font-family:var(--font-ar);letter-spacing:0;}
+
+.hero-desc{
+  font-size:1.05rem;font-weight:400;color:var(--text-muted);
+  max-width:580px;margin:0 auto 48px;line-height:1.95;
+  opacity:0;animation:fadeUp .8s .8s forwards;
+}
+
+.hero-cta{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .8s 1s forwards;
+}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#06060F;
+  font-family:var(--font-ar);font-size:.95rem;font-weight:700;
+  padding:14px 32px;border-radius:100px;
+  text-decoration:none;border:none;cursor:pointer;transition:all .3s;
+}
+[data-lang="en"] .btn-primary{font-family:var(--font-en);}
+.btn-primary:hover{
+  background:var(--accent-light);transform:translateY(-2px);
+  box-shadow:0 12px 40px rgba(129,140,248,.38);
+}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--text-muted);
+  font-family:var(--font-ar);font-size:.95rem;font-weight:500;
+  padding:14px 32px;border-radius:100px;
+  text-decoration:none;border:1px solid var(--border-dim);transition:all .3s;
+}
+[data-lang="en"] .btn-secondary{font-family:var(--font-en);}
+.btn-secondary:hover{
+  color:var(--text);border-color:var(--border);
+  background:var(--accent-dim);transform:translateY(-2px);
+}
+
+.stats-bar{
+  position:relative;z-index:1;
+  display:flex;justify-content:center;
+  margin:64px auto 0;max-width:740px;
+  border:1px solid var(--border-dim);border-radius:var(--radius);
+  overflow:hidden;background:var(--bg2);
+  opacity:0;animation:fadeUp .8s 1.2s forwards;
+}
+.stat-item{
+  flex:1;text-align:center;padding:24px 16px;
+  border-right:1px solid var(--border-dim);
+}
+.stat-item:last-child{border-right:none;}
+html[dir="ltr"] .stat-item{border-right:none;border-left:1px solid var(--border-dim);}
+html[dir="ltr"] .stat-item:last-child{border-left:none;}
+.stat-num{
+  font-family:var(--font-en);font-size:1.6rem;font-weight:700;
+  color:var(--accent);line-height:1;margin-bottom:6px;letter-spacing:-.02em;
+}
+.stat-label{font-size:.72rem;color:var(--text-dim);font-weight:400;line-height:1.45;}
+
+/* ─── SECTIONS ─── */
+section{padding:96px 60px;max-width:1200px;margin:0 auto;}
+
+.section-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-en);font-size:.68rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:16px;
+}
+[data-lang="ar"] .section-label{font-family:var(--font-ar);letter-spacing:0;font-size:.78rem;}
+.section-label::after{content:'';width:24px;height:1px;background:var(--accent);opacity:.7;}
+
+.section-title{
+  font-size:clamp(2rem,4vw,3rem);font-weight:700;
+  color:var(--text);line-height:1.2;margin-bottom:20px;
+}
+.section-sub{font-size:1rem;color:var(--text-muted);max-width:500px;line-height:1.85;}
+
+/* ─── ABOUT ─── */
+#about{
+  display:grid;grid-template-columns:1.2fr 1fr;
+  gap:80px;align-items:start;border-top:1px solid var(--border-dim);
+}
+.about-text p{color:var(--text-muted);margin-bottom:18px;font-size:1rem;line-height:1.95;}
+.about-text p strong{color:var(--text);font-weight:600;}
+.about-text p .hl{color:var(--accent);font-weight:600;}
+
+/* definition list sidebar */
+.about-dl{display:flex;flex-direction:column;}
+.dl-row{
+  display:grid;grid-template-columns:72px 1fr;gap:16px;
+  padding:14px 0;border-bottom:1px solid var(--border-dim);
+  align-items:baseline;
+}
+.dl-row:first-child{border-top:1px solid var(--border-dim);}
+.about-dl dt{
+  font-family:var(--font-en);font-size:.64rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);
+  padding-top:1px;
+}
+.about-dl dd{font-size:.88rem;color:var(--text);font-weight:500;line-height:1.55;}
+
+/* ─── PROJECTS ─── */
+#projects{border-top:1px solid var(--border-dim);}
+.projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;}
+
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
+.project-card{
+  background:var(--bg3);border:1px solid var(--border-dim);
+  border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;
+}
+.project-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:var(--shadow);}
+.project-card.live{border-top:2px solid var(--emerald);}
+.project-card.dev{border-top:2px solid rgba(129,140,248,.32);}
+
+.card-inner{padding:32px;display:flex;flex-direction:column;flex:1;}
+.card-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-en);font-size:.67rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:5px 12px;border-radius:100px;margin-bottom:20px;align-self:flex-start;
+}
+.badge-live{background:rgba(52,211,153,.1);color:var(--emerald);border:1px solid rgba(52,211,153,.25);}
+.badge-live::before{content:'';width:5px;height:5px;background:var(--emerald);border-radius:50%;animation:blink 1.5s infinite;flex-shrink:0;}
+.badge-dev{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border);}
+.badge-hackathon{background:rgba(139,92,246,.12);color:#A78BFA;border:1px solid rgba(139,92,246,.25);}
+.badge-project{background:rgba(255,255,255,.05);color:var(--text-dim);border:1px solid var(--border-dim);}
+
+.card-title{font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3;}
+.card-title-en{font-family:var(--font-en);font-size:.77rem;color:var(--text-dim);margin-bottom:16px;font-style:italic;}
+.card-desc{font-size:.9rem;color:var(--text-muted);line-height:1.85;margin-bottom:24px;flex:1;}
+.card-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;}
+.tag{
+  font-family:var(--font-en);font-size:.68rem;font-weight:500;
+  color:var(--text-dim);background:var(--bg);
+  border:1px solid var(--border-dim);padding:3px 10px;border-radius:6px;
+}
+.card-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-en);font-size:.8rem;font-weight:500;
+  color:var(--accent);text-decoration:none;
+  border-top:1px solid var(--border-dim);padding-top:20px;width:100%;
+  transition:gap .18s ease-out;margin-top:auto;
+}
+.card-link:hover{gap:14px;}
+.card-link svg{width:14px;height:14px;flex-shrink:0;}
+.card-link-muted{color:var(--text-dim);cursor:default;}
+.card-link-muted:hover{gap:8px;}
+
+.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.small-card{
+  background:var(--bg2);border:1px solid var(--border-dim);
+  border-radius:var(--radius);padding:24px;transition:all .3s;
+  position:relative;overflow:hidden;
+}
+.small-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--emerald));
+  opacity:0;transition:opacity .3s;
+}
+.small-card:hover{border-color:var(--border);transform:translateY(-3px);box-shadow:var(--shadow-sm);}
+.small-card:hover::before{opacity:1;}
+.small-card-icon{
+  width:36px;height:36px;margin-bottom:16px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);
+}
+.small-card-icon svg{width:20px;height:20px;}
+.small-card-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px;margin-top:10px;}
+.small-card-desc{font-size:.82rem;color:var(--text-dim);line-height:1.75;}
+.small-card .card-tags{margin-top:12px;}
+
+/* ─── SKILLS ─── */
+#skills{border-top:1px solid var(--border-dim);}
+.skills-two-col{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;margin-top:48px;
+}
+.skill-col-head{
+  font-family:var(--font-en);font-size:.68rem;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--accent);
+  padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:4px;
+}
+[data-lang="ar"] .skill-col-head{font-family:var(--font-ar);letter-spacing:0;font-size:.8rem;}
+.skill-row{
+  display:grid;grid-template-columns:56px 1fr;gap:16px;
+  padding:11px 0;border-bottom:1px solid var(--border-dim);
+  align-items:baseline;
+}
+.skill-row:last-child{border-bottom:none;}
+.skill-cat{
+  font-family:var(--font-en);font-size:.63rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);
+  padding-top:2px;
+}
+.skill-vals{
+  font-family:var(--font-en);font-size:.83rem;
+  color:var(--text-muted);line-height:1.65;
+}
+
+/* ─── EDUCATION ─── */
+#education{border-top:1px solid var(--border-dim);}
+.edu-card{
+  display:flex;align-items:center;gap:24px;
+  background:var(--bg2);border:1px solid var(--border-dim);
+  border-radius:var(--radius);padding:32px;margin-top:40px;transition:all .3s;
+}
+.edu-card:hover{border-color:var(--border);box-shadow:var(--shadow-sm);}
+.edu-logo{
+  width:56px;height:56px;background:var(--accent-dim);
+  border:1px solid var(--accent-border);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);flex-shrink:0;
+}
+.edu-logo svg{width:24px;height:24px;}
+.edu-info{flex:1;}
+.edu-uni{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+.edu-degree{font-size:.84rem;color:var(--text-muted);margin-bottom:12px;font-family:var(--font-en);}
+[data-lang="ar"] .edu-degree{font-family:var(--font-ar);}
+[data-theme="light"] .tag{background:var(--bg2);}
+.edu-year{
+  display:inline-block;font-family:var(--font-en);font-size:.72rem;font-weight:500;
+  color:var(--accent);background:var(--accent-dim);
+  border:1px solid var(--accent-border);padding:4px 14px;border-radius:100px;
+}
+.edu-progress{
+  display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;
+}
+.edu-progress-label{
+  font-size:.7rem;color:var(--text-dim);text-align:center;
+  font-family:var(--font-ar);line-height:1.4;
+}
+[data-lang="en"] .edu-progress-label{font-family:var(--font-en);}
+
+/* ring fires when .ring-animated is added via JS on scroll-into-view */
+.ring-fill{stroke-dasharray:0 201.1;}
+.ring-animated .ring-fill{
+  animation:fillRing 1.6s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes fillRing{to{stroke-dasharray:56.8 201.1;}}
+
+/* ─── CONTACT ─── */
+#contact{border-top:1px solid var(--border-dim);text-align:center;}
+.contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:48px;}
+.contact-link{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--bg2);border:1px solid var(--border-dim);
+  color:var(--text-muted);font-family:var(--font-en);
+  font-size:.85rem;font-weight:500;
+  padding:12px 24px;border-radius:100px;text-decoration:none;transition:all .3s;
+}
+.contact-link:hover{
+  border-color:var(--accent-border);color:var(--accent);
+  transform:translateY(-2px);background:var(--accent-dim);
+  box-shadow:0 8px 24px rgba(129,140,248,.14);
+}
+.contact-link svg{width:16px;height:16px;flex-shrink:0;}
+.footer-copy{
+  margin-top:60px;font-family:var(--font-en);
+  font-size:.74rem;color:var(--text-dim);padding-bottom:40px;
+}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ─── REDUCED MOTION ─── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal{opacity:1;transform:none;}
+  .hero-eyebrow,.hero-name,.hero-title,.hero-desc,.hero-cta,.stats-bar{opacity:1;animation:none;}
+  .ring-fill{stroke-dasharray:56.8 201.1!important;}
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav{padding:13px 22px;}
+  nav.scrolled{padding:10px 22px;}
+  section{padding:64px 22px;}
+  #hero{padding:100px 22px 60px;}
+  #about{grid-template-columns:1fr;gap:40px;}
+  .featured-grid{grid-template-columns:1fr;}
+  .small-grid{grid-template-columns:1fr 1fr;}
+  .skills-two-col{grid-template-columns:1fr;gap:32px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .stats-bar{flex-direction:column;}
+  .stat-item{border-right:none!important;border-left:none!important;border-bottom:1px solid var(--border-dim);}
+  .stat-item:last-child{border-bottom:none;}
+  .projects-header{flex-direction:column;align-items:flex-start;gap:12px;}
+  .edu-card{flex-wrap:wrap;}
+}
+@media(max-width:600px){
+  .small-grid{grid-template-columns:1fr;}
+  .hero-cta{flex-direction:column;align-items:center;}
+  .dl-row{grid-template-columns:64px 1fr;}
+  .skill-row{grid-template-columns:48px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="logo-mark">YA</div>
+    <span class="logo-name">
+      <span class="ar">يوسف عبدالعال</span>
+      <span class="en">Yousef Abdulaal</span>
+    </span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">  <span class="ar">نبذة</span>    <span class="en">About</span>    </a></li>
+    <li><a href="#projects"><span class="ar">المشاريع</span><span class="en">Projects</span></a></li>
+    <li><a href="#skills">  <span class="ar">المهارات</span><span class="en">Skills</span>   </a></li>
+    <li><a href="#education"><span class="ar">التعليم</span><span class="en">Education</span></a></li>
+    <li><a href="#contact"> <span class="ar">تواصل</span>   <span class="en">Contact</span>  </a></li>
+  </ul>
+
+  <div class="nav-controls">
+    <button class="ctrl-btn lang-btn" id="langToggle" title="Switch language">
+      <span class="ar">EN</span><span class="en">AR</span>
+    </button>
+    <button class="ctrl-btn" id="themeToggle" title="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+      </svg>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">    <span class="ar">نبذة</span>    <span class="en">About</span>    </a>
+  <a href="#projects"> <span class="ar">المشاريع</span><span class="en">Projects</span></a>
+  <a href="#skills">   <span class="ar">المهارات</span><span class="en">Skills</span>   </a>
+  <a href="#education"><span class="ar">التعليم</span> <span class="en">Education</span></a>
+  <a href="#contact">  <span class="ar">تواصل</span>   <span class="en">Contact</span>  </a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero" style="padding-top:130px;max-width:100%;border:none;">
+  <div class="hero-grid"></div>
+
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="ar">مطوّر برمجيات · مؤسس · الرياض، المملكة العربية السعودية</span>
+      <span class="en">Software Engineer · Founder · Riyadh, Saudi Arabia</span>
+    </div>
+
+    <h1 class="hero-name">
+      <span class="ar">يوسف <span class="hl">عبدالعال</span></span>
+      <span class="en">Yousef <span class="hl">Abdulaal</span></span>
+    </h1>
+
+    <p class="hero-title">
+      <span class="ar">مطوّر Full-Stack · منشئ منتجات AI · برمجيات عربية أولاً</span>
+      <span class="en">Full-Stack Engineer · AI Product Builder · Arabic-First Software</span>
+    </p>
+
+    <p class="hero-desc">
+      <span class="ar">
+        أبني منتجات AI مطلقة فعلاً — منصات SaaS، تطبيقات موبايل،
+        وأدوات مجتمعية — مصممة عربياً من الأساس.
+      </span>
+      <span class="en">
+        I ship production AI products — SaaS platforms, mobile apps, and community tools —
+        built Arabic-first and used by real people.
+      </span>
+    </p>
+
+    <div class="hero-cta">
+      <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <span class="ar">زيارة Hulool Future ↗</span>
+        <span class="en">Visit Hulool Future ↗</span>
+      </a>
+      <a href="#projects" class="btn-secondary">
+        <span class="ar">استعراض المشاريع</span>
+        <span class="en">View Projects</span>
+      </a>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">
+          <span class="ar">منتج SaaS مباشر</span>
+          <span class="en">Live SaaS Product</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">
+          <span class="ar">منتجات مطلقة</span>
+          <span class="en">Products Shipped</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">AR·EN</div>
+        <div class="stat-label">
+          <span class="ar">بناء RTL/LTR أصيل</span>
+          <span class="en">RTL + LTR Native</span>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">~2yr</div>
+        <div class="stat-label">
+          <span class="ar">Full-Stack منذ 2024</span>
+          <span class="en">Full-Stack Since 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="about-text reveal">
+    <div class="section-label">
+      <span class="ar">نبذة</span>
+      <span class="en">ABOUT</span>
+    </div>
+    <h2 class="section-title">
+      <span class="ar">مطوّر يبني<br/><span style="color:var(--accent)">حلولاً تُحدث أثراً</span></span>
+      <span class="en">Engineer who builds<br/><span style="color:var(--accent)">solutions that matter</span></span>
+    </h2>
+    <p>
+      <span class="ar">
+        أنا <strong>يوسف عبدالعال</strong> — مطوّر برمجيات ومؤسس، أطلق منتجات AI تحت مظلة
+        <strong>مؤسسة مستقبل حلول التقنية</strong>،
+        وأدرس علوم الحاسب في <span class="hl">الجامعة العربية المفتوحة</span> بالرياض.
+      </span>
+      <span class="en">
+        I'm <strong>Yousef Abdulaal</strong> — software engineer and founder, shipping production
+        AI products under <strong>Mustaqbal Hulul AlTaqniyah Establishment</strong>,
+        studying Computer Science at <span class="hl">Arab Open University</span> in Riyadh.
+      </span>
+    </p>
+    <p>
+      <span class="ar">
+        تخصصي في منتجات الموبايل المدمجة بالذكاء الاصطناعي.
+        العمل يبدأ من المشكلة — لا من التقنية.
+        كل منتج أطلقه له مبرر وجوده قبل أي سطر كود.
+      </span>
+      <span class="en">
+        I specialize in mobile-first, AI-integrated products.
+        The work starts with the problem — not the stack.
+        Every product I ship has a clear reason to exist before a line of code is written.
+      </span>
+    </p>
+    <p>
+      <span class="ar">
+        أركز على ثغرات البرمجيات التي لا تزال قائمة:
+        واجهات عربية أولاً، سياق محلي حقيقي، وذكاء اصطناعي مطبّق على مشكلات يومية فعلية.
+      </span>
+      <span class="en">
+        I focus on software gaps that still matter: Arabic-first interfaces,
+        local context, and AI applied to problems people actually have.
+      </span>
+    </p>
+  </div>
+
+  <dl class="about-dl reveal reveal-delay-2">
+    <div class="dl-row">
+      <dt>Education</dt>
+      <dd>
+        <span class="ar">الجامعة العربية المفتوحة — علوم الحاسب</span>
+        <span class="en">Arab Open University — Computer Science</span>
+      </dd>
+    </div>
+    <div class="dl-row">
+      <dt>Company</dt>
+      <dd>
+        <span class="ar">مؤسسة مستقبل حلول التقنية · مطور المشاريع التقنية</span>
+        <span class="en">Mustaqbal Hulul AlTaqniyah Est. · Tech Projects Developer</span>
+      </dd>
+    </div>
+    <div class="dl-row">
+      <dt>Location</dt>
+      <dd>
+        <span class="ar">الرياض، المملكة العربية السعودية</span>
+        <span class="en">Riyadh, Saudi Arabia</span>
+      </dd>
+    </div>
+    <div class="dl-row">
+      <dt>Email</dt>
+      <dd style="font-family:var(--font-en)">yousefabdulaal2@gmail.com</dd>
+    </div>
+    <div class="dl-row">
+      <dt>GitHub</dt>
+      <dd style="font-family:var(--font-en)">github.com/jdf55</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <div class="projects-header reveal">
+    <div>
+      <div class="section-label">
+        <span class="ar">مشاريع</span>
+        <span class="en">PROJECTS</span>
+      </div>
+      <h2 class="section-title">
+        <span class="ar">ما بنيته<br/><span style="color:var(--accent)">فعلياً</span></span>
+        <span class="en">What I've<br/><span style="color:var(--accent)">Actually Built</span></span>
+      </h2>
+    </div>
+    <p class="section-sub" style="max-width:300px;text-align:end;">
+      <span class="ar">كل مشروع هنا موجود على GitHub أو مباشر على الإنترنت</span>
+      <span class="en">Every project here is live or available on GitHub</span>
+    </p>
+  </div>
+
+  <div class="featured-grid">
+
+    <!-- AILine -->
+    <div class="project-card live reveal reveal-delay-1">
+      <div class="card-inner">
+        <span class="card-badge badge-live">Live Product</span>
+        <h3 class="card-title">
+          <span class="ar">AILine — منصة الجدول الذكي</span>
+          <span class="en">AILine — Smart Scheduler</span>
+        </h3>
+        <p class="card-title-en">by Mustaqbal Hulul AlTaqniyah · huloolfuture.sa</p>
+        <p class="card-desc">
+          <span class="ar">
+            منصة SaaS لطلاب الجامعات — يقرأ الذكاء الاصطناعي الجدول المرفوع،
+            يعيّن مواعيد الاختبارات، ويبني خطة مذاكرة يومية.
+            منشورة على huloolfuture.sa، عربي وإنجليزي.
+          </span>
+          <span class="en">
+            SaaS platform for university students — the AI reads the uploaded timetable,
+            maps exam dates, and generates a day-by-day study plan.
+            Deployed at huloolfuture.sa, fully bilingual.
+          </span>
+        </p>
+        <div class="card-tags">
+          <span class="tag">Next.js 15</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">AI APIs</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Supabase Auth</span>
+        </div>
+        <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="card-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+            <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          <span class="ar">زيارة المنتج المباشر — huloolfuture.sa</span>
+          <span class="en">Visit Live Product — huloolfuture.sa</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FitMap -->
+    <div class="project-card dev reveal reveal-delay-2">
+      <div class="card-inner">
+        <span class="card-badge badge-dev">In Development</span>
+        <h3 class="card-title">
+          <span class="ar">FitMap — منصة اللياقة الذكية</span>
+          <span class="en">FitMap — Smart Fitness Platform</span>
+        </h3>
+        <p class="card-title-en">AI-Powered Fitness &amp; Wellness · Mobile-First</p>
+        <p class="card-desc">
+          <span class="ar">
+            تطبيق AI للياقة البدنية مع خطط تدريب مخصصة، تتبع التغذية بقاعدة بيانات
+            الأكل المحلي، وإيجاد الصالات بالموقع الجغرافي. واجهة RTL عربية أولاً.
+          </span>
+          <span class="en">
+            AI fitness app with personalized training plans, local food nutrition tracking,
+            and gym discovery via geolocation. Arabic-first RTL interface.
+          </span>
+        </p>
+        <div class="card-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">React Native</span>
+          <span class="tag">AI APIs</span>
+          <span class="tag">Geolocation</span>
+          <span class="tag">RTL Design</span>
+        </div>
+        <div class="card-link card-link-muted">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0110 0v4"/>
+          </svg>
+          <span class="ar">مستودع خاص · متاح عند الطلب</span>
+          <span class="en">Private Repository · Available on Request</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="small-grid">
+
+    <div class="small-card reveal reveal-delay-1">
+      <div class="small-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+          <path d="M9 21V12h6v9"/>
+        </svg>
+      </div>
+      <span class="card-badge badge-hackathon" style="font-size:.64rem;padding:3px 10px;">ROSHN Hackathon</span>
+      <div class="small-card-title">ROSHN PropTech AI</div>
+      <div class="small-card-desc">
+        <span class="ar">محرك بحث عقاري عربي-أولاً بـ FastAPI + GraphQL + NLP، بُني لشركة روشن في هاكاثون وطني.</span>
+        <span class="en">Arabic-first real estate search engine with FastAPI + GraphQL + NLP, built for ROSHN in a national hackathon.</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">FastAPI</span><span class="tag">GraphQL</span><span class="tag">NLP</span>
+      </div>
+    </div>
+
+    <div class="small-card reveal reveal-delay-2">
+      <div class="small-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+        </svg>
+      </div>
+      <span class="card-badge badge-project" style="font-size:.64rem;padding:3px 10px;">SaaS Platform</span>
+      <div class="small-card-title">
+        <span class="ar">HifzHub — منصة حلقات القرآن</span>
+        <span class="en">HifzHub — Quran Schools</span>
+      </div>
+      <div class="small-card-desc">
+        <span class="ar">منصة SaaS لإدارة مدارس تحفيظ القرآن — حضور وحفظ وإدارة معلمين وطلاب.</span>
+        <span class="en">SaaS for managing Quran memorization schools — attendance, progress tracking, teacher &amp; student management.</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">RTL</span>
+      </div>
+    </div>
+
+    <div class="small-card reveal reveal-delay-3">
+      <div class="small-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="3"/>
+          <path d="M12 8v8M8 12h8"/>
+        </svg>
+      </div>
+      <span class="card-badge badge-project" style="font-size:.64rem;padding:3px 10px;">Healthcare PWA</span>
+      <div class="small-card-title">
+        <span class="ar">Curative — تطبيق الدواء</span>
+        <span class="en">Curative — Med Reminder</span>
+      </div>
+      <div class="small-card-desc">
+        <span class="ar">تطبيق ويب PWA للتذكير بالأدوية يعمل بدون إنترنت، واجهة عربية RTL كاملة، صفر مكتبات خارجية.</span>
+        <span class="en">Offline-capable medication reminder PWA, full Arabic RTL, zero external dependencies.</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">PWA</span><span class="tag">Vanilla JS</span><span class="tag">Service Workers</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">
+      <span class="ar">مهارات</span>
+      <span class="en">SKILLS</span>
+    </div>
+    <h2 class="section-title">
+      <span class="ar">المهارات التقنية</span>
+      <span class="en">Technical Skills</span>
+    </h2>
+    <p class="section-sub">
+      <span class="ar">الأدوات المستخدمة فعلياً عبر جميع المشاريع المذكورة</span>
+      <span class="en">Tools actively used across all listed projects</span>
+    </p>
+  </div>
+
+  <div class="skills-two-col">
+    <div class="skill-col reveal reveal-delay-1">
+      <div class="skill-col-head">
+        <span class="ar">ما أبني به</span>
+        <span class="en">What I ship with</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Frontend</span>
+        <span class="skill-vals">Next.js 15 · TypeScript · Tailwind CSS · React Native · Framer Motion</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Backend</span>
+        <span class="skill-vals">Python · FastAPI · Supabase · GraphQL · REST APIs</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Deploy</span>
+        <span class="skill-vals">Vercel · Expo · EAS Build · OTA Updates · Git</span>
+      </div>
+    </div>
+    <div class="skill-col reveal reveal-delay-2">
+      <div class="skill-col-head">
+        <span class="ar">ما أضيفه للمنظومة</span>
+        <span class="en">What I bring to the stack</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">AI</span>
+        <span class="skill-vals">AI API Integration · Prompt Engineering · Arabic NLP</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">RTL</span>
+        <span class="skill-vals">RTL-first UI · Arabic typography · Bilingual systems</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">PWA</span>
+        <span class="skill-vals">Service Workers · Offline-first · Zero-dependency builds</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Vision</span>
+        <span class="skill-vals">OpenCV · FER · Computer Vision pipelines</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section id="education">
+  <div class="reveal">
+    <div class="section-label">
+      <span class="ar">تعليم</span>
+      <span class="en">EDUCATION</span>
+    </div>
+    <h2 class="section-title">
+      <span class="ar">التعليم</span>
+      <span class="en">Education</span>
+    </h2>
+  </div>
+
+  <div class="edu-card reveal reveal-delay-1">
+    <div class="edu-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      </svg>
+    </div>
+
+    <div class="edu-info">
+      <div class="edu-uni">
+        <span class="ar">الجامعة العربية المفتوحة</span>
+        <span class="en">Arab Open University (AOU)</span>
+      </div>
+      <div class="edu-degree">
+        <span class="ar">الجامعة العربية المفتوحة · الرياض · بكالوريوس علوم الحاسب</span>
+        <span class="en">Arab Open University · Riyadh · Bachelor of Computer Science</span>
+      </div>
+      <span class="edu-year">2024 — Present</span>
+    </div>
+
+    <!-- progress ring: circumference 2π×32 ≈ 201.1 · 28.2% filled = 56.8 -->
+    <div class="edu-progress">
+      <svg width="84" height="84" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="32" fill="none" stroke="var(--border-dim)" stroke-width="5"/>
+        <circle class="ring-fill" cx="40" cy="40" r="32" fill="none"
+          stroke="var(--accent)" stroke-width="5"
+          stroke-linecap="round" transform="rotate(-90 40 40)"/>
+        <text x="40" y="38" text-anchor="middle"
+          fill="var(--accent)" font-size="13" font-weight="700" font-family="Inter,sans-serif">28%</text>
+        <text x="40" y="53" text-anchor="middle"
+          fill="var(--text-dim)" font-size="7.5" font-family="Inter,sans-serif">37 / 131</text>
+      </svg>
+      <div class="edu-progress-label">
+        <span class="ar">ساعات منجزة</span>
+        <span class="en">Credits Done</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">
+      <span class="ar">تواصل</span>
+      <span class="en">CONTACT</span>
+    </div>
+    <h2 class="section-title">
+      <span class="ar">تواصل معي</span>
+      <span class="en">Get in Touch</span>
+    </h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">
+      <span class="ar">LinkedIn، GitHub، أو عبر البريد الإلكتروني مباشرة</span>
+      <span class="en">LinkedIn, GitHub, or reach me directly by email</span>
+    </p>
+  </div>
+
+  <div class="contact-links reveal reveal-delay-1">
+    <a href="mailto:yousefabdulaal2@gmail.com" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      yousefabdulaal2@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/yousef-abdulaal" target="_blank" rel="noopener noreferrer" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/jdf55" target="_blank" rel="noopener noreferrer" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+      GitHub — jdf55
+    </a>
+  </div>
+
+  <p class="footer-copy">
+    © 2026 Yousef Abdulaal · Mustaqbal Hulul AlTaqniyah Est. · Built to solve, not to showcase
+  </p>
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  const navbar     = document.getElementById('navbar');
+  const themeBtn   = document.getElementById('themeToggle');
+  const langToggle = document.getElementById('langToggle');
+  const hamburger  = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  // Accepted values — anything else from localStorage is treated as the default.
+  const VALID_THEMES  = new Set(['dark', 'light']);
+  const VALID_LANGS   = new Set(['ar', 'en']);
+  // Only internal section IDs are valid scroll targets.
+  const VALID_ANCHORS = new Set(['#hero', '#about', '#projects', '#skills', '#education', '#contact']);
+
+  // ── NAV SHRINK ON SCROLL ──────────────────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // ── SCROLL REVEAL ─────────────────────────────────────────────────────────
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── EDUCATION PROGRESS RING ───────────────────────────────────────────────
+  const eduCard = document.querySelector('.edu-card');
+  if (eduCard) {
+    const ringObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('ring-animated'); ringObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    ringObs.observe(eduCard);
+  }
+
+  // ── SMOOTH SCROLL ─────────────────────────────────────────────────────────
+  // Only scroll to known section IDs; use getElementById to avoid CSS selector injection.
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (!VALID_ANCHORS.has(href)) return;
+      e.preventDefault();
+      const target = document.getElementById(href.slice(1));
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - (navbar.offsetHeight + 16);
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ── THEME ─────────────────────────────────────────────────────────────────
+  const iconSun  = themeBtn.querySelector('.icon-sun');
+  const iconMoon = themeBtn.querySelector('.icon-moon');
+
+  function applyTheme(t) {
+    const theme = VALID_THEMES.has(t) ? t : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    iconSun.style.display  = theme === 'dark'  ? '' : 'none';
+    iconMoon.style.display = theme === 'light' ? '' : 'none';
+    const metaTheme = document.getElementById('metaThemeColor');
+    if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#06060F' : '#F2F2FF');
+  }
+  applyTheme(localStorage.getItem('theme') || 'dark');
+  themeBtn.addEventListener('click', () => {
+    applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  // ── LANGUAGE ──────────────────────────────────────────────────────────────
+  function applyLang(l) {
+    const lang = VALID_LANGS.has(l) ? l : 'ar';
+    const html = document.documentElement;
+    html.setAttribute('data-lang', lang);
+    html.lang = lang;
+    html.dir  = lang === 'ar' ? 'rtl' : 'ltr';
+    localStorage.setItem('lang', lang);
+    document.title = lang === 'ar'
+      ? 'يوسف عبدالعال — مطوّر برمجيات ومنشئ منتجات AI'
+      : 'Yousef Abdulaal — Full-Stack Engineer & AI Product Builder';
+  }
+  applyLang(localStorage.getItem('lang') || 'ar');
+  langToggle.addEventListener('click', () => {
+    applyLang(document.documentElement.getAttribute('data-lang') === 'ar' ? 'en' : 'ar');
+  });
+
+  // ── MOBILE MENU ───────────────────────────────────────────────────────────
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMobileMenu();
+  });
+
+}());
+</script>
+</body>
+</html>
