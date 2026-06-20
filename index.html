@@ -405,8 +405,8 @@ section{
 /* ─── SKILLS ─── */
 #skills{background:#0A160D;}
 .skills-two-col{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:48px;margin-top:48px;
+  display:block;
+  margin-top:48px;max-width:600px;
 }
 .skill-col-head{
   font-family:var(--font-mono);font-size:.68rem;font-weight:500;
@@ -473,13 +473,17 @@ section{
 
 /* ─── CONTACT ─── */
 #contact{background:#0A160D;text-align:center;}
-.contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:48px;}
+.contact-links{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+  max-width:480px;margin:48px auto 0;
+}
 .contact-link{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--bg2);border:1px solid var(--border-dim);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;
+  background:var(--bg2);border:1px solid rgba(221,230,223,.12);
   color:var(--text-muted);font-family:var(--font-en);
   font-size:.85rem;font-weight:500;
-  padding:12px 24px;border-radius:100px;text-decoration:none;transition:all .3s;
+  padding:14px 20px;border-radius:12px;text-decoration:none;transition:all .3s;
 }
 .contact-link:hover{
   border-color:var(--accent-border);color:var(--accent);
@@ -623,7 +627,6 @@ section{
   #about{grid-template-columns:1fr;gap:40px;}
   .featured-grid{grid-template-columns:1fr;}
   .small-grid{grid-template-columns:1fr 1fr;}
-  .skills-two-col{grid-template-columns:1fr;gap:32px;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
   .projects-header{flex-direction:column;align-items:flex-start;gap:12px;}
@@ -633,6 +636,7 @@ section{
   .hero-cta{flex-direction:column;align-items:center;}
   .dl-row{grid-template-columns:64px 1fr;}
   .skill-row{grid-template-columns:48px 1fr;}
+  .contact-links{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -997,28 +1001,6 @@ section{
       <div class="skill-row">
         <span class="skill-cat">Deploy</span>
         <span class="skill-vals">Vercel · Expo · EAS Build · OTA Updates · Git</span>
-      </div>
-    </div>
-    <div class="skill-col reveal reveal-delay-2">
-      <div class="skill-col-head">
-        <span class="ar">ما أضيفه للمنظومة</span>
-        <span class="en">What I bring to the stack</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-cat">AI</span>
-        <span class="skill-vals">AI API Integration · Prompt Engineering · Arabic NLP</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-cat">RTL</span>
-        <span class="skill-vals">RTL-first UI · Arabic typography · Bilingual systems</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-cat">PWA</span>
-        <span class="skill-vals">Service Workers · Offline-first · Zero-dependency builds</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-cat">Vision</span>
-        <span class="skill-vals">OpenCV · FER · Computer Vision pipelines</span>
       </div>
     </div>
   </div>
