@@ -71,13 +71,18 @@
   --bg4:        #E0EBE2;
   --text:       #0A1A0D;
   --text-muted: #3D6648;
-  --text-dim:   #80A088;
+  --text-dim:   #5A7A60;
   --border:     rgba(10,26,13,0.12);
   --border-dim: rgba(10,26,13,0.06);
   --shadow:     0 20px 60px rgba(92,175,126,0.12);
-  --shadow-sm:  0 4px 20px rgba(92,175,126,0.10);
-  --glass:      rgba(245,248,245,0.90);
+  --shadow-sm:  0 4px 20px rgba(92,175,126,0.08);
+  --glass:      rgba(245,248,245,0.92);
+  --card-bg:    rgba(255,255,255,0.7);
 }
+[data-theme="light"] .project-card{background:rgba(255,255,255,0.8)!important;border-color:rgba(92,175,126,0.2)!important;}
+[data-theme="light"] .skill-row{border-color:rgba(10,26,13,0.1);}
+[data-theme="light"] .contact-link{border-color:rgba(10,26,13,0.12);background:rgba(255,255,255,0.6);}
+[data-theme="light"] .contact-link:hover{background:rgba(92,175,126,0.08);}
 
 
 /* ─── RESET ─── */
@@ -744,9 +749,7 @@ section{
 <!-- ═══ ABOUT ═══ -->
 <section id="about">
   <div class="about-text reveal">
-    <div class="section-label">
-      <span class="ar">نبذة</span>
-    </div>
+    <div class="section-label"><span class="ar">نبذة</span><span class="en">About</span></div>
     <h2 class="section-title">
       <span class="ar">مطوّر يبني<br/><span style="color:var(--accent)">حلولاً تُحدث أثراً</span></span>
     </h2>
@@ -790,9 +793,7 @@ section{
 <section id="projects">
   <div class="projects-header reveal">
     <div>
-      <div class="section-label">
-        <span class="ar">مشاريع</span>
-      </div>
+      <div class="section-label"><span class="ar">مشاريع</span><span class="en">Projects</span></div>
       <h2 class="section-title">
         <span class="ar">ما بنيته<br/><span style="color:var(--accent)">فعلياً</span></span>
       </h2>
@@ -923,9 +924,10 @@ section{
         </svg>
       </div>
       <span class="card-badge badge-project" style="font-size:.64rem;padding:3px 10px;">مفتوح المصدر</span>
-      <div class="small-card-title">Ilmora — منصة إدارة المدارس</div>
+      <div class="small-card-title"><span class="ar">Ilmora — منصة إدارة المدارس</span><span class="en">Ilmora — School Management Platform</span></div>
       <div class="small-card-desc">
-        نظام إدارة مدرسي متعدد المستأجرين — مفتوح المصدر. يشمل الجداول الأسبوعية، تتبع الحضور، إدارة المجموعات، والمهام. مبني بفريق من مطورين.
+        <span class="ar">نظام إدارة مدرسي متعدد المستأجرين — مفتوح المصدر. يشمل الجداول الأسبوعية، تتبع الحضور، إدارة المجموعات، والمهام. مبني بفريق من مطورين.</span>
+        <span class="en">Open-source multi-tenant school management system — weekly schedules, attendance tracking, group management, and assignments. Built with a team.</span>
       </div>
       <div class="card-tags">
         <span class="tag">Laravel 11</span><span class="tag">Livewire 3</span><span class="tag">Alpine.js</span><span class="tag">Tailwind CSS</span><span class="tag">MariaDB</span><span class="tag">Docker</span>
@@ -943,9 +945,10 @@ section{
         </svg>
       </div>
       <span class="card-badge badge-live" style="font-size:.64rem;padding:3px 10px;">منتج مباشر</span>
-      <div class="small-card-title">دوائي (Curative) — تتبع الدواء</div>
+      <div class="small-card-title"><span class="ar">دوائي — تتبع الدواء</span><span class="en">Curative — Medication Tracker</span></div>
       <div class="small-card-desc">
-        تطبيق PWA للتذكير بالأدوية وتتبع صحة الأسنان — يعمل بدون إنترنت، سجّل يومي، إحصائيات، وتصدير بيانات. صفر مكتبات خارجية.
+        <span class="ar">تطبيق PWA للتذكير بالأدوية وتتبع صحة الأسنان — يعمل بدون إنترنت، سجّل يومي، إحصائيات، وتصدير بيانات. صفر مكتبات خارجية.</span>
+        <span class="en">Offline-first PWA for medication reminders and dental health tracking — daily log, streaks, statistics, and data export. Zero external dependencies.</span>
       </div>
       <div class="card-tags">
         <span class="tag">PWA</span><span class="tag">Vanilla JS</span><span class="tag">Service Workers</span>
@@ -965,9 +968,7 @@ section{
 <!-- ═══ SKILLS ═══ -->
 <section id="skills">
   <div class="reveal">
-    <div class="section-label">
-      <span class="ar">مهارات</span>
-    </div>
+    <div class="section-label"><span class="ar">مهارات</span><span class="en">Skills</span></div>
     <h2 class="section-title">
       <span class="ar">المهارات التقنية</span>
     </h2>
@@ -1001,9 +1002,7 @@ section{
 <!-- ═══ CV ═══ -->
 <section id="cv">
   <div class="reveal">
-    <div class="section-label">
-      <span class="ar">السيرة الذاتية</span>
-    </div>
+    <div class="section-label"><span class="ar">السيرة الذاتية</span><span class="en">Resume</span></div>
     <h2 class="section-title">
       <span class="ar">السيرة الذاتية</span>
     </h2>
@@ -1063,9 +1062,7 @@ section{
 <!-- ═══ CONTACT ═══ -->
 <section id="contact">
   <div class="reveal">
-    <div class="section-label">
-      <span class="ar">تواصل</span>
-    </div>
+    <div class="section-label"><span class="ar">تواصل</span><span class="en">Contact</span></div>
     <h2 class="section-title">
       <span class="ar">تواصل معي</span>
     </h2>
