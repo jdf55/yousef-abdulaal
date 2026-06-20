@@ -79,10 +79,17 @@
   --glass:      rgba(247,245,240,0.92);
   --card-bg:    rgba(255,255,255,0.7);
 }
-[data-theme="light"] .project-card{background:rgba(255,255,255,0.8)!important;border-color:rgba(92,175,126,0.2)!important;}
+[data-theme="light"] .project-card{background:#FFFFFF!important;border:1px solid rgba(10,26,13,0.10)!important;box-shadow:0 1px 4px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.05)!important;}
+[data-theme="light"] .project-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.10),0 0 0 1px rgba(92,175,126,0.2)!important;border-color:rgba(92,175,126,0.25)!important;}
+[data-theme="light"] .small-card{background:#FFFFFF!important;border:1px solid rgba(10,26,13,0.10)!important;box-shadow:0 1px 4px rgba(0,0,0,0.06)!important;}
+[data-theme="light"] .small-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.09),0 0 0 1px rgba(92,175,126,0.18)!important;border-color:rgba(92,175,126,0.22)!important;}
+[data-theme="light"] .hero-photo img{box-shadow:0 12px 48px rgba(0,0,0,0.20);}
+[data-theme="light"] .card-badge{background:rgba(10,26,13,0.06);color:#2A5A35;border-color:rgba(10,26,13,0.12);}
+[data-theme="light"] .badge-live{background:rgba(92,175,126,0.12);color:#1A6B3A;border-color:rgba(92,175,126,0.25);}
 [data-theme="light"] .skill-row{border-color:rgba(10,26,13,0.1);}
 [data-theme="light"] .contact-link{border-color:rgba(10,26,13,0.12);background:rgba(255,255,255,0.6);}
 [data-theme="light"] .contact-link:hover{background:rgba(92,175,126,0.08);}
+[data-theme="light"] .tag,[data-theme="light"] [class*="tag"]{background:rgba(10,26,13,0.06)!important;border:1px solid rgba(10,26,13,0.10)!important;color:#2A4A30!important;}
 
 
 /* ─── RESET ─── */
@@ -298,8 +305,7 @@ section{
   color:var(--accent);margin-bottom:16px;
 }
 [data-lang="ar"] .section-label{font-family:var(--font-ar);letter-spacing:0;font-size:.78rem;font-weight:600;text-transform:none;}
-.section-label::before{content:'// ';opacity:.5;letter-spacing:0;}
-[data-lang="ar"] .section-label::before{content:'';}
+.section-label::before{content:'';display:none;}
 .section-label::after{content:'';width:20px;height:1px;background:var(--accent);opacity:.5;}
 
 .section-title{
@@ -808,7 +814,7 @@ section{
     <!-- AILine -->
     <div class="project-card live reveal reveal-delay-1">
       <div class="card-inner">
-        <span class="card-badge badge-live">منتج مباشر</span>
+        <span class="card-badge badge-live"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
         <h3 class="card-title">
           <span class="ar">AILine — منصة الجدول الذكي</span>
           <span class="en">AILine — Smart Scheduler</span>
@@ -848,7 +854,7 @@ section{
     <!-- FitMap -->
     <div class="project-card dev reveal reveal-delay-2">
       <div class="card-inner">
-        <span class="card-badge badge-dev">قيد التطوير</span>
+        <span class="card-badge badge-dev"><span class="ar">قيد التطوير</span><span class="en">In Dev</span></span>
         <h3 class="card-title">
           <span class="ar">FitMap — منصة اللياقة الذكية</span>
           <span class="en">FitMap — Smart Fitness Platform</span>
@@ -894,7 +900,7 @@ section{
           <path d="M9 21V12h6v9"/>
         </svg>
       </div>
-      <span class="card-badge badge-live" style="font-size:.64rem;padding:3px 10px;">منتج مباشر</span>
+      <span class="card-badge badge-live" style="font-size:.64rem;padding:3px 10px;"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
       <div class="small-card-title">
         <span class="ar">المُرشّح — مساعد عقاري</span>
         <span class="en">Almorashih — Property AI</span>
@@ -923,7 +929,7 @@ section{
           <polyline points="9,22 9,12 15,12 15,22"/>
         </svg>
       </div>
-      <span class="card-badge badge-project" style="font-size:.64rem;padding:3px 10px;">مفتوح المصدر</span>
+      <span class="card-badge badge-project" style="font-size:.64rem;padding:3px 10px;"><span class="ar">مفتوح المصدر</span><span class="en">Open Source</span></span>
       <div class="small-card-title"><span class="ar">Ilmora — منصة إدارة المدارس</span><span class="en">Ilmora — School Management Platform</span></div>
       <div class="small-card-desc">
         <span class="ar">نظام إدارة مدرسي متعدد المستأجرين — مفتوح المصدر. يشمل الجداول الأسبوعية، تتبع الحضور، إدارة المجموعات، والمهام. مبني بفريق من مطورين.</span>
@@ -944,7 +950,7 @@ section{
           <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
         </svg>
       </div>
-      <span class="card-badge badge-live" style="font-size:.64rem;padding:3px 10px;">منتج مباشر</span>
+      <span class="card-badge badge-live" style="font-size:.64rem;padding:3px 10px;"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
       <div class="small-card-title"><span class="ar">دوائي — تتبع الدواء</span><span class="en">Curative — Medication Tracker</span></div>
       <div class="small-card-desc">
         <span class="ar">تطبيق PWA للتذكير بالأدوية وتتبع صحة الأسنان — يعمل بدون إنترنت، سجّل يومي، إحصائيات، وتصدير بيانات. صفر مكتبات خارجية.</span>
