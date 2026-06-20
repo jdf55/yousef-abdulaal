@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yousef Abdulaal — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS
+============================================================ */
+:root {
+  --navy:   #0F1623;
+  --accent: #818CF8;
+  --text:   #1C1C2E;
+  --sub:    #3D3D5C;
+  --muted:  #737390;
+  --border: #E4E4F0;
+  --tag-bg: #F2F2FA;
+  --white:  #FFFFFF;
+}
+
+/* ============================================================
+   RESET + BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: var(--text);
+  background: #EAEAF2;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   PAGE SHELL  (A4 = 210mm × 297mm)
+============================================================ */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 8mm auto;
+  background: var(--white);
+  box-shadow: 0 4px 40px rgba(0,0,0,0.14);
+  overflow: hidden;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.cv-header {
+  background: var(--navy);
+  padding: 15px 26px 13px;
+  position: relative;
+}
+
+.cv-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.h-name {
+  font-size: 22pt;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 3px;
+  letter-spacing: -0.5px;
+}
+
+.h-name .hl { color: var(--accent); }
+
+.h-title {
+  font-size: 9pt;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.4px;
+  margin-bottom: 9px;
+}
+
+.h-contact {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0 14px;
+  font-size: 8pt;
+  color: rgba(255,255,255,0.72);
+  white-space: nowrap;
+}
+
+.h-contact a { color: rgba(255,255,255,0.72); }
+.h-contact a:hover { color: var(--accent); }
+
+.h-sep {
+  color: rgba(255,255,255,0.25);
+  margin: 0 2px;
+  user-select: none;
+}
+
+/* ============================================================
+   BODY GRID  (main | sidebar)
+============================================================ */
+.cv-body {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 0;
+  align-items: start;
+}
+
+.cv-main {
+  padding: 18px 14px 18px 26px;
+  border-right: 1.5px solid var(--border);
+}
+
+.cv-aside {
+  padding: 18px 26px 18px 12px;
+}
+
+/* ============================================================
+   SECTION
+============================================================ */
+.sec { margin-bottom: 15px; }
+.sec:last-child { margin-bottom: 0; }
+.cv-aside .sec { margin-bottom: 8px; }
+
+.sec-title {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--border);
+  margin-bottom: 9px;
+}
+
+/* ============================================================
+   SUMMARY
+============================================================ */
+.summary-text {
+  font-size: 8.8pt;
+  line-height: 1.7;
+  color: var(--sub);
+}
+
+.summary-text strong { color: var(--text); font-weight: 600; }
+
+/* ============================================================
+   EXPERIENCE
+============================================================ */
+.exp { margin-bottom: 11px; }
+.exp:last-child { margin-bottom: 0; }
+
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 1px;
+}
+
+.exp-role {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.exp-date {
+  font-size: 7.5pt;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.exp-org {
+  font-size: 8pt;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.bullets { list-style: none; padding: 0; }
+.bullets li {
+  font-size: 8.5pt;
+  line-height: 1.55;
+  color: var(--sub);
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 3px;
+}
+.bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 7pt;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   PROJECTS
+============================================================ */
+.proj { margin-bottom: 10px; }
+.proj:last-child { margin-bottom: 0; }
+
+.proj-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 1px;
+}
+
+.proj-name {
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.proj-link {
+  font-size: 7.5pt;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.proj-stack {
+  font-size: 7.5pt;
+  color: var(--muted);
+  margin-bottom: 3px;
+  font-style: italic;
+}
+
+.proj-desc {
+  font-size: 8.5pt;
+  line-height: 1.55;
+  color: var(--sub);
+}
+
+/* ============================================================
+   SIDEBAR — SKILLS
+============================================================ */
+.skill-grp { margin-bottom: 7px; }
+.skill-grp:last-child { margin-bottom: 0; }
+
+.skill-cat {
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+
+.tag {
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1.5px 5px;
+  font-size: 6.5pt;
+  color: var(--sub);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SIDEBAR — EDUCATION
+============================================================ */
+.edu-item { margin-bottom: 8px; }
+.edu-item:last-child { margin-bottom: 0; }
+
+.edu-degree {
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1px;
+}
+
+.edu-school {
+  font-size: 7pt;
+  color: var(--sub);
+  margin-bottom: 1px;
+}
+
+.edu-date { font-size: 6.5pt; color: var(--muted); }
+
+/* ============================================================
+   SIDEBAR — TRAINING / LANGUAGES
+============================================================ */
+.cert-list { list-style: none; padding: 0; }
+.cert-list li {
+  font-size: 7.5pt;
+  color: var(--sub);
+  padding-left: 10px;
+  position: relative;
+  margin-bottom: 2px;
+  line-height: 1.45;
+}
+.cert-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 7pt;
+}
+
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+.lang-name  { font-size: 7.5pt; font-weight: 700; color: var(--text); }
+.lang-level { font-size: 6.5pt; color: var(--muted); }
+
+/* ============================================================
+   PRINT
+============================================================ */
+@page { size: A4; margin: 0; }
+
+@media print {
+  body { background: white; }
+  .page { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="cv-header">
+    <div class="h-name">Yousef <span class="hl">Abdulaal</span></div>
+    <div class="h-title">Full-Stack Developer &nbsp;·&nbsp; AI Product Builder &nbsp;·&nbsp; Founder</div>
+    <div class="h-contact">
+      <span>+966 57 044 5012</span>
+      <span class="h-sep">·</span>
+      <a href="mailto:yousefabdulaal2@gmail.com">yousefabdulaal2@gmail.com</a>
+      <span class="h-sep">·</span>
+      <a href="https://linkedin.com/in/yousef-abdulaal" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <span class="h-sep">·</span>
+      <a href="https://github.com/jdf55" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <span class="h-sep">·</span>
+      <span>Riyadh, Saudi Arabia</span>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="cv-body">
+
+    <!-- MAIN COLUMN -->
+    <main class="cv-main">
+
+      <!-- PROFILE -->
+      <section class="sec">
+        <div class="sec-title">Profile</div>
+        <p class="summary-text">
+          I build mobile apps and web products independently — from code to infrastructure to
+          production — under <strong>Mustaqbal Hulul AlTaqniyah Establishment</strong>.
+          I grow by shipping real products, with a focus on integrating AI into applications
+          and building Arabic RTL interfaces.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="sec">
+        <div class="sec-title">Experience</div>
+
+        <div class="exp">
+          <div class="exp-top">
+            <span class="exp-role">Full-Stack Developer &amp; Founder</span>
+            <span class="exp-date">2025 – Present</span>
+          </div>
+          <div class="exp-org">Mustaqbal Hulul AlTaqniyah (HuloolFuture) &nbsp;·&nbsp; Riyadh, SA</div>
+          <ul class="bullets">
+            <li>Independently building and shipping digital products via GitHub — AILine and Dawai are live; FitMap is in active development; contributing to Ilmora (open-source).</li>
+            <li>Conducted a full security audit across 167+ endpoints, identifying and closing two critical authentication vulnerabilities before launch.</li>
+            <li>Managing the full infrastructure layer: Apple Developer Organization, EAS Build, Vercel, Cloudflare R2, and Google Cloud.</li>
+          </ul>
+        </div>
+
+        <div class="exp">
+          <div class="exp-top">
+            <span class="exp-role">Data Entry</span>
+            <span class="exp-date">2023 – 2024</span>
+          </div>
+          <div class="exp-org">Wardat Al-Tariq &nbsp;·&nbsp; Riyadh, SA</div>
+          <ul class="bullets">
+            <li>Data entry and database management in a live operational environment; gained hands-on experience with information systems and IT operations.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="sec">
+        <div class="sec-title">Projects</div>
+
+        <div class="proj">
+          <div class="proj-top">
+            <span class="proj-name">FitMap — Fitness App</span>
+            <span class="proj-link">In Development</span>
+          </div>
+          <div class="proj-stack">React Native · Expo · Moyasar · OpenRouter AI · EAS Build</div>
+          <div class="proj-desc">
+            Fitness app being built with workout tracking, AI-generated training plans, nutrition logging, and gym discovery.
+            Features Ramadan Mode and prayer-time workout scheduling. Integrating Moyasar payments with webhook-based subscription management.
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top">
+            <span class="proj-name">AILine — AI Study Platform</span>
+            <a class="proj-link" href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer">Live — huloolfuture.sa ↗</a>
+          </div>
+          <div class="proj-stack">Next.js 15 · TypeScript · AI APIs · Supabase Auth</div>
+          <div class="proj-desc">
+            Academic platform for university students — parses uploaded schedules, generates personalized study plans via LLM,
+            and provides a course-aware study assistant. Bilingual AR/EN, live now.
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top">
+            <span class="proj-name">Dawai — Medication Tracker PWA</span>
+            <a class="proj-link" href="https://curative-chi.vercel.app" target="_blank" rel="noopener noreferrer">Live ↗</a>
+          </div>
+          <div class="proj-stack">Vanilla JS · Service Worker · PWA · IndexedDB · RTL UI</div>
+          <div class="proj-desc">
+            Installable PWA for medication reminders, dose logging, and streak tracking — fully offline via service worker. Arabic RTL-first design.
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top">
+            <span class="proj-name">Ilmora — School Management (Collaboration)</span>
+            <a class="proj-link" href="https://github.com/AhmadBakdash/Ilmora" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+          <div class="proj-stack">Laravel · PHP · Livewire 3 · Alpine.js · MySQL &nbsp;·&nbsp; <em>Open-Source · In Development</em></div>
+          <div class="proj-desc">
+            Contributing to an open-source school management system built with a friend. Extending it for Quran memorization schools — adding Hifz progress tracking, recitation logging, and memorization-specific reporting.
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top">
+            <span class="proj-name">Almorashih (المُرشّح) — AI Property Matching</span>
+            <a class="proj-link" href="https://technyaty.com" target="_blank" rel="noopener noreferrer">Live ↗</a>
+          </div>
+          <div class="proj-stack">FastAPI · GraphQL · NLP · Python &nbsp;·&nbsp; <em>Roshn Hackathon 2025 · Team of 4</em></div>
+          <div class="proj-desc">
+            AI assistant matching students and new employees to suitable housing options. Built with a team of four for ROSHN Hackathon 2025 — accepted in round one but did not advance. The team continued building independently and shipped it live at technyaty.com.
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="cv-aside">
+
+      <!-- SKILLS -->
+      <section class="sec">
+        <div class="sec-title">Skills</div>
+
+        <div class="skill-grp">
+          <div class="skill-cat">Frontend</div>
+          <div class="skill-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">Next.js 15</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Framer Motion</span>
+          </div>
+        </div>
+
+        <div class="skill-grp">
+          <div class="skill-cat">Backend</div>
+          <div class="skill-tags">
+            <span class="tag">Supabase</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Python</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-grp">
+          <div class="skill-cat">AI / LLM</div>
+          <div class="skill-tags">
+            <span class="tag">OpenRouter</span>
+            <span class="tag">Claude API</span>
+            <span class="tag">Arabic NLP</span>
+            <span class="tag">Prompt Eng.</span>
+          </div>
+        </div>
+
+        <div class="skill-grp">
+          <div class="skill-cat">Mobile & Deploy</div>
+          <div class="skill-tags">
+            <span class="tag">EAS Build</span>
+            <span class="tag">OTA Updates</span>
+            <span class="tag">APK / IPA</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Cloudflare R2</span>
+            <span class="tag">Google Cloud</span>
+          </div>
+        </div>
+
+        <div class="skill-grp">
+          <div class="skill-cat">Payments</div>
+          <div class="skill-tags">
+            <span class="tag">Moyasar</span>
+            <span class="tag">Webhooks</span>
+            <span class="tag">Subscriptions</span>
+          </div>
+        </div>
+
+        <div class="skill-grp">
+          <div class="skill-cat">Security</div>
+          <div class="skill-tags">
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Info Security</span>
+            <span class="tag">Auth Audit</span>
+            <span class="tag">167+ Endpoints</span>
+          </div>
+        </div>
+
+        <div class="skill-grp">
+          <div class="skill-cat">Specialties</div>
+          <div class="skill-tags">
+            <span class="tag">Arabic RTL UI</span>
+            <span class="tag">Bilingual AR/EN</span>
+            <span class="tag">PWA</span>
+            <span class="tag">GitHub</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="sec">
+        <div class="sec-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">B.Sc. Computer Science</div>
+          <div class="edu-school">Arab Open University (AOU)</div>
+          <div class="edu-date">2024 – Present · Riyadh</div>
+        </div>
+      </section>
+
+      <!-- TRAINING -->
+      <section class="sec">
+        <div class="sec-title">Training Courses</div>
+        <ul class="cert-list">
+          <li>Cybersecurity Fundamentals</li>
+          <li>Information Security</li>
+          <li>Data Management &amp; Analysis</li>
+          <li>Programming</li>
+        </ul>
+      </section>
+
+
+    </aside>
+  </div>
+
+</div>
+</body>
+</html>
