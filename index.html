@@ -1178,26 +1178,30 @@ section{padding:96px 60px;max-width:1200px;margin:0 auto;}
     en: { html: 'Yousef_Abdulaal_CV_EN.html', pdf: 'Yousef_Abdulaal_CV_EN.pdf' },
   };
 
-  const cvFrame     = document.getElementById('cvFrame');
-  const cvContainer = document.getElementById('cvFrameContainer');
-  const cvDownload  = document.getElementById('cvDownload');
-  const cvNewTab    = document.getElementById('cvNewTab');
-  const tabAr       = document.getElementById('tab-ar');
-  const tabEn       = document.getElementById('tab-en');
+  const cvFrame    = document.getElementById('cvFrame');
+  const cvPaper    = document.getElementById('cvPaper');
+  const cvDownload = document.getElementById('cvDownload');
+  const cvNewTab   = document.getElementById('cvNewTab');
+  const tabAr      = document.getElementById('tab-ar');
+  const tabEn      = document.getElementById('tab-en');
 
   let _cvLang = 'ar';
 
   function scaleCVFrame() {
-    if (!cvContainer || !cvFrame) return;
-    const w = cvContainer.offsetWidth;
+    if (!cvPaper || !cvFrame) return;
+    const w = cvPaper.offsetWidth;
     const scale = w / 794;
     cvFrame.style.transform = 'scale(' + scale + ')';
-    cvContainer.style.height = Math.round(1123 * scale) + 'px';
+    cvPaper.style.height = Math.round(1123 * scale) + 'px';
   }
 
   function switchCV(lang) {
     const l = VALID_LANGS.has(lang) ? lang : 'ar';
-    if (_cvLang === l && cvFrame && cvFrame.src.includes(CV_FILES[l].html)) return;
+    if (_cvLang === l) {
+      if (tabAr) tabAr.classList.toggle('active', l === 'ar');
+      if (tabEn) tabEn.classList.toggle('active', l === 'en');
+      return;
+    }
     _cvLang = l;
     const files = CV_FILES[l];
     if (cvFrame)    cvFrame.src = files.html;
@@ -1207,10 +1211,12 @@ section{padding:96px 60px;max-width:1200px;margin:0 auto;}
     if (tabEn) tabEn.classList.toggle('active', l === 'en');
   }
 
-  if (cvContainer) {
+  if (cvPaper) {
     scaleCVFrame();
-    new ResizeObserver(scaleCVFrame).observe(cvContainer);
+    new ResizeObserver(scaleCVFrame).observe(cvPaper);
   }
+  if (tabAr) tabAr.addEventListener('click', () => switchCV('ar'));
+  if (tabEn) tabEn.addEventListener('click', () => switchCV('en'));
 
   // ── NAV SHRINK ON SCROLL ──────────────────────────────────────────────────
   window.addEventListener('scroll', () => {
