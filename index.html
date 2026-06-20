@@ -194,7 +194,16 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
   padding:130px 60px 90px;overflow:hidden;
 }
 
-.hero-inner{position:relative;z-index:1;text-align:center;max-width:920px;}
+.hero-inner{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:2fr 3fr;
+  align-items:center;gap:3rem;
+  max-width:1100px;width:100%;
+}
+.hero-photo img{
+  width:100%;max-width:380px;
+  border-radius:20px;display:block;
+}
 
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:10px;
@@ -229,12 +238,12 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
 
 .hero-desc{
   font-size:1.05rem;font-weight:400;color:var(--text-muted);
-  max-width:580px;margin:0 auto 48px;line-height:1.95;
+  max-width:580px;margin-bottom:48px;line-height:1.95;
   opacity:0;animation:fadeUp .8s .8s forwards;
 }
 
 .hero-cta{
-  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap;
   opacity:0;animation:fadeUp .8s 1s forwards;
 }
 
@@ -248,7 +257,7 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
 [data-lang="en"] .btn-primary{font-family:var(--font-en);}
 .btn-primary:hover{
   background:var(--accent-light);transform:translateY(-2px);
-  box-shadow:0 12px 40px rgba(129,140,248,.38);
+  box-shadow:0 12px 40px rgba(92,175,126,.35);
 }
 .btn-secondary{
   display:inline-flex;align-items:center;gap:8px;
@@ -334,14 +343,14 @@ section{padding:96px 60px;max-width:1200px;margin:0 auto;}
 
 .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
 .project-card{
-  background:var(--bg3);border:1px solid var(--border-dim);
-  border-radius:var(--radius);overflow:hidden;
+  background:rgba(92,175,126,0.04);border:1px solid rgba(92,175,126,0.1);
+  border-radius:16px;overflow:hidden;
   display:flex;flex-direction:column;
   transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;
 }
 .project-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:var(--shadow);}
 .project-card.live{border-top:2px solid var(--emerald);}
-.project-card.dev{border-top:2px solid rgba(129,140,248,.32);}
+.project-card.dev{border-top:2px solid var(--accent-border);}
 
 .card-inner{padding:32px;display:flex;flex-direction:column;flex:1;}
 .card-badge{
@@ -615,6 +624,12 @@ section{padding:96px 60px;max-width:1200px;margin:0 auto;}
 }
 
 /* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;justify-items:center;}
+  .hero-photo{order:-1;}
+  .hero-photo img{max-width:220px;margin:0 auto;}
+  .hero-cta{justify-content:center;}
+}
 @media(max-width:900px){
   nav{padding:13px 22px;}
   nav.scrolled{padding:10px 22px;}
@@ -690,41 +705,48 @@ section{padding:96px 60px;max-width:1200px;margin:0 auto;}
 <!-- ═══ HERO ═══ -->
 <section id="hero" style="padding-top:130px;max-width:100%;border:none;">
   <div class="hero-inner">
-    <div class="hero-eyebrow">
-      <span class="ar">مطوّر برمجيات · مؤسس · الرياض، المملكة العربية السعودية</span>
-      <span class="en">Software Engineer · Founder · Riyadh, Saudi Arabia</span>
+
+    <div class="hero-photo">
+      <img src="yousef_photo.png" alt="Yousef Abdulaal" loading="eager"/>
     </div>
 
-    <h1 class="hero-name">
-      <span class="ar">يوسف <span class="hl">عبدالعال</span></span>
-      <span class="en">Yousef <span class="hl">Abdulaal</span></span>
-    </h1>
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="ar">مطوّر برمجيات · مؤسس · الرياض، المملكة العربية السعودية</span>
+        <span class="en">Software Engineer · Founder · Riyadh, Saudi Arabia</span>
+      </div>
 
-    <p class="hero-title">
-      <span class="ar">مطوّر Full-Stack · منشئ منتجات AI · برمجيات عربية أولاً</span>
-      <span class="en">Full-Stack Engineer · AI Product Builder · Arabic-First Software</span>
-    </p>
+      <h1 class="hero-name">
+        <span class="ar">يوسف <span class="hl">عبدالعال</span></span>
+        <span class="en">Yousef <span class="hl">Abdulaal</span></span>
+      </h1>
 
-    <p class="hero-desc">
-      <span class="ar">
-        أبني منتجات AI مطلقة فعلاً — منصات SaaS، تطبيقات موبايل،
-        وأدوات مجتمعية — مصممة عربياً من الأساس.
-      </span>
-      <span class="en">
-        I ship production AI products — SaaS platforms, mobile apps, and community tools —
-        built Arabic-first and used by real people.
-      </span>
-    </p>
+      <p class="hero-title">
+        <span class="ar">مطوّر Full-Stack · منشئ منتجات AI · برمجيات عربية أولاً</span>
+        <span class="en">Full-Stack Engineer · AI Product Builder · Arabic-First Software</span>
+      </p>
 
-    <div class="hero-cta">
-      <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        <span class="ar">زيارة Hulool Future ↗</span>
-        <span class="en">Visit Hulool Future ↗</span>
-      </a>
-      <a href="#projects" class="btn-secondary">
-        <span class="ar">استعراض المشاريع</span>
-        <span class="en">View Projects</span>
-      </a>
+      <p class="hero-desc">
+        <span class="ar">
+          أبني منتجات AI مطلقة فعلاً — منصات SaaS، تطبيقات موبايل،
+          وأدوات مجتمعية — مصممة عربياً من الأساس.
+        </span>
+        <span class="en">
+          I ship production AI products — SaaS platforms, mobile apps, and community tools —
+          built Arabic-first and used by real people.
+        </span>
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <span class="ar">زيارة Hulool Future ↗</span>
+          <span class="en">Visit Hulool Future ↗</span>
+        </a>
+        <a href="#projects" class="btn-secondary">
+          <span class="ar">استعراض المشاريع</span>
+          <span class="en">View Projects</span>
+        </a>
+      </div>
     </div>
 
   </div>
