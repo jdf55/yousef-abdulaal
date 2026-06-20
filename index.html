@@ -66,8 +66,8 @@
 
 [data-theme="light"] {
   --bg:         #F5F8F5;
-  --bg2:        #FFFFFF;
-  --bg3:        #EBF0EC;
+  --bg2:        #E8EDE8;
+  --bg3:        #DDE5DD;
   --bg4:        #E0EBE2;
   --text:       #0A1A0D;
   --text-muted: #3D6648;
@@ -75,7 +75,7 @@
   --border:     rgba(10,26,13,0.12);
   --border-dim: rgba(10,26,13,0.06);
   --shadow:     0 20px 60px rgba(92,175,126,0.12);
-  --shadow-sm:  0 4px 20px rgba(92,175,126,0.08);
+  --shadow-sm:  0 4px 20px rgba(92,175,126,0.10);
   --glass:      rgba(245,248,245,0.90);
 }
 
@@ -304,12 +304,12 @@ section{
 .section-sub{font-size:1rem;color:var(--text-muted);max-width:500px;line-height:1.85;}
 
 /* ─── HERO BG ─── */
-#hero{background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(92,175,126,.06) 0%,#060D08 70%);}
+#hero{background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(92,175,126,.06) 0%,var(--bg) 70%);}
 
 /* ─── ABOUT ─── */
 #about{
   display:grid;grid-template-columns:1.2fr 1fr;
-  gap:80px;align-items:start;background:#0A160D;
+  gap:80px;align-items:start;background:var(--bg2);
 }
 .about-text p{color:var(--text-muted);margin-bottom:18px;font-size:1rem;line-height:1.95;}
 .about-text p strong{color:var(--text);font-weight:600;}
@@ -331,7 +331,7 @@ section{
 .about-dl dd{font-size:.88rem;color:var(--text);font-weight:500;line-height:1.55;}
 
 /* ─── PROJECTS ─── */
-#projects{background:#060D08;}
+#projects{background:var(--bg);}
 .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;}
 
 .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
@@ -403,7 +403,7 @@ section{
 .small-card .card-tags{margin-top:12px;}
 
 /* ─── SKILLS ─── */
-#skills{background:#0A160D;}
+#skills{background:var(--bg2);}
 .skills-two-col{
   display:block;
   margin-top:48px;max-width:600px;
@@ -431,7 +431,7 @@ section{
 }
 
 /* ─── EDUCATION ─── */
-#education{background:#060D08;}
+#education{background:var(--bg);}
 .edu-card{
   display:flex;align-items:center;gap:24px;
   background:var(--bg2);border:1px solid var(--border-dim);
@@ -472,7 +472,7 @@ section{
 @keyframes fillRing{to{stroke-dasharray:56.8 201.1;}}
 
 /* ─── CONTACT ─── */
-#contact{background:#0A160D;text-align:center;}
+#contact{background:var(--bg2);text-align:center;}
 .contact-links{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
   max-width:500px;margin:48px auto 0;
@@ -507,7 +507,7 @@ section{
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
 /* ─── CV VIEWER ─── */
-#cv{background:#060D08;}
+#cv{background:var(--bg);}
 
 .cv-viewer{margin-top:48px;max-width:860px;}
 
