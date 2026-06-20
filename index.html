@@ -474,12 +474,12 @@ section{
 /* ─── CONTACT ─── */
 #contact{background:#0A160D;text-align:center;}
 .contact-links{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;
-  max-width:480px;margin:48px auto 0;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+  max-width:500px;margin:48px auto 0;
 }
 .contact-link{
   display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;
+  width:100%;box-sizing:border-box;
   background:var(--bg2);border:1px solid rgba(221,230,223,.12);
   color:var(--text-muted);font-family:var(--font-en);
   font-size:.85rem;font-weight:500;
@@ -753,13 +753,11 @@ section{
     <p>
       <span class="ar">
         أنا <strong>يوسف عبدالعال</strong> — مطوّر برمجيات ومؤسس، أطلق منتجات AI تحت مظلة
-        <strong>مؤسسة مستقبل حلول التقنية</strong>،
-        وأدرس علوم الحاسب في <span class="hl">الجامعة العربية المفتوحة</span> بالرياض.
+        <strong>مؤسسة مستقبل حلول التقنية</strong>.
       </span>
       <span class="en">
         I'm <strong>Yousef Abdulaal</strong> — software engineer and founder, shipping production
-        AI products under <strong>Mustaqbal Hulul AlTaqniyah Establishment</strong>,
-        studying Computer Science at <span class="hl">Arab Open University</span> in Riyadh.
+        AI products under <strong>Mustaqbal Hulul AlTaqniyah Establishment</strong>.
       </span>
     </p>
     <p>
