@@ -787,31 +787,48 @@ section{
 
 /* 768px — hero tightening + typography */
 @media(max-width:768px){
-  #hero{padding-top:78px;padding-bottom:44px;}
+  /* ── Hero: perfectly centered, direction-agnostic ── */
+  #hero{
+    padding-top:78px;padding-bottom:44px;
+    padding-left:22px;padding-right:22px; /* override base 60px sides */
+  }
   .hero-inner{gap:1.25rem;}
-  .hero-photo img{max-width:240px;}
-  .hero-name{font-size:clamp(1.9rem,10vw,2.6rem);}
+  /* Force hero-text to always center — no shift on AR↔EN toggle */
+  .hero-text{
+    display:flex;flex-direction:column;align-items:center;
+    text-align:center;width:100%;
+  }
+  .hero-name{
+    font-size:clamp(1.9rem,10vw,2.6rem);
+    text-align:center;
+  }
+  .hero-title{font-size:.85rem;text-align:center;}
+  .hero-desc{font-size:.9rem;margin-bottom:28px;text-align:center;}
   /* Eyebrow pill: truncate long text to one clean line */
-  .hero-eyebrow{max-width:calc(100vw - 60px);overflow:hidden;}
+  .hero-eyebrow{
+    max-width:calc(100vw - 44px);overflow:hidden;
+    align-self:center;
+  }
   .hero-eyebrow .ar,.hero-eyebrow .en{
     white-space:nowrap;overflow:hidden;
     text-overflow:ellipsis;min-width:0;
   }
-  .hero-title{font-size:.85rem;}
-  .hero-desc{font-size:.9rem;margin-bottom:28px;}
-  /* Smaller section headings */
-  .section-title{font-size:clamp(1.5rem,6.5vw,2rem);}
-  /* About stats: center the row on mobile */
-  .about-stats{justify-content:center;}
-  /* Edu card: stack vertically */
-  .edu-card{flex-direction:column;align-items:flex-start;gap:14px;padding:22px;}
-  /* Hero pills: show on mobile, scaled down, no negative offsets */
+  /* Hero photo: shrink-wrap to image so pills position correctly */
+  .hero-photo{width:fit-content;margin:0 auto;}
+  .hero-photo img{max-width:240px;width:240px;}
+  /* Hero pills: show on mobile, scaled down */
   .hero-pill{display:inline-flex;font-size:.52rem;padding:5px 10px;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.32);}
   .hero-pill::before{width:4px;height:4px;}
   .hp1{top:5%;right:4px;}
   .hp2{top:40%;left:4px;}
   .hp3{bottom:10%;right:6%;}
   .hp4{top:12px;left:20%;}
+  /* Smaller section headings */
+  .section-title{font-size:clamp(1.5rem,6.5vw,2rem);}
+  /* About stats: center the row on mobile */
+  .about-stats{justify-content:center;}
+  /* Edu card: stack vertically */
+  .edu-card{flex-direction:column;align-items:flex-start;gap:14px;padding:22px;}
 }
 
 /* 600px — full-width CTA buttons */
