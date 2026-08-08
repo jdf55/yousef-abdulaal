@@ -305,7 +305,7 @@ section{
 }
 [data-lang="ar"] .section-label{font-family:var(--font-ar);letter-spacing:0;font-size:.78rem;font-weight:600;text-transform:none;}
 .section-label::before{content:'';display:none;}
-.section-label::after{content:'';width:20px;height:1px;background:var(--accent);opacity:.5;}
+.section-label::after{content:'';width:0;height:1px;background:var(--accent);opacity:.5;transition:width .5s .25s cubic-bezier(.16,1,.3,1);}
 
 .section-title{
   font-size:clamp(2.5rem,4vw,3rem);font-weight:700;
@@ -343,6 +343,7 @@ section{
 /* ─── PROJECTS ─── */
 #projects{background:var(--bg);}
 .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;}
+.projects-header .section-sub{text-align:right;}
 
 .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
 .project-card{
@@ -411,6 +412,25 @@ section{
 .small-card-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px;margin-top:10px;}
 .small-card-desc{font-size:.82rem;color:var(--text-dim);line-height:1.75;}
 .small-card .card-tags{margin-top:12px;}
+
+/* ─── EXPERIENCE ─── */
+#experience{background:var(--bg);}
+.xp-list{margin-top:48px;max-width:780px;display:flex;flex-direction:column;}
+.xp-item{
+  display:grid;grid-template-columns:170px 1fr;gap:24px;
+  padding:28px 0;border-bottom:1px solid var(--border-dim);
+}
+.xp-item:first-child{border-top:1px solid var(--border-dim);}
+.xp-date{
+  font-family:var(--font-en);font-size:.72rem;font-weight:500;
+  color:var(--text-dim);letter-spacing:.06em;padding-top:5px;
+}
+[data-lang="ar"] .xp-date{font-family:var(--font-ar);letter-spacing:0;font-size:.78rem;}
+.xp-role{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:2px;}
+.xp-org{font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:10px;}
+.xp-desc{font-size:.88rem;color:var(--text-muted);line-height:1.85;}
+.xp-item .card-tags{margin-top:12px;margin-bottom:0;}
+@media(max-width:600px){.xp-item{grid-template-columns:1fr;gap:8px;}}
 
 /* ─── SKILLS ─── */
 #skills{background:var(--bg2);}
@@ -611,6 +631,39 @@ section{
   .cv-meta-line{display:none;}
 }
 
+/* ─── SCROLL PROGRESS ─── */
+#scroll-progress{
+  position:fixed;top:0;left:0;z-index:200;
+  height:2px;width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--accent-light));
+  pointer-events:none;
+}
+
+/* ─── HERO PHOTO ENTRANCE + FLOAT ─── */
+@keyframes heroIn{
+  from{opacity:0;transform:scale(.96) translateY(14px);}
+  to  {opacity:1;transform:scale(1)   translateY(0);}
+}
+.hero-photo img{
+  animation: heroIn .9s .5s cubic-bezier(.16,1,.3,1) both;
+}
+
+/* ─── NAV ACTIVE SECTION INDICATOR ─── */
+.nav-links a.active{color:var(--text);}
+.nav-links a.active::after{transform:scaleX(1);}
+
+/* ─── SECTION LABEL LINE DRAW ─── */
+.reveal.visible .section-label::after{width:20px;}
+
+/* ─── SKILL ROW STAGGER ─── */
+.skill-col .skill-row{
+  transform:translateY(8px);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.skill-col.reveal.visible .skill-row:nth-child(2){transform:translateY(0);transition-delay:.06s;}
+.skill-col.reveal.visible .skill-row:nth-child(3){transform:translateY(0);transition-delay:.14s;}
+.skill-col.reveal.visible .skill-row:nth-child(4){transform:translateY(0);transition-delay:.22s;}
+
 /* ─── REDUCED MOTION ─── */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
@@ -619,7 +672,9 @@ section{
     transition-duration:.01ms!important;
   }
   .reveal{opacity:1;transform:none;}
-  .hero-eyebrow,.hero-name,.hero-title,.hero-desc,.hero-cta{opacity:1;animation:none;}
+  .hero-eyebrow,.hero-name,.hero-title,.hero-desc,.hero-cta,.hero-photo img{opacity:1;animation:none;}
+  .section-label::after{width:20px;transition:none;}
+  .skill-col .skill-row{transform:none;transition:none;}
 }
 
 /* ─── RESPONSIVE ─── */
@@ -640,6 +695,7 @@ section{
   .nav-links{display:none;}
   .hamburger{display:flex;}
   .projects-header{flex-direction:column;align-items:flex-start;gap:12px;}
+  .projects-header .section-sub{text-align:start;}
 }
 @media(max-width:600px){
   .small-grid{grid-template-columns:1fr;}
@@ -651,6 +707,7 @@ section{
 </style>
 </head>
 <body>
+<div id="scroll-progress" aria-hidden="true"></div>
 
 <!-- ═══ NAV ═══ -->
 <nav id="navbar">
@@ -664,6 +721,7 @@ section{
 
   <ul class="nav-links">
     <li><a href="#about">  <span class="ar">نبذة</span>    <span class="en">About</span>    </a></li>
+    <li><a href="#experience"><span class="ar">الخبرة</span><span class="en">Experience</span></a></li>
     <li><a href="#projects"><span class="ar">المشاريع</span><span class="en">Projects</span></a></li>
     <li><a href="#skills">  <span class="ar">المهارات</span><span class="en">Skills</span>   </a></li>
     <li><a href="#cv">      <span class="ar">السيرة</span>  <span class="en">Resume</span>   </a></li>
@@ -695,6 +753,7 @@ section{
 <!-- mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about">    <span class="ar">نبذة</span>    <span class="en">About</span>    </a>
+  <a href="#experience"><span class="ar">الخبرة</span> <span class="en">Experience</span></a>
   <a href="#projects"> <span class="ar">المشاريع</span><span class="en">Projects</span></a>
   <a href="#skills">   <span class="ar">المهارات</span><span class="en">Skills</span>   </a>
   <a href="#cv">      <span class="ar">السيرة</span>  <span class="en">Resume</span>  </a>
@@ -727,12 +786,12 @@ section{
 
       <p class="hero-desc">
         <span class="ar">
-          أبني منتجات AI مطلقة فعلاً — منصات SaaS، تطبيقات موبايل،
-          وأدوات مجتمعية — مصممة عربياً من الأساس.
+          أقود منصات إنتاجية من الفكرة إلى الإطلاق — تكامل أنظمة عبر الـ API مع قاول تيك،
+          قيادة بناء منصة WashX، ومنتجات AI عربية أولاً تحت مظلتي الخاصة.
         </span>
         <span class="en">
-          I ship production AI products — SaaS platforms, mobile apps, and community tools —
-          built Arabic-first and used by real people.
+          I lead production platforms from idea to launch — API integration at Qawel Tech,
+          leading the WashX platform build, and shipping Arabic-first AI products under my own establishment.
         </span>
       </p>
 
@@ -756,7 +815,7 @@ section{
   <div class="about-text reveal">
     <div class="section-label"><span class="ar">نبذة</span><span class="en">About</span></div>
     <h2 class="section-title">
-      <span class="ar">مطوّر يبني<br/><span style="color:var(--accent)">حلولاً تُحدث أثراً</span></span>
+      <span class="ar">مطوّر يبني<br/><span style="color:var(--accent)">حلولاً تُحدث أثراً</span></span><span class="en">A Developer Who Builds<br/><span style="color:var(--accent)">Solutions That Matter</span></span>
     </h2>
     <p>
       <span class="ar">
@@ -770,12 +829,24 @@ section{
     </p>
     <p>
       <span class="ar">
-        تخصصي في منتجات الموبايل المدمجة بالذكاء الاصطناعي.
+        اليوم أعمل مع <strong>قاول تيك</strong> على ربط أنظمة الشركة عبر الـ <span class="hl">API</span>،
+        وشاركت معهم في هاكاثون أمد 2026 بدور <strong>مدير المشروع</strong> لمنصة Qawel.fin —
+        وسلّمنا منصة مباشرة كاملة خلال ستة أيام.
+        كما أقود بناء منصة <strong>WashX</strong> الضخمة: حجوزات، عقود بتوقيع إلكتروني، مدفوعات، وعمليات.
+      </span>
+      <span class="en">
+        Today I handle <span class="hl">API integration</span> at <strong>Qawel Tech</strong>,
+        and represented them at the Amad 2026 Hackathon as <strong>Project Manager</strong> of Qawel.fin —
+        shipping a fully live platform in six days.
+        I also lead the build of the full <strong>WashX</strong> platform: booking, e-signed agreements, payments, and operations.
+      </span>
+    </p>
+    <p>
+      <span class="ar">
         العمل يبدأ من المشكلة — لا من التقنية.
         كل منتج أطلقه له مبرر وجوده قبل أي سطر كود.
       </span>
       <span class="en">
-        I specialize in mobile-first, AI-integrated products.
         The work starts with the problem — not the stack.
         Every product I ship has a clear reason to exist before a line of code is written.
       </span>
@@ -794,24 +865,221 @@ section{
 
 </section>
 
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience">
+  <div class="reveal">
+    <div class="section-label"><span class="ar">الخبرة</span><span class="en">Experience</span></div>
+    <h2 class="section-title">
+      <span class="ar">أين أعمل<br/><span style="color:var(--accent)">الآن</span></span><span class="en">Where I Work<br/><span style="color:var(--accent)">Right Now</span></span>
+    </h2>
+  </div>
+
+  <div class="xp-list">
+
+    <div class="xp-item reveal reveal-delay-1">
+      <div class="xp-date">
+        <span class="ar">أغسطس 2026 – الآن</span>
+        <span class="en">Aug 2026 – Present</span>
+      </div>
+      <div>
+        <div class="xp-role">
+          <span class="ar">قائد تقني — منصة WashX</span>
+          <span class="en">Technical Lead — WashX Platform</span>
+        </div>
+        <div class="xp-org">
+          <span class="ar">WashX · تنظيف الواجهات والألواح الشمسية بالدرون · السعودية</span>
+          <span class="en">WashX · Drone-based facade &amp; solar panel cleaning · KSA</span>
+        </div>
+        <div class="xp-desc">
+          <span class="ar">
+            أقود بناء منصة الشركة الكاملة: حجوزات متعددة الخطوات، عقود خدمة ثنائية اللغة
+            بتوقيع إلكتروني، تتبع مدفوعات، ولوحة عمليات داخلية.
+            صممت المعمارية بآلة حالات لدورة الطلب وواجهات Adapter لكل مزود خارجي،
+            مع 19 قرار معماري موثق وبوابات جودة CI إلزامية.
+          </span>
+          <span class="en">
+            Leading the build of the company's full platform: multi-step booking, bilingual
+            e-signed service agreements, payment tracking, and an internal operations dashboard.
+            Designed the architecture around an order-lifecycle state machine and adapter
+            interfaces for every external provider — 19 documented ADRs and mandatory CI quality gates.
+          </span>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase RLS</span><span class="tag">Moyasar</span><span class="tag">Zoho Sign</span><span class="tag">n8n</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item reveal reveal-delay-2">
+      <div class="xp-date">
+        <span class="ar">يوليو 2026 – الآن</span>
+        <span class="en">Jul 2026 – Present</span>
+      </div>
+      <div>
+        <div class="xp-role">
+          <span class="ar">مطوّر تكامل API</span>
+          <span class="en">API Integration Developer</span>
+        </div>
+        <div class="xp-org">
+          <span class="ar">قاول تيك (Qawel Tech) · السعودية</span>
+          <span class="en">Qawel Tech · KSA</span>
+        </div>
+        <div class="xp-desc">
+          <span class="ar">
+            أتولى ربط أنظمة الشركة عبر واجهات برمجة التطبيقات — تصميم النقاط، مصادقة JWT،
+            والتوثيق. مثّلت الشركة في هاكاثون أمد 2026 بمشروع Qawel.fin بدور مدير المشروع:
+            قدت فريقًا من أربعة وسلّمنا منصة مباشرة كاملة خلال ستة أيام.
+          </span>
+          <span class="en">
+            Own API integration across the company's systems — endpoint design, JWT auth,
+            and documentation. Represented the company at the Amad 2026 Hackathon with Qawel.fin
+            as Project Manager: led a team of four and delivered a fully live platform in six days.
+          </span>
+        </div>
+        <div class="card-tags">
+          <span class="tag">REST APIs</span><span class="tag">FastAPI</span><span class="tag">JWT</span><span class="tag">PostgreSQL</span><span class="tag">Project Management</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item reveal reveal-delay-3">
+      <div class="xp-date">
+        <span class="ar">2025 – الآن</span>
+        <span class="en">2025 – Present</span>
+      </div>
+      <div>
+        <div class="xp-role">
+          <span class="ar">مطوّر Full-Stack ومؤسس</span>
+          <span class="en">Full-Stack Developer &amp; Founder</span>
+        </div>
+        <div class="xp-org">
+          <span class="ar">مستقبل حلول التقنية (HuloolFuture) · الرياض</span>
+          <span class="en">Mustaqbal Hulul AlTaqniyah (HuloolFuture) · Riyadh</span>
+        </div>
+        <div class="xp-desc">
+          <span class="ar">
+            أطلقت AILine للإنتاج على huloolfuture.sa، وأجريت مراجعة أمنية على أكثر من 167
+            نقطة نهاية أغلقت خلالها ثغرتين حرجتين قبل الإطلاق، وأدير البنية التحتية كاملة
+            من Apple Developer وEAS Build إلى Vercel وGoogle Cloud.
+          </span>
+          <span class="en">
+            Shipped AILine to production at huloolfuture.sa, ran a security audit across 167+
+            endpoints closing two critical auth vulnerabilities pre-launch, and manage the full
+            infrastructure — Apple Developer, EAS Build, Vercel, and Google Cloud.
+          </span>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Next.js 15</span><span class="tag">AI APIs</span><span class="tag">React Native</span><span class="tag">Vercel</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══ PROJECTS ═══ -->
 <section id="projects">
   <div class="projects-header reveal">
     <div>
       <div class="section-label"><span class="ar">مشاريع</span><span class="en">Projects</span></div>
       <h2 class="section-title">
-        <span class="ar">ما بنيته<br/><span style="color:var(--accent)">فعلياً</span></span>
+        <span class="ar">ما بنيته<br/><span style="color:var(--accent)">فعلياً</span></span><span class="en">What I've<br/><span style="color:var(--accent)">Actually Built</span></span>
       </h2>
     </div>
-    <p class="section-sub" style="max-width:300px;text-align:end;">
-      <span class="ar">كل مشروع هنا موجود على GitHub أو مباشر على الإنترنت</span>
+    <p class="section-sub" style="max-width:300px;">
+      <span class="ar">كل مشروع هنا موجود على GitHub أو مباشر على الإنترنت</span><span class="en">Every project here is on GitHub or live on the internet</span>
     </p>
   </div>
 
   <div class="featured-grid">
 
-    <!-- AILine -->
+    <!-- Qawel.fin -->
     <div class="project-card live reveal reveal-delay-1">
+      <div class="card-inner">
+        <span class="card-badge badge-hackathon"><span class="ar">هاكاثون أمد 2026 · مدير المشروع</span><span class="en">Amad 2026 Hackathon · Project Manager</span></span>
+        <h3 class="card-title">
+          <span class="ar">Qawel.fin — جسر تمويلي بالذكاء الاصطناعي</span>
+          <span class="en">Qawel.fin — AI Financing Bridge</span>
+        </h3>
+        <p class="card-title-en">with Qawel Tech · qawelfin.vercel.app</p>
+        <p class="card-desc">
+          <span class="ar">
+            منصة تحلّل عقود البناء تلقائيًا (OCR عربي + نموذج لغوي مستضاف ذاتيًا)،
+            تتحقق من المستندات بالذكاء الاصطناعي وتكشف التلاعب، وتحسب مؤشر مخاطر
+            شفافًا من 100 مع توصية تمويل معلّلة بالعربية.
+            قدت فريقًا من أربعة — يضم زميلًا من الجامعة — وسلّمنا منصة مباشرة كاملة خلال ستة أيام،
+            بسيادة بيانات كاملة: لا تغادر بيانات العملاء بنيتنا التحتية.
+          </span>
+          <span class="en">
+            Analyzes construction contracts automatically (Arabic OCR + self-hosted LLM),
+            AI-verifies documents with tamper detection, and computes a transparent 0–100
+            risk score with a reasoned Arabic financing recommendation.
+            Led a team of four — including a university colleague — and shipped a fully live
+            platform in six days, with full data sovereignty: client data never leaves our infrastructure.
+          </span>
+        </p>
+        <div class="card-tags">
+          <span class="tag">FastAPI</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Ollama · LLaMA 3.1</span>
+          <span class="tag">Arabic OCR</span>
+          <span class="tag">Railway</span>
+        </div>
+        <a href="https://qawelfin.vercel.app" target="_blank" rel="noopener noreferrer" class="card-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+            <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          <span class="ar">زيارة المنصة — qawelfin.vercel.app</span>
+          <span class="en">Visit Platform — qawelfin.vercel.app</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- WashX -->
+    <div class="project-card dev reveal reveal-delay-2">
+      <div class="card-inner">
+        <span class="card-badge badge-dev"><span class="ar">منصة عميل · قيد البناء</span><span class="en">Client Platform · In Build</span></span>
+        <h3 class="card-title">
+          <span class="ar">WashX — منصة الحجوزات والعمليات</span>
+          <span class="en">WashX — Booking &amp; Operations Platform</span>
+        </h3>
+        <p class="card-title-en">Technical Lead · Drone facade &amp; solar cleaning · KSA</p>
+        <p class="card-desc">
+          <span class="ar">
+            أقود بناء المنصة الكاملة لشركة WashX لتنظيف الواجهات والألواح الشمسية بالدرون:
+            حجوزات متعددة الخطوات، عقود خدمة ثنائية اللغة بتوقيع إلكتروني، تتبع مدفوعات،
+            ولوحة عمليات داخلية — بمعمارية Adapter لكل مزود خارجي وبوابات جودة CI إلزامية.
+          </span>
+          <span class="en">
+            Leading the build of WashX's full platform for drone-based facade and solar panel
+            cleaning: multi-step booking, bilingual e-signed service agreements, payment tracking,
+            and an internal operations dashboard — adapter architecture for every external
+            provider, with mandatory CI quality gates.
+          </span>
+        </p>
+        <div class="card-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Supabase RLS</span>
+          <span class="tag">Moyasar</span>
+          <span class="tag">Zoho Sign</span>
+          <span class="tag">n8n</span>
+        </div>
+        <div class="card-link card-link-muted">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0110 0v4"/>
+          </svg>
+          <span class="ar">مستودع خاص · عمل لعميل</span>
+          <span class="en">Private Repository · Client Work</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AILine -->
+    <div class="project-card live reveal reveal-delay-3">
       <div class="card-inner">
         <span class="card-badge badge-live"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
         <h3 class="card-title">
@@ -836,7 +1104,6 @@ section{
           <span class="tag">TypeScript</span>
           <span class="tag">Tailwind CSS</span>
           <span class="tag">AI APIs</span>
-          <span class="tag">React Native</span>
           <span class="tag">Supabase Auth</span>
         </div>
         <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="card-link">
@@ -850,121 +1117,42 @@ section{
       </div>
     </div>
 
-    <!-- FitMap -->
-    <div class="project-card dev reveal reveal-delay-2">
+    <!-- Almorashih -->
+    <div class="project-card live reveal reveal-delay-4">
       <div class="card-inner">
-        <span class="card-badge badge-dev"><span class="ar">قيد التطوير</span><span class="en">In Dev</span></span>
+        <span class="card-badge badge-live"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
         <h3 class="card-title">
-          <span class="ar">FitMap — منصة اللياقة الذكية</span>
-          <span class="en">FitMap — Smart Fitness Platform</span>
+          <span class="ar">المُرشّح — مساعد عقاري بالذكاء الاصطناعي</span>
+          <span class="en">Almorashih — Property AI Assistant</span>
         </h3>
-        <p class="card-title-en">AI-Powered Fitness &amp; Wellness · Mobile-First</p>
+        <p class="card-title-en">ROSHN Hackathon 2025 · Team of 4 · technyaty.com</p>
         <p class="card-desc">
           <span class="ar">
-            تطبيق AI للياقة البدنية مع خطط تدريب مخصصة، تتبع التغذية بقاعدة بيانات
-            الأكل المحلي، وإيجاد الصالات بالموقع الجغرافي. واجهة RTL عربية أولاً.
+            مساعد ذكاء اصطناعي يطابق الطلاب والموظفين الجدد مع السكن الأنسب —
+            بُني لهاكاثون روشن 2025 بفريق من أربعة، ثم واصل الفريق التطوير مستقلاً
+            وأطلق المنتج على technyaty.com.
           </span>
           <span class="en">
-            AI fitness app with personalized training plans, local food nutrition tracking,
-            and gym discovery via geolocation. Arabic-first RTL interface.
+            AI assistant matching students and new employees to suitable housing —
+            built for the ROSHN Hackathon 2025 with a team of four, then the team kept
+            building independently and shipped it at technyaty.com.
           </span>
         </p>
         <div class="card-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">React Native</span>
-          <span class="tag">AI APIs</span>
-          <span class="tag">Geolocation</span>
-          <span class="tag">RTL Design</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">GraphQL</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Python</span>
         </div>
-        <div class="card-link card-link-muted">
+        <a href="https://technyaty.com" target="_blank" rel="noopener noreferrer" class="card-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0110 0v4"/>
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+            <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
           </svg>
-          <span class="ar">مستودع خاص · متاح عند الطلب</span>
-          <span class="en">Private Repository · Available on Request</span>
-        </div>
+          <span class="ar">زيارة المنتج — technyaty.com</span>
+          <span class="en">Visit Live Product — technyaty.com</span>
+        </a>
       </div>
-    </div>
-
-  </div>
-
-  <div class="small-grid">
-
-    <div class="small-card reveal reveal-delay-1">
-      <div class="small-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
-          <path d="M9 21V12h6v9"/>
-        </svg>
-      </div>
-      <span class="card-badge badge-live" style="font-size:.64rem;padding:3px 10px;"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
-      <div class="small-card-title">
-        <span class="ar">المُرشّح — مساعد عقاري</span>
-        <span class="en">Almorashih — Property AI</span>
-      </div>
-      <div class="small-card-desc">
-        <span class="ar">مساعد ذكاء اصطناعي يطابق الطلاب والموظفين الجدد مع السكن الأنسب — بُني لهاكاثون روشن بفريق من أربعة، ثم أطلق الفريق المنتج مستقلاً على technyaty.com.</span>
-        <span class="en">AI assistant matching students and new employees to suitable housing options — built for ROSHN Hackathon with a team of four, then shipped independently at technyaty.com.</span>
-      </div>
-      <div class="card-tags">
-        <span class="tag">FastAPI</span><span class="tag">GraphQL</span><span class="tag">NLP</span>
-      </div>
-      <a href="https://technyaty.com" target="_blank" rel="noopener noreferrer" class="card-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-          <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-        <span class="ar">زيارة المنتج — technyaty.com</span>
-        <span class="en">Visit Live Product — technyaty.com</span>
-      </a>
-    </div>
-
-    <div class="small-card reveal reveal-delay-2" style="display:flex;flex-direction:column;">
-      <div class="small-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9,22 9,12 15,12 15,22"/>
-        </svg>
-      </div>
-      <span class="card-badge badge-project" style="font-size:.64rem;padding:3px 10px;"><span class="ar">مفتوح المصدر</span><span class="en">Open Source</span></span>
-      <div class="small-card-title"><span class="ar">Ilmora — منصة إدارة المدارس</span><span class="en">Ilmora — School Management Platform</span></div>
-      <div class="small-card-desc">
-        <span class="ar">نظام إدارة مدرسي متعدد المستأجرين — مفتوح المصدر. يشمل الجداول الأسبوعية، تتبع الحضور، إدارة المجموعات، والمهام. مبني بفريق من مطورين.</span>
-        <span class="en">Open-source multi-tenant school management system — weekly schedules, attendance tracking, group management, and assignments. Built with a team.</span>
-      </div>
-      <div class="card-tags">
-        <span class="tag">Laravel 11</span><span class="tag">Livewire 3</span><span class="tag">Alpine.js</span><span class="tag">Tailwind CSS</span><span class="tag">MariaDB</span><span class="tag">Docker</span>
-      </div>
-      <a href="https://github.com/AhmadBakdash/Ilmora" target="_blank" rel="noopener noreferrer" class="card-link" style="margin-top:auto;">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        عرض على GitHub
-      </a>
-    </div>
-
-    <div class="small-card reveal reveal-delay-3" style="display:flex;flex-direction:column;">
-      <div class="small-card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-        </svg>
-      </div>
-      <span class="card-badge badge-live" style="font-size:.64rem;padding:3px 10px;"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
-      <div class="small-card-title"><span class="ar">دوائي — تتبع الدواء</span><span class="en">Curative — Medication Tracker</span></div>
-      <div class="small-card-desc">
-        <span class="ar">تطبيق PWA للتذكير بالأدوية وتتبع صحة الأسنان — يعمل بدون إنترنت، سجّل يومي، إحصائيات، وتصدير بيانات. صفر مكتبات خارجية.</span>
-        <span class="en">Offline-first PWA for medication reminders and dental health tracking — daily log, streaks, statistics, and data export. Zero external dependencies.</span>
-      </div>
-      <div class="card-tags">
-        <span class="tag">PWA</span><span class="tag">Vanilla JS</span><span class="tag">Service Workers</span>
-      </div>
-      <a href="https://curative-chi.vercel.app" target="_blank" rel="noopener noreferrer" class="card-link" style="margin-top:auto;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-          <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-        زيارة التطبيق المباشر
-      </a>
     </div>
 
   </div>
@@ -975,10 +1163,10 @@ section{
   <div class="reveal">
     <div class="section-label"><span class="ar">مهارات</span><span class="en">Skills</span></div>
     <h2 class="section-title">
-      <span class="ar">المهارات التقنية</span>
+      <span class="ar">المهارات التقنية</span><span class="en">Technical Skills</span>
     </h2>
     <p class="section-sub">
-      <span class="ar">الأدوات المستخدمة فعلياً عبر جميع المشاريع المذكورة</span>
+      <span class="ar">الأدوات المستخدمة فعلياً عبر جميع المشاريع المذكورة</span><span class="en">Tools actively used across all listed projects</span>
     </p>
   </div>
 
@@ -990,15 +1178,23 @@ section{
       </div>
       <div class="skill-row">
         <span class="skill-cat">Frontend</span>
-        <span class="skill-vals">Next.js 15 · TypeScript · Tailwind CSS · React Native · Framer Motion</span>
+        <span class="skill-vals">Next.js · TypeScript · Tailwind CSS · React Native · Shadcn/ui</span>
       </div>
       <div class="skill-row">
         <span class="skill-cat">Backend</span>
-        <span class="skill-vals">Python · FastAPI · Supabase · GraphQL · REST APIs</span>
+        <span class="skill-vals">Python · FastAPI · PostgreSQL · Supabase · REST APIs · JWT Auth</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">AI</span>
+        <span class="skill-vals">Ollama · Self-hosted LLaMA · Arabic OCR · Claude API · Prompt Engineering</span>
       </div>
       <div class="skill-row">
         <span class="skill-cat">Deploy</span>
-        <span class="skill-vals">Vercel · Expo · EAS Build · OTA Updates · Git</span>
+        <span class="skill-vals">Vercel · Railway · Docker · CI/CD · EAS Build · Git</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Integrations</span>
+        <span class="skill-vals">Moyasar · Zoho Sign · Resend · n8n · Webhooks</span>
       </div>
     </div>
   </div>
@@ -1009,10 +1205,10 @@ section{
   <div class="reveal">
     <div class="section-label"><span class="ar">السيرة الذاتية</span><span class="en">Resume</span></div>
     <h2 class="section-title">
-      <span class="ar">السيرة الذاتية</span>
+      <span class="ar">السيرة الذاتية</span><span class="en">Resume</span>
     </h2>
     <p class="section-sub">
-      <span class="ar">اعرض، حمّل، أو افتح السيرة الذاتية في نافذة جديدة</span>
+      <span class="ar">اعرض، حمّل، أو افتح السيرة الذاتية في نافذة جديدة</span><span class="en">View, download, or open the resume in a new tab</span>
     </p>
   </div>
 
@@ -1026,7 +1222,7 @@ section{
           <span class="ar">إنجليزي</span><span class="en">English</span>
         </button>
       </div>
-      <span class="cv-meta-line">A4 · 1 page · Jun 2026</span>
+      <span class="cv-meta-line">A4 · 1 page · Aug 2026</span>
     </div>
 
     <div class="cv-stage">
@@ -1069,7 +1265,7 @@ section{
   <div class="reveal">
     <div class="section-label"><span class="ar">تواصل</span><span class="en">Contact</span></div>
     <h2 class="section-title">
-      <span class="ar">تواصل معي</span>
+      <span class="ar">تواصل معي</span><span class="en">Get in Touch</span>
     </h2>
   </div>
 
@@ -1122,7 +1318,7 @@ section{
   const VALID_THEMES  = new Set(['dark', 'light']);
   const VALID_LANGS   = new Set(['ar', 'en']);
   // Only internal section IDs are valid scroll targets.
-  const VALID_ANCHORS = new Set(['#hero', '#about', '#projects', '#skills', '#cv', '#contact']);
+  const VALID_ANCHORS = new Set(['#hero', '#about', '#experience', '#projects', '#skills', '#cv', '#contact']);
 
   // ── CV VIEWER ─────────────────────────────────────────────────────────────
   const CV_FILES = {
@@ -1170,6 +1366,15 @@ section{
   if (tabAr) tabAr.addEventListener('click', () => switchCV('ar'));
   if (tabEn) tabEn.addEventListener('click', () => switchCV('en'));
 
+  // ── SCROLL PROGRESS BAR ──────────────────────────────────────────────────
+  const progressBar = document.getElementById('scroll-progress');
+  function updateProgress() {
+    const scrollable = document.body.scrollHeight - window.innerHeight;
+    progressBar.style.width = (scrollable > 0 ? (window.scrollY / scrollable * 100) : 0) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
   // ── NAV SHRINK ON SCROLL ──────────────────────────────────────────────────
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 50);
@@ -1182,6 +1387,22 @@ section{
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── NAV ACTIVE SECTION INDICATOR ──────────────────────────────────────────
+  const navLinkMap = {};
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    if (VALID_ANCHORS.has('#' + id)) navLinkMap[id] = a;
+  });
+  const activeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (navLinkMap[e.target.id]) navLinkMap[e.target.id].classList.toggle('active', e.isIntersecting);
+    });
+  }, { rootMargin: '-25% 0px -65% 0px' });
+  ['about','experience','projects','skills','cv','contact'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) activeObs.observe(el);
+  });
 
   // ── SMOOTH SCROLL ─────────────────────────────────────────────────────────
   // Only scroll to known section IDs; use getElementById to avoid CSS selector injection.

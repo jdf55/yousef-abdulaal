@@ -1,576 +1,302 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yousef Abdulaal — CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   TOKENS
-============================================================ */
-:root {
-  --navy:   #0F1623;
-  --accent: #818CF8;
-  --text:   #1C1C2E;
-  --sub:    #3D3D5C;
-  --muted:  #737390;
-  --border: #E4E4F0;
-  --tag-bg: #F2F2FA;
-  --white:  #FFFFFF;
-}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ============================================================
-   RESET + BASE
-============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --accent: #1a6b3c;
+    --accent-light: #2d8a55;
+    --text: #111827;
+    --text-muted: #4b5563;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+    --bg: #ffffff;
+  }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 9pt;
-  line-height: 1.6;
-  color: var(--text);
-  background: #EAEAF2;
-}
+  html { font-size: 10.5pt; }
 
-a { color: inherit; text-decoration: none; }
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
-/* ============================================================
-   PAGE SHELL  (A4 = 210mm × 297mm)
-============================================================ */
-.page {
-  width: 210mm;
-  min-height: 297mm;
-  margin: 8mm auto;
-  background: var(--white);
-  box-shadow: 0 4px 40px rgba(0,0,0,0.14);
-  overflow: hidden;
-}
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    padding: 14mm 14mm 12mm 14mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-/* ============================================================
-   HEADER
-============================================================ */
-.cv-header {
-  background: var(--navy);
-  padding: 15px 26px 13px;
-  position: relative;
-}
+  /* ── HEADER ─────────────────────────── */
+  .header { margin-bottom: 10px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .name { font-size: 22pt; font-weight: 700; letter-spacing: -0.5px; color: var(--text); }
+  .name span { color: var(--accent); }
+  .title { font-size: 9.5pt; font-weight: 400; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.2px; }
+  .contacts {
+    display: flex; flex-wrap: wrap; gap: 3px 14px;
+    font-size: 8pt; color: var(--text-muted);
+    margin-top: 7px;
+    border-top: 1.5px solid var(--accent);
+    padding-top: 6px;
+  }
+  .contact-item { display: flex; align-items: center; gap: 4px; }
+  .contact-item a { color: var(--text-muted); text-decoration: none; }
 
-.cv-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--accent);
-}
+  /* ── LAYOUT ─────────────────────────── */
+  .body { display: grid; grid-template-columns: 1fr 195px; gap: 0 18px; flex: 1; }
+  .main { display: flex; flex-direction: column; gap: 0; }
+  .sidebar { display: flex; flex-direction: column; gap: 0; border-left: 1.5px solid var(--border); padding-left: 14px; }
 
-.h-name {
-  font-size: 22pt;
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 3px;
-  letter-spacing: -0.5px;
-}
+  /* ── SECTIONS ───────────────────────── */
+  .section { margin-bottom: 9px; }
+  .section-title {
+    font-size: 7.5pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px; margin-bottom: 7px;
+  }
 
-.h-name .hl { color: var(--accent); }
+  /* ── PROFILE ────────────────────────── */
+  .profile p { font-size: 9pt; color: var(--text); line-height: 1.55; }
 
-.h-title {
-  font-size: 9pt;
-  font-weight: 600;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.4px;
-  margin-bottom: 9px;
-}
+  /* ── EXPERIENCE ─────────────────────── */
+  .job { margin-bottom: 8px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-size: 9.5pt; font-weight: 600; color: var(--text); }
+  .job-date { font-size: 8pt; color: var(--text-light); white-space: nowrap; }
+  .job-company { font-size: 8.5pt; color: var(--text-muted); margin-bottom: 3px; }
+  .job ul { padding-left: 11px; }
+  .job li { font-size: 8.5pt; color: var(--text); margin-bottom: 2px; line-height: 1.5; }
 
-.h-contact {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 0 14px;
-  font-size: 8pt;
-  color: rgba(255,255,255,0.72);
-  white-space: nowrap;
-}
+  /* ── PROJECTS ───────────────────────── */
+  .project { margin-bottom: 7px; }
+  .project:last-child { margin-bottom: 0; }
+  .project-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .project-name { font-size: 9pt; font-weight: 600; color: var(--text); }
+  .project-status {
+    font-size: 7pt; font-weight: 600; padding: 1px 6px;
+    border-radius: 3px; white-space: nowrap;
+  }
+  .status-live { background: #dcfce7; color: #15803d; }
+  .status-dev { background: #fef3c7; color: #92400e; }
+  .status-oss { background: #eff6ff; color: #1d4ed8; }
+  .project-stack { font-size: 7.5pt; color: var(--text-light); margin-bottom: 2px; font-style: italic; }
+  .project p { font-size: 8.5pt; color: var(--text); line-height: 1.45; }
 
-.h-contact a { color: rgba(255,255,255,0.72); }
-.h-contact a:hover { color: var(--accent); }
+  /* ── SIDEBAR SECTIONS ───────────────── */
+  .sidebar .section-title { font-size: 7pt; }
+  .skill-group { margin-bottom: 7px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-label { font-size: 7.5pt; font-weight: 600; color: var(--text-muted); margin-bottom: 2px; }
+  .skill-list { font-size: 8pt; color: var(--text); line-height: 1.55; }
 
-.h-sep {
-  color: rgba(255,255,255,0.25);
-  margin: 0 2px;
-  user-select: none;
-}
+  .edu-name { font-size: 9pt; font-weight: 600; color: var(--text); }
+  .edu-school { font-size: 8pt; color: var(--text-muted); }
+  .edu-date { font-size: 7.5pt; color: var(--text-light); margin-top: 1px; }
 
-/* ============================================================
-   BODY GRID  (main | sidebar)
-============================================================ */
-.cv-body {
-  display: grid;
-  grid-template-columns: 1fr 160px;
-  gap: 0;
-  align-items: start;
-}
+  .training-list { padding-left: 0; list-style: none; }
+  .training-list li { font-size: 8pt; color: var(--text); padding: 1px 0; }
+  .training-list li::before { content: "✓  "; color: var(--accent); font-size: 7pt; }
 
-.cv-main {
-  padding: 18px 14px 18px 26px;
-  border-right: 1.5px solid var(--border);
-}
+  .lang-row { display: flex; justify-content: space-between; font-size: 8.5pt; margin-bottom: 3px; }
+  .lang-name { font-weight: 500; color: var(--text); }
+  .lang-level { color: var(--text-light); }
 
-.cv-aside {
-  padding: 18px 26px 18px 12px;
-}
-
-/* ============================================================
-   SECTION
-============================================================ */
-.sec { margin-bottom: 15px; }
-.sec:last-child { margin-bottom: 0; }
-.cv-aside .sec { margin-bottom: 8px; }
-
-.sec-title {
-  font-size: 7pt;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  padding-bottom: 4px;
-  border-bottom: 1.5px solid var(--border);
-  margin-bottom: 9px;
-}
-
-/* ============================================================
-   SUMMARY
-============================================================ */
-.summary-text {
-  font-size: 8.8pt;
-  line-height: 1.7;
-  color: var(--sub);
-}
-
-.summary-text strong { color: var(--text); font-weight: 600; }
-
-/* ============================================================
-   EXPERIENCE
-============================================================ */
-.exp { margin-bottom: 11px; }
-.exp:last-child { margin-bottom: 0; }
-
-.exp-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 1px;
-}
-
-.exp-role {
-  font-size: 10pt;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.exp-date {
-  font-size: 7.5pt;
-  color: var(--muted);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.exp-org {
-  font-size: 8pt;
-  color: var(--muted);
-  margin-bottom: 5px;
-}
-
-.bullets { list-style: none; padding: 0; }
-.bullets li {
-  font-size: 8.5pt;
-  line-height: 1.55;
-  color: var(--sub);
-  padding-left: 12px;
-  position: relative;
-  margin-bottom: 3px;
-}
-.bullets li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--accent);
-  font-size: 7pt;
-  line-height: 1.7;
-}
-
-/* ============================================================
-   PROJECTS
-============================================================ */
-.proj { margin-bottom: 10px; }
-.proj:last-child { margin-bottom: 0; }
-
-.proj-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 1px;
-}
-
-.proj-name {
-  font-size: 9.5pt;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.proj-link {
-  font-size: 7.5pt;
-  color: var(--accent);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.proj-stack {
-  font-size: 7.5pt;
-  color: var(--muted);
-  margin-bottom: 3px;
-  font-style: italic;
-}
-
-.proj-desc {
-  font-size: 8.5pt;
-  line-height: 1.55;
-  color: var(--sub);
-}
-
-/* ============================================================
-   SIDEBAR — SKILLS
-============================================================ */
-.skill-grp { margin-bottom: 7px; }
-.skill-grp:last-child { margin-bottom: 0; }
-
-.skill-cat {
-  font-size: 7.5pt;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 3px;
-}
-
-.skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
-
-.tag {
-  background: var(--tag-bg);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 1.5px 5px;
-  font-size: 6.5pt;
-  color: var(--sub);
-  line-height: 1.6;
-}
-
-/* ============================================================
-   SIDEBAR — EDUCATION
-============================================================ */
-.edu-item { margin-bottom: 8px; }
-.edu-item:last-child { margin-bottom: 0; }
-
-.edu-degree {
-  font-size: 7.5pt;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 1px;
-}
-
-.edu-school {
-  font-size: 7pt;
-  color: var(--sub);
-  margin-bottom: 1px;
-}
-
-.edu-date { font-size: 6.5pt; color: var(--muted); }
-
-/* ============================================================
-   SIDEBAR — TRAINING / LANGUAGES
-============================================================ */
-.cert-list { list-style: none; padding: 0; }
-.cert-list li {
-  font-size: 7.5pt;
-  color: var(--sub);
-  padding-left: 10px;
-  position: relative;
-  margin-bottom: 2px;
-  line-height: 1.45;
-}
-.cert-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-size: 7pt;
-}
-
-.lang-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3px;
-}
-.lang-name  { font-size: 7.5pt; font-weight: 700; color: var(--text); }
-.lang-level { font-size: 6.5pt; color: var(--muted); }
-
-/* ============================================================
-   PRINT
-============================================================ */
-@page { size: A4; margin: 0; }
-
-@media print {
-  body { background: white; }
-  .page { width: 210mm; min-height: 297mm; margin: 0; box-shadow: none; }
-  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-}
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { width: 210mm; }
+    .page { margin: 0; padding: 14mm 14mm 12mm 14mm; }
+    .status-live { background: #dcfce7 !important; color: #15803d !important; }
+    .status-dev { background: #fef3c7 !important; color: #92400e !important; }
+    .status-oss { background: #eff6ff !important; color: #1d4ed8 !important; }
+  }
 </style>
 </head>
 <body>
 <div class="page">
 
   <!-- HEADER -->
-  <header class="cv-header">
-    <div class="h-name">Yousef <span class="hl">Abdulaal</span></div>
-    <div class="h-title">Full-Stack Developer &nbsp;·&nbsp; AI Product Builder &nbsp;·&nbsp; Founder</div>
-    <div class="h-contact">
-      <span>+966 57 044 5012</span>
-      <span class="h-sep">·</span>
-      <a href="mailto:yousefabdulaal2@gmail.com">yousefabdulaal2@gmail.com</a>
-      <span class="h-sep">·</span>
-      <a href="https://linkedin.com/in/yousef-abdulaal" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <span class="h-sep">·</span>
-      <a href="https://github.com/jdf55" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      <span class="h-sep">·</span>
-      <span>Riyadh, Saudi Arabia</span>
+  <div class="header">
+    <div class="name">Yousef <span>Abdulaal</span></div>
+    <div class="title">Full-Stack Developer &nbsp;·&nbsp; AI Product Builder &nbsp;·&nbsp; Founder</div>
+    <div class="contacts">
+      <span class="contact-item">+966 57 044 5012</span>
+      <span class="contact-item"><a href="mailto:yousefabdulaal2@gmail.com">yousefabdulaal2@gmail.com</a></span>
+      <span class="contact-item"><a href="https://linkedin.com/in/yousef-abdulaal">linkedin.com/in/yousef-abdulaal</a></span>
+      <span class="contact-item"><a href="https://github.com/jdf55">github.com/jdf55</a></span>
+      <span class="contact-item">Riyadh, Saudi Arabia</span>
     </div>
-  </header>
+  </div>
 
   <!-- BODY -->
-  <div class="cv-body">
+  <div class="body">
 
     <!-- MAIN COLUMN -->
-    <main class="cv-main">
+    <div class="main">
 
       <!-- PROFILE -->
-      <section class="sec">
-        <div class="sec-title">Profile</div>
-        <p class="summary-text">
-          I build mobile apps and web products independently — from code to infrastructure to
-          production — under <strong>Mustaqbal Hulul AlTaqniyah Establishment</strong>.
-          I grow by shipping real products, with a focus on integrating AI into applications
-          and building Arabic RTL interfaces.
-        </p>
-      </section>
+      <div class="section profile">
+        <div class="section-title">Profile</div>
+        <p>Full-stack developer leading production platforms from idea to launch. Currently handling API integration at Qawel Tech and leading the build of the full WashX platform (booking, e-signed agreements, payments), alongside founder products under Mustaqbal Hulul AlTaqniyah. Specializes in AI-integrated, Arabic-first applications — from architecture to production.</p>
+      </div>
 
       <!-- EXPERIENCE -->
-      <section class="sec">
-        <div class="sec-title">Experience</div>
+      <div class="section">
+        <div class="section-title">Experience</div>
 
-        <div class="exp">
-          <div class="exp-top">
-            <span class="exp-role">Full-Stack Developer &amp; Founder</span>
-            <span class="exp-date">2025 – Present</span>
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Technical Lead — WashX Platform</span>
+            <span class="job-date">Aug 2026 – Present</span>
           </div>
-          <div class="exp-org">Mustaqbal Hulul AlTaqniyah (HuloolFuture) &nbsp;·&nbsp; Riyadh, SA</div>
-          <ul class="bullets">
-            <li>Independently building and shipping digital products via GitHub — AILine and Dawai are live; FitMap is in active development; contributing to Ilmora (open-source).</li>
-            <li>Conducted a full security audit across 167+ endpoints, identifying and closing two critical authentication vulnerabilities before launch.</li>
-            <li>Managing the full infrastructure layer: Apple Developer Organization, EAS Build, Vercel, Cloudflare R2, and Google Cloud.</li>
+          <div class="job-company">WashX — drone-based facade &amp; solar panel cleaning &nbsp;·&nbsp; Saudi Arabia</div>
+          <ul>
+            <li>Leading the build of the company's full platform: multi-step booking, bilingual service agreements with e-signature, payment tracking, and an internal operations dashboard</li>
+            <li>Designed the architecture — Next.js + TypeScript + Supabase (RLS everywhere), an order-lifecycle state machine, and adapter interfaces for every external provider (Moyasar, Zoho Sign, Resend, n8n)</li>
+            <li>Established engineering governance: 19 documented architecture decision records, mandatory CI quality gates, and a PDPL-compliant security checklist</li>
           </ul>
         </div>
 
-        <div class="exp">
-          <div class="exp-top">
-            <span class="exp-role">Data Entry</span>
-            <span class="exp-date">2023 – 2024</span>
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">API Integration Developer</span>
+            <span class="job-date">Jul 2026 – Present</span>
           </div>
-          <div class="exp-org">Wardat Al-Tariq &nbsp;·&nbsp; Riyadh, SA</div>
-          <ul class="bullets">
-            <li>Data entry and database management in a live operational environment; gained hands-on experience with information systems and IT operations.</li>
+          <div class="job-company">Qawel Tech &nbsp;·&nbsp; Saudi Arabia</div>
+          <ul>
+            <li>Own API integration across the company's systems — endpoint design, JWT authentication, input validation, and documentation</li>
+            <li>Represented the company at the Amad 2026 Hackathon with Qawel.fin as <strong>Project Manager</strong> — led a team of four, driving delivery through a PRD, architecture decision records, and a daily delivery plan</li>
+            <li>Delivered a fully live end-to-end platform in 6 days — from registration to financing recommendation — with a risk-scoring model running in production before submission closed</li>
           </ul>
         </div>
-      </section>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Full-Stack Developer &amp; Founder</span>
+            <span class="job-date">2025 – Present</span>
+          </div>
+          <div class="job-company">Mustaqbal Hulul AlTaqniyah (HuloolFuture) &nbsp;·&nbsp; Riyadh, SA</div>
+          <ul>
+            <li>Shipped AILine to production — AI-powered academic assistant live at huloolfuture.sa, serving university students</li>
+            <li>Conducted a security audit across 167+ API endpoints; identified and patched 2 critical authentication vulnerabilities pre-launch</li>
+            <li>Manages full cloud infrastructure: Apple Developer Organization, EAS Build (iOS/Android), Vercel, Cloudflare R2, Google Cloud</li>
+          </ul>
+        </div>
+
+      </div>
 
       <!-- PROJECTS -->
-      <section class="sec">
-        <div class="sec-title">Projects</div>
+      <div class="section">
+        <div class="section-title">Projects</div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">FitMap — Fitness App</span>
-            <span class="proj-link">In Development</span>
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Qawel.fin — AI Financing Bridge</span>
+            <span class="project-status status-live">Live · qawelfin.vercel.app</span>
           </div>
-          <div class="proj-stack">React Native · Expo · Moyasar · OpenRouter AI · EAS Build</div>
-          <div class="proj-desc">
-            Fitness app being built with workout tracking, AI-generated training plans, nutrition logging, and gym discovery.
-            Features Ramadan Mode and prayer-time workout scheduling. Integrating Moyasar payments with webhook-based subscription management.
-          </div>
+          <div class="project-stack">FastAPI · Next.js · PostgreSQL · Ollama (LLaMA 3.1) · Arabic OCR &nbsp;·&nbsp; Amad 2026 · Project Manager</div>
+          <p>Analyzes construction contracts automatically (Arabic OCR + self-hosted LLM), AI-verifies documents with tamper detection, and computes a transparent 0–100 risk score with an Arabic financing recommendation. Built with a team of four including a university colleague — client data never leaves our infrastructure.</p>
         </div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">AILine — AI Study Platform</span>
-            <a class="proj-link" href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer">Live — huloolfuture.sa ↗</a>
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">AILine — AI Study Platform</span>
+            <span class="project-status status-live">Live · huloolfuture.sa</span>
           </div>
-          <div class="proj-stack">Next.js 15 · TypeScript · AI APIs · Supabase Auth</div>
-          <div class="proj-desc">
-            Academic platform for university students — parses uploaded schedules, generates personalized study plans via LLM,
-            and provides a course-aware study assistant. Bilingual AR/EN, live now.
-          </div>
+          <div class="project-stack">Next.js 15 · TypeScript · Supabase · LLM APIs</div>
+          <p>Parses student schedules, generates personalized study plans via LLM, and provides a course-aware study chatbot. Bilingual Arabic/English.</p>
         </div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">Dawai — Medication Tracker PWA</span>
-            <a class="proj-link" href="https://curative-chi.vercel.app" target="_blank" rel="noopener noreferrer">Live ↗</a>
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">Almorashih — Property AI Assistant</span>
+            <span class="project-status status-live">Live · technyaty.com</span>
           </div>
-          <div class="proj-stack">Vanilla JS · Service Worker · PWA · IndexedDB · RTL UI</div>
-          <div class="proj-desc">
-            Installable PWA for medication reminders, dose logging, and streak tracking — fully offline via service worker. Arabic RTL-first design.
-          </div>
+          <div class="project-stack">FastAPI · GraphQL · NLP · Python &nbsp;·&nbsp; ROSHN Hackathon 2025 · Team of 4</div>
+          <p>AI assistant matching students and new employees to suitable housing. Built for the ROSHN Hackathon 2025, then shipped independently at technyaty.com.</p>
         </div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">Ilmora — School Management (Collaboration)</span>
-            <a class="proj-link" href="https://github.com/AhmadBakdash/Ilmora" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          </div>
-          <div class="proj-stack">Laravel · PHP · Livewire 3 · Alpine.js · MySQL &nbsp;·&nbsp; <em>Open-Source · In Development</em></div>
-          <div class="proj-desc">
-            Contributing to an open-source school management system built with a friend. Extending it for Quran memorization schools — adding Hifz progress tracking, recitation logging, and memorization-specific reporting.
-          </div>
-        </div>
+      </div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">Almorashih (المُرشّح) — AI Property Matching</span>
-            <a class="proj-link" href="https://technyaty.com" target="_blank" rel="noopener noreferrer">Live ↗</a>
-          </div>
-          <div class="proj-stack">FastAPI · GraphQL · NLP · Python &nbsp;·&nbsp; <em>Roshn Hackathon 2025 · Team of 4</em></div>
-          <div class="proj-desc">
-            AI assistant matching students and new employees to suitable housing options. Built with a team of four for ROSHN Hackathon 2025 — accepted in round one but did not advance. The team continued building independently and shipped it live at technyaty.com.
-          </div>
-        </div>
-
-      </section>
-
-    </main>
+    </div><!-- /main -->
 
     <!-- SIDEBAR -->
-    <aside class="cv-aside">
+    <div class="sidebar">
 
       <!-- SKILLS -->
-      <section class="sec">
-        <div class="sec-title">Skills</div>
+      <div class="section">
+        <div class="section-title">Skills</div>
 
-        <div class="skill-grp">
-          <div class="skill-cat">Frontend</div>
-          <div class="skill-tags">
-            <span class="tag">React Native</span>
-            <span class="tag">Next.js 15</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Tailwind CSS</span>
-            <span class="tag">Framer Motion</span>
-          </div>
+        <div class="skill-group">
+          <div class="skill-label">Frontend</div>
+          <div class="skill-list">Next.js, TypeScript, Tailwind CSS, React Native, Shadcn/ui</div>
         </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">Backend</div>
-          <div class="skill-tags">
-            <span class="tag">Supabase</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Python</span>
-            <span class="tag">PHP</span>
-            <span class="tag">Laravel</span>
-            <span class="tag">REST APIs</span>
-          </div>
+        <div class="skill-group">
+          <div class="skill-label">Backend</div>
+          <div class="skill-list">FastAPI, Python, PostgreSQL, Supabase, Node.js, REST APIs</div>
         </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">AI / LLM</div>
-          <div class="skill-tags">
-            <span class="tag">OpenRouter</span>
-            <span class="tag">Claude API</span>
-            <span class="tag">Arabic NLP</span>
-            <span class="tag">Prompt Eng.</span>
-          </div>
+        <div class="skill-group">
+          <div class="skill-label">AI &amp; LLM</div>
+          <div class="skill-list">Ollama (self-hosted LLaMA), Arabic OCR, Claude API, Arabic NLP, Prompt Engineering</div>
         </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">Mobile & Deploy</div>
-          <div class="skill-tags">
-            <span class="tag">EAS Build</span>
-            <span class="tag">OTA Updates</span>
-            <span class="tag">APK / IPA</span>
-            <span class="tag">Vercel</span>
-            <span class="tag">Cloudflare R2</span>
-            <span class="tag">Google Cloud</span>
-          </div>
+        <div class="skill-group">
+          <div class="skill-label">Integrations</div>
+          <div class="skill-list">Moyasar, Zoho Sign, Resend, n8n, Webhooks</div>
         </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">Payments</div>
-          <div class="skill-tags">
-            <span class="tag">Moyasar</span>
-            <span class="tag">Webhooks</span>
-            <span class="tag">Subscriptions</span>
-          </div>
+        <div class="skill-group">
+          <div class="skill-label">Deploy &amp; Ops</div>
+          <div class="skill-list">Vercel, Railway, Docker, CI/CD, EAS Build, Cloudflare</div>
         </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">Security</div>
-          <div class="skill-tags">
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">Info Security</span>
-            <span class="tag">Auth Audit</span>
-            <span class="tag">167+ Endpoints</span>
-          </div>
+        <div class="skill-group">
+          <div class="skill-label">Security</div>
+          <div class="skill-list">JWT, Supabase RLS, Auth Auditing, Rate Limiting, PDPL</div>
         </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">Specialties</div>
-          <div class="skill-tags">
-            <span class="tag">Arabic RTL UI</span>
-            <span class="tag">Bilingual AR/EN</span>
-            <span class="tag">PWA</span>
-            <span class="tag">GitHub</span>
-          </div>
+        <div class="skill-group">
+          <div class="skill-label">Specialties</div>
+          <div class="skill-list">Arabic RTL UI, Bilingual AR/EN, Project Management, ADR Documentation</div>
         </div>
-      </section>
+      </div>
 
       <!-- EDUCATION -->
-      <section class="sec">
-        <div class="sec-title">Education</div>
-        <div class="edu-item">
-          <div class="edu-degree">B.Sc. Computer Science</div>
-          <div class="edu-school">Arab Open University (AOU)</div>
-          <div class="edu-date">2024 – Present · Riyadh</div>
-        </div>
-      </section>
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="edu-name">B.Sc. Computer Science</div>
+        <div class="edu-school">Arab Open University (AOU)</div>
+        <div class="edu-date">2024 – Present · Riyadh</div>
+      </div>
 
       <!-- TRAINING -->
-      <section class="sec">
-        <div class="sec-title">Training Courses</div>
-        <ul class="cert-list">
+      <div class="section">
+        <div class="section-title">Training</div>
+        <ul class="training-list">
           <li>Cybersecurity Fundamentals</li>
           <li>Information Security</li>
           <li>Data Management &amp; Analysis</li>
           <li>Programming</li>
         </ul>
-      </section>
+      </div>
 
+    </div><!-- /sidebar -->
 
-    </aside>
-  </div>
+  </div><!-- /body -->
 
-</div>
+</div><!-- /page -->
 </body>
 </html>
