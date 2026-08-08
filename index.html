@@ -116,7 +116,7 @@ body{
 
 /* ─── NAV ─── */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
+  position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
   padding:18px 60px;
   background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
@@ -173,17 +173,22 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
   display:block;width:16px;height:1.5px;
   background:var(--text-muted);border-radius:2px;transition:all .3s;
 }
+.hamburger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hamburger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
 
 .mobile-menu{
-  display:none;position:fixed;top:66px;left:0;right:0;
-  background:var(--glass);backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--border-dim);
-  padding:16px 24px;z-index:99;flex-direction:column;gap:2px;
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:var(--bg);z-index:190;
+  flex-direction:column;align-items:center;justify-content:center;gap:6px;
 }
 .mobile-menu.open{display:flex;}
 .mobile-menu a{
-  color:var(--text-muted);text-decoration:none;font-size:.95rem;font-weight:500;
-  padding:11px 16px;border-radius:8px;transition:all .2s;
+  color:var(--text-dim);text-decoration:none;
+  font-size:1.3rem;font-weight:500;letter-spacing:.02em;
+  padding:14px 48px;border-radius:10px;
+  width:100%;max-width:300px;text-align:center;
+  transition:color .2s, background .2s;
 }
 .mobile-menu a:hover{color:var(--accent);background:var(--accent-dim);}
 
@@ -736,33 +741,6 @@ section{
 .hp4{top:20px; left:24%;    animation-delay:1.45s,.35s;}
 @media(max-width:900px){.hero-pill{display:none;}}
 
-/* ─── DOT NAV ─── */
-#dot-nav{
-  position:fixed;right:22px;left:auto;top:50%;transform:translateY(-50%);
-  display:flex;flex-direction:column;gap:17px;z-index:90;
-  width:max-content;
-}
-.dot-link{
-  display:flex;align-items:center;justify-content:flex-end;gap:8px;
-  text-decoration:none;opacity:.3;transition:opacity .25s;
-}
-.dot-link:hover,.dot-link.active{opacity:1;}
-.dot-num{
-  font-family:var(--font-en);font-size:.52rem;font-weight:600;
-  letter-spacing:.1em;color:var(--accent);
-  opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap;
-}
-.dot-link:hover .dot-num,.dot-link.active .dot-num{opacity:1;}
-.dot-pip{
-  width:5px;height:5px;border-radius:50%;background:var(--text-dim);
-  transition:width .25s,height .25s,background .25s,box-shadow .25s;flex-shrink:0;
-}
-.dot-link.active .dot-pip{
-  background:var(--accent);width:7px;height:7px;
-  box-shadow:0 0 0 2px var(--accent-border);
-}
-.dot-link:hover .dot-pip{background:var(--text-muted);}
-@media(max-width:1100px){#dot-nav{display:none;}}
 
 /* ─── ABOUT STATS ─── */
 .about-stats{
@@ -790,20 +768,69 @@ section{
   }
   .big-stat-num{font-size:2.2rem;}
 }
+
+/* ─── MOBILE: PROFESSIONAL RESPONSIVE ─── */
+
+/* 900px — nav, experience, CV */
+@media(max-width:900px){
+  /* Hide full name in nav — show YA mark only */
+  .logo-name{display:none;}
+  /* Stack experience date + content vertically */
+  .xp-item{grid-template-columns:1fr;gap:4px;}
+  .xp-list{margin-top:32px;}
+  /* CV download buttons: full-width column */
+  .cv-actions{flex-direction:column;align-items:stretch;}
+  .cv-dl-btn,.cv-open-btn{justify-content:center;}
+}
+
+/* 768px — hero tightening + typography */
+@media(max-width:768px){
+  #hero{padding-top:78px;padding-bottom:44px;}
+  .hero-inner{gap:1.25rem;}
+  .hero-photo img{max-width:240px;}
+  .hero-name{font-size:clamp(1.9rem,10vw,2.6rem);}
+  /* Eyebrow pill: truncate long text to one clean line */
+  .hero-eyebrow{max-width:calc(100vw - 60px);overflow:hidden;}
+  .hero-eyebrow .ar,.hero-eyebrow .en{
+    white-space:nowrap;overflow:hidden;
+    text-overflow:ellipsis;min-width:0;
+  }
+  .hero-title{font-size:.85rem;}
+  .hero-desc{font-size:.9rem;margin-bottom:28px;}
+  /* Smaller section headings */
+  .section-title{font-size:clamp(1.5rem,6.5vw,2rem);}
+  /* About stats: center the row on mobile */
+  .about-stats{justify-content:center;}
+  /* Edu card: stack vertically */
+  .edu-card{flex-direction:column;align-items:flex-start;gap:14px;padding:22px;}
+  /* Hero pills: show on mobile, scaled down */
+  .hero-pill{display:inline-flex;font-size:.52rem;padding:5px 10px;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.32);}
+  .hero-pill::before{width:4px;height:4px;}
+  .hp1{top:5%;right:-2px;}
+  .hp2{top:40%;left:-6px;}
+  .hp3{bottom:10%;right:3%;}
+  .hp4{top:12px;left:18%;}
+}
+
+/* 600px — full-width CTA buttons */
+@media(max-width:600px){
+  .hero-cta{align-items:stretch;}
+  .btn-primary,.btn-secondary{justify-content:center;}
+}
+
+/* 480px — extra-small phones */
+@media(max-width:480px){
+  section{padding:56px 18px;}
+  #hero{padding-top:64px;padding-bottom:36px;}
+  .hero-name{font-size:clamp(1.75rem,9.5vw,2.3rem);}
+  .big-stat-num{font-size:1.8rem;}
+  .about-stats{gap:12px;padding-top:18px;}
+}
 </style>
 </head>
 <body>
 <div id="scroll-progress" aria-hidden="true"></div>
 
-<!-- ═══ DOT NAV ═══ -->
-<nav id="dot-nav" aria-label="Section navigation" aria-hidden="true">
-  <a href="#hero"       class="dot-link" data-section="hero">      <span class="dot-num">01</span><span class="dot-pip"></span></a>
-  <a href="#about"      class="dot-link" data-section="about">     <span class="dot-num">02</span><span class="dot-pip"></span></a>
-  <a href="#experience" class="dot-link" data-section="experience"><span class="dot-num">03</span><span class="dot-pip"></span></a>
-  <a href="#projects"   class="dot-link" data-section="projects">  <span class="dot-num">04</span><span class="dot-pip"></span></a>
-  <a href="#skills"     class="dot-link" data-section="skills">    <span class="dot-num">05</span><span class="dot-pip"></span></a>
-  <a href="#contact"    class="dot-link" data-section="contact">   <span class="dot-num">06</span><span class="dot-pip"></span></a>
-</nav>
 
 <!-- ═══ NAV ═══ -->
 <nav id="navbar">
@@ -857,7 +884,7 @@ section{
 </div>
 
 <!-- ═══ HERO ═══ -->
-<section id="hero" style="padding-top:130px;max-width:100%;border:none;">
+<section id="hero">
   <div class="hero-inner">
 
     <div class="hero-photo">
@@ -1580,40 +1607,20 @@ section{
   });
 
   // ── MOBILE MENU ───────────────────────────────────────────────────────────
-  function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+  }
 
-  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
   window.addEventListener('resize', () => {
     if (window.innerWidth > 900) closeMobileMenu();
   });
 
-  // ── DOT NAV ──────────────────────────────────────────────────────────────
-  const dotNav = document.getElementById('dot-nav');
-  if (dotNav) {
-    const dotMap = {};
-    dotNav.querySelectorAll('.dot-link[data-section]').forEach(a => {
-      dotMap[a.dataset.section] = a;
-    });
-    const dotObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (dotMap[e.target.id]) dotMap[e.target.id].classList.toggle('active', e.isIntersecting);
-      });
-    }, { rootMargin: '-25% 0px -65% 0px' });
-    ['hero','about','experience','projects','skills','contact'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) dotObs.observe(el);
-    });
-    dotNav.querySelectorAll('.dot-link').forEach(a => {
-      a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
-        if (!VALID_ANCHORS.has(href)) return;
-        e.preventDefault();
-        const target = document.getElementById(href.slice(1));
-        if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - (navbar.offsetHeight + 16), behavior: 'smooth' });
-      });
-    });
-  }
 
 }());
 </script>
