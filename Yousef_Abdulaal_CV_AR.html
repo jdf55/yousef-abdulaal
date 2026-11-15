@@ -6,604 +6,208 @@
 <title>يوسف عبدالعال — سيرة ذاتية</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   TOKENS
-============================================================ */
-:root {
-  --navy:    #0F1623;
-  --accent:  #8A6D2F;
-  --accent-bright: #C9A557;
-  --text:    #1C1C2E;
-  --sub:     #3D3D5C;
-  --muted:   #737390;
-  --border:  #E4E4F0;
-  --tag-bg:  #F2F2FA;
-  --white:   #FFFFFF;
-}
-
-/* ============================================================
-   RESET + BASE
-============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Tajawal', 'Arial', sans-serif;
-  font-size: 9pt;
-  line-height: 1.6;
-  color: var(--text);
-  background: #EAEAF2;
-  direction: rtl;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* ============================================================
-   PAGE SHELL  (A4 = 210mm × 297mm)
-============================================================ */
-.page {
-  width: 210mm;
-  min-height: 297mm;
-  margin: 8mm auto;
-  background: var(--white);
-  box-shadow: 0 4px 40px rgba(0,0,0,0.14);
-  overflow: hidden;
-}
-
-/* ============================================================
-   HEADER
-============================================================ */
-.cv-header {
-  background: var(--navy);
-  padding: 15px 26px 13px;
-  position: relative;
-}
-
-.cv-header::before {
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--accent-bright);
-}
-
-.h-name {
-  font-family: 'Cairo', sans-serif;
-  font-size: 22pt;
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 3px;
-  letter-spacing: -0.3px;
-}
-
-.h-name .hl { color: var(--accent-bright); }
-
-.h-title {
-  font-family: 'Cairo', sans-serif;
-  font-size: 9pt;
-  font-weight: 600;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.4px;
-  margin-bottom: 9px;
-}
-
-.h-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 18px;
-  font-size: 8pt;
-  color: rgba(255,255,255,0.72);
-  font-family: 'Tajawal', sans-serif;
-}
-
-.h-contact a { color: rgba(255,255,255,0.72); transition: color 0.15s; }
-.h-contact a:hover { color: var(--accent); }
-
-.h-sep {
-  color: rgba(255,255,255,0.25);
-  margin: 0 2px;
-  user-select: none;
-}
-
-/* ============================================================
-   BODY GRID  (main | sidebar)
-============================================================ */
-.cv-body {
-  display: grid;
-  grid-template-columns: 1fr 158px;
-  gap: 0;
-  align-items: start;
-}
-
-.cv-main {
-  padding: 18px 26px 18px 14px;
-  border-left: 1.5px solid var(--border);
-}
-
-.cv-aside {
-  padding: 18px 12px 18px 16px;
-}
-
-/* ============================================================
-   SECTION
-============================================================ */
-.sec { margin-bottom: 15px; }
-.sec:last-child { margin-bottom: 0; }
-.cv-aside .sec { margin-bottom: 8px; }
-
-.sec-title {
-  font-family: 'Cairo', sans-serif;
-  font-size: 7pt;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  padding-bottom: 4px;
-  border-bottom: 1.5px solid var(--border);
-  margin-bottom: 9px;
-}
-
-/* ============================================================
-   SUMMARY
-============================================================ */
-.summary-text {
-  font-size: 8.8pt;
-  line-height: 1.7;
-  color: var(--sub);
-}
-
-.summary-text strong { color: var(--text); font-weight: 700; }
-
-/* ============================================================
-   EXPERIENCE
-============================================================ */
-.exp { margin-bottom: 11px; }
-.exp:last-child { margin-bottom: 0; }
-
-.exp-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 1px;
-}
-
-.exp-role {
-  font-family: 'Cairo', sans-serif;
-  font-size: 10pt;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.exp-date {
-  font-size: 7.5pt;
-  color: var(--muted);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.exp-org {
-  font-size: 8pt;
-  color: var(--muted);
-  margin-bottom: 5px;
-}
-
-.bullets { list-style: none; padding: 0; }
-.bullets li {
-  font-size: 8.5pt;
-  line-height: 1.55;
-  color: var(--sub);
-  padding-right: 12px;
-  position: relative;
-  margin-bottom: 3px;
-}
-.bullets li::before {
-  content: '▸';
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: var(--accent);
-  font-size: 7pt;
-  line-height: 1.7;
-}
-
-/* ============================================================
-   PROJECTS
-============================================================ */
-.proj { margin-bottom: 10px; }
-.proj:last-child { margin-bottom: 0; }
-
-.proj-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 1px;
-}
-
-.proj-name {
-  font-family: 'Cairo', sans-serif;
-  font-size: 9.5pt;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.proj-link {
-  font-size: 7.5pt;
-  color: var(--accent);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.proj-stack {
-  font-size: 7.5pt;
-  color: var(--muted);
-  margin-bottom: 3px;
-  font-style: italic;
-}
-
-.proj-desc {
-  font-size: 8.5pt;
-  line-height: 1.55;
-  color: var(--sub);
-}
-
-/* ============================================================
-   SIDEBAR — SKILLS
-============================================================ */
-.skill-grp { margin-bottom: 7px; }
-.skill-grp:last-child { margin-bottom: 0; }
-
-.skill-cat {
-  font-family: 'Cairo', sans-serif;
-  font-size: 7.5pt;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 3px;
-}
-
-.skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
-
-.tag {
-  background: var(--tag-bg);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 1.5px 5px;
-  font-size: 6.5pt;
-  color: var(--sub);
-  line-height: 1.6;
-}
-
-/* ============================================================
-   SIDEBAR — EDUCATION
-============================================================ */
-.edu-item { margin-bottom: 8px; }
-.edu-item:last-child { margin-bottom: 0; }
-
-.edu-degree {
-  font-family: 'Cairo', sans-serif;
-  font-size: 8pt;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 1px;
-}
-
-.edu-school {
-  font-size: 7.5pt;
-  color: var(--sub);
-  margin-bottom: 1px;
-}
-
-.edu-date {
-  font-size: 7pt;
-  color: var(--muted);
-}
-
-/* ============================================================
-   SIDEBAR — CERTIFICATIONS
-============================================================ */
-.cert-list { list-style: none; padding: 0; }
-.cert-list li {
-  font-size: 7.5pt;
-  color: var(--sub);
-  padding-right: 10px;
-  position: relative;
-  margin-bottom: 2px;
-  line-height: 1.45;
-}
-.cert-list li::before {
-  content: '✓';
-  position: absolute;
-  right: 0;
-  color: var(--accent);
-  font-size: 7pt;
-}
-
-/* ============================================================
-   SIDEBAR — LANGUAGES
-============================================================ */
-.lang-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3px;
-}
-.lang-name  { font-size: 8pt; font-weight: 700; color: var(--text); }
-.lang-level { font-size: 7pt; color: var(--muted); }
-
-/* ============================================================
-   PRINT
-============================================================ */
-@page {
-  size: A4;
-  margin: 0;
-}
-
-@media print {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --accent: #6b5423;
+    --text: #1C1C2E;
+    --sub: #3D3D5C;
+    --muted: #737390;
+    --border: #d9d9e6;
+    --bg: #ffffff;
+  }
   body {
-    background: white;
-  }
-  .page {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0;
-    box-shadow: none;
-  }
-  * {
+    font-family: 'Cairo', Tahoma, Arial, sans-serif;
+    font-size: 11pt;
+    color: var(--text);
+    background: var(--bg);
+    direction: rtl;
+    line-height: 1.6;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-}
+  a { color: inherit; text-decoration: underline; }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+  .page { max-width: 760px; margin: 0 auto; padding: 26px 12px; }
+
+  .name { font-size: 19pt; font-weight: 800; }
+  .title { font-size: 10.5pt; font-weight: 500; color: var(--sub); margin-top: 3px; }
+  .contacts {
+    font-size: 9.5pt; color: var(--sub);
+    margin-top: 9px; padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .contacts a { color: var(--sub); }
+
+  h2.section-title {
+    font-size: 11pt; font-weight: 700; color: var(--accent);
+    margin-top: 16px; margin-bottom: 7px;
+    padding-bottom: 3px; border-bottom: 1px solid var(--border);
+    break-after: avoid;
+  }
+  .section:first-of-type h2.section-title { margin-top: 14px; }
+
+  p { font-size: 10pt; color: var(--sub); margin-bottom: 5px; }
+  .exp, .proj, .edu-item { margin-bottom: 10px; }
+  .exp:last-child, .proj:last-child { margin-bottom: 0; }
+
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .exp-role, .proj-name, .edu-name { font-size: 10.5pt; font-weight: 700; color: var(--text); }
+  .exp-date, .edu-date { font-size: 9.5pt; color: var(--muted); white-space: nowrap; }
+  .exp-org, .proj-stack, .edu-school { font-size: 9.5pt; color: var(--muted); margin-bottom: 4px; }
+
+  ul { margin: 5px 24px 0 0; }
+  li { font-size: 10pt; color: var(--sub); margin-bottom: 4px; line-height: 1.5; }
+
+  .skill-line strong { color: var(--text); font-weight: 700; }
+  .lang-line { font-size: 10pt; margin-bottom: 2px; }
+
+  @page { size: A4; margin: 15mm 16mm; }
+  @media print { .exp, .proj, .edu-item { break-inside: avoid; } }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- ═══════════════════════════════════════════════════════
-       HEADER
-  ═══════════════════════════════════════════════════════ -->
-  <header class="cv-header">
-    <div class="h-name">يوسف <span class="hl">عبدالعال</span></div>
-    <div class="h-title">مطوّر <span dir="ltr" style="unicode-bidi:isolate;">Full-Stack</span> &nbsp;·&nbsp; منشئ منتجات <span dir="ltr" style="unicode-bidi:isolate;">AI</span> &nbsp;·&nbsp; مؤسس</div>
-    <div class="h-contact">
-      <span dir="ltr" style="unicode-bidi:isolate;">+966 57 044 5012</span>
-      <span class="h-sep">·</span>
-      <a href="mailto:yousefabdulaal2@gmail.com" dir="ltr" style="unicode-bidi:isolate;">yousefabdulaal2@gmail.com</a>
-      <span class="h-sep">·</span>
-      <a href="https://linkedin.com/in/yousef-abdulaal" target="_blank" rel="noopener noreferrer" dir="ltr" style="unicode-bidi:isolate;">linkedin.com/in/yousef-abdulaal</a>
-      <span class="h-sep">·</span>
-      <a href="https://github.com/jdf55" target="_blank" rel="noopener noreferrer" dir="ltr" style="unicode-bidi:isolate;">github.com/jdf55</a>
-      <span class="h-sep">·</span>
-      <span>الرياض، المملكة العربية السعودية</span>
+  <div class="name">يوسف عبدالعال</div>
+  <div class="title">طالب علوم حاسب — مطوّر <span class="ltr" dir="ltr">Full-Stack</span></div>
+  <div class="contacts">
+    <span class="ltr" dir="ltr">+966 57 044 5012</span> ·
+    <a href="mailto:yousefabdulaal2@gmail.com" class="ltr" dir="ltr">yousefabdulaal2@gmail.com</a> ·
+    <a href="https://linkedin.com/in/yousef-abdulaal" target="_blank" rel="noopener noreferrer" class="ltr" dir="ltr">linkedin.com/in/yousef-abdulaal</a> ·
+    <a href="https://github.com/jdf55" target="_blank" rel="noopener noreferrer" class="ltr" dir="ltr">github.com/jdf55</a> ·
+    الرياض، المملكة العربية السعودية
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">نبذة</h2>
+    <p>طالب علوم حاسب في الجامعة العربية المفتوحة، وأعمل متدربًا تعاونيًا في شركة رؤيتك حيث بنيت معظم النظام الخلفي لمنصة حجز موارد الفعاليات. أغلب عملي في أنظمة الحجز والتشغيل، ولي منتج يعمل اليوم هو <span class="ltr" dir="ltr">AILine</span> أطلقته عبر مؤسستي.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">الخبرة العملية</h2>
+
+    <div class="exp">
+      <div class="row">
+        <span class="exp-role">مسؤول المتجر الإلكتروني · تشغيل وتطوير</span>
+        <span class="exp-date">نوفمبر 2026 – الآن</span>
+      </div>
+      <div class="exp-org">سوبرماركت في الرياض — متجر على منصة سلة</div>
+      <ul>
+        <li>أعدت تنظيم كتالوج المتجر، وضبطت إعدادات التوصيل وسياسة التوصيل المجاني ببرمجة مخصصة في الثيم، واستخدمت <span class="ltr" dir="ltr">Salla Admin API</span> لبناء ملف جرد شامل للمخزون وتوحيد مقاسات صور المنتجات آليًا وإعداد دليل تشغيل للإدارة.</li>
+      </ul>
     </div>
-  </header>
 
-  <!-- ═══════════════════════════════════════════════════════
-       BODY
-  ═══════════════════════════════════════════════════════ -->
-  <div class="cv-body">
+    <div class="exp">
+      <div class="row">
+        <span class="exp-role">مطوّر <span class="ltr" dir="ltr">Backend</span> · تدريب تعاوني</span>
+        <span class="exp-date">أكتوبر 2026 – الآن</span>
+      </div>
+      <div class="exp-org">شركة رؤيتك (<span class="ltr" dir="ltr">Your Vision</span>) — تنظيم الفعاليات — الرياض</div>
+      <ul>
+        <li>أبني ضمن فريق من اثنين منصة الشركة لحجز موارد الفعاليات، وكتبت معظم نظامها الخلفي: نموذج البيانات، ودورة الطلب من الإرسال إلى عرض السعر والقبول، ومنع الحجز المزدوج بقيد في قاعدة بيانات <span class="ltr" dir="ltr">PostgreSQL</span>.</li>
+        <li>بنيت الأدوار والصلاحيات مع التحقق بخطوتين وسجل تدقيق لا يقبل التعديل، وفي المنصة 1,470 اختبارًا آليًا، وأعددت الفحوصات الآلية (<span class="ltr" dir="ltr">CI</span>) والنشر على <span class="ltr" dir="ltr">Azure</span> في تشغيل تجريبي داخلي.</li>
+        <li>بنيت نظامًا داخليًا لحضور المتدربين ومهامهم، وأضفت إلى موقع فعالية الرياضات الإلكترونية للشركة صفحات الجوال للحكّام وموظفي الدخول، والتحديث الحيّ لجدول الإقصاء، وماسح رموز <span class="ltr" dir="ltr">QR</span> بالكاميرا.</li>
+      </ul>
+    </div>
 
-    <!-- ── MAIN COLUMN ── -->
-    <main class="cv-main">
+    <div class="exp">
+      <div class="row">
+        <span class="exp-role">المطوّر الرئيسي · منصة <span class="ltr" dir="ltr">WashX</span></span>
+        <span class="exp-date">أغسطس 2026 – الآن</span>
+      </div>
+      <div class="exp-org"><span class="ltr" dir="ltr">WashX</span> — تنظيف الواجهات والألواح الشمسية بالدرون — مشروع لعميل</div>
+      <ul>
+        <li>أبني منصة الشركة منفردًا: طلب الخدمة على مراحل، وعرض السعر، وعقد خدمة بالعربية والإنجليزية يُوقَّع إلكترونيًا، ومتابعة الدفع، والجدولة، ولوحة تشغيل داخلية.</li>
+        <li>صمّمت دورة الطلب كحالات محددة (<span class="ltr" dir="ltr">state machine</span>)، وعزلت كل مزوّد خارجي خلف واجهة يسهل استبدالها، ووثّقت 23 قرارًا معماريًا، مع فحوصات آلية إلزامية قبل أي دمج.</li>
+      </ul>
+    </div>
 
-      <!-- SUMMARY -->
-      <section class="sec">
-        <div class="sec-title">الملف المهني</div>
-        <p class="summary-text">
-          مطوّر <span dir="ltr" style="unicode-bidi:isolate;">Full-Stack</span> أقود منصات إنتاجية من الفكرة إلى الإطلاق.
-          أعمل حاليًا مع <strong>قاول تيك</strong> على تكامل الأنظمة عبر الـ <span dir="ltr" style="unicode-bidi:isolate;">API</span>،
-          وأقود بناء منصة <strong dir="ltr" style="unicode-bidi:isolate;">WashX</strong> الكاملة للحجوزات والعقود والمدفوعات،
-          إضافة إلى منتجاتي تحت مظلة <strong>مؤسسة مستقبل حلول التقنية</strong>.
-          تخصصي دمج الذكاء الاصطناعي في منتجات عربية أولاً — من المعمارية إلى الإنتاج.
-        </p>
-      </section>
+    <div class="exp">
+      <div class="row">
+        <span class="exp-role">مطوّر المنصة وتكامل <span class="ltr" dir="ltr">API</span></span>
+        <span class="exp-date">يوليو – سبتمبر 2026</span>
+      </div>
+      <div class="exp-org">قاول تيك (<span class="ltr" dir="ltr">Qawel Tech</span>) — السعودية</div>
+      <ul>
+        <li>بنيت معظم النسخة الأولى من منصة مشتريات لقطاع البناء تعتمد على الذكاء الاصطناعي: واجهة <span class="ltr" dir="ltr">Next.js</span> وخلفية <span class="ltr" dir="ltr">FastAPI</span>، وربطتها بمحرّك تحليل العقود العربية الذي طوّره زميل في الفريق.</li>
+        <li>قدت مشروع <span class="ltr" dir="ltr">Qawel.fin</span> باسم الشركة في هاكاثون أمد 2026 ضمن فريق من أربعة أعضاء، ثم سلّمت العمل موثّقًا للفريق في سبتمبر.</li>
+      </ul>
+    </div>
 
-      <!-- EXPERIENCE -->
-      <section class="sec">
-        <div class="sec-title">الخبرة العملية</div>
+    <div class="exp">
+      <div class="row">
+        <span class="exp-role">مؤسس ومطوّر <span class="ltr" dir="ltr">Full-Stack</span></span>
+        <span class="exp-date">2025 – الآن</span>
+      </div>
+      <div class="exp-org">مؤسسة مستقبل حلول التقنية (<span class="ltr" dir="ltr">HuloolFuture</span>) — الرياض</div>
+      <ul>
+        <li>أطلقت <span class="ltr" dir="ltr">AILine</span> على <span class="ltr" dir="ltr">huloolfuture.sa</span>، وهو مساعد دراسي لطلاب الجامعات بالعربية والإنجليزية.</li>
+        <li>راجعت أمان واجهات الـ<span class="ltr" dir="ltr">API</span> قبل الإطلاق وأغلقت ثغرتين حرجتين في المصادقة، وأدير النشر والحسابات السحابية بنفسي.</li>
+      </ul>
+    </div>
+  </div>
 
-        <div class="exp">
-          <div class="exp-top">
-            <span class="exp-role">قائد تقني — منصة <span dir="ltr" style="unicode-bidi:isolate;">WashX</span></span>
-            <span class="exp-date">أغسطس 2026 – الحاضر</span>
-          </div>
-          <div class="exp-org">WashX — تنظيف الواجهات والألواح الشمسية بالدرون &nbsp;·&nbsp; السعودية</div>
-          <ul class="bullets">
-            <li>أقود بناء منصة الشركة الكاملة: حجوزات متعددة الخطوات، عقود خدمة ثنائية اللغة بتوقيع إلكتروني، تتبع مدفوعات، ولوحة عمليات داخلية لدورة حياة الطلبات.</li>
-            <li>صممت المعمارية: <span dir="ltr" style="unicode-bidi:isolate;">Next.js + TypeScript + Supabase (RLS)</span>، آلة حالات لدورة الطلب، وواجهات <span dir="ltr" style="unicode-bidi:isolate;">Adapter</span> لكل مزود خارجي (<span dir="ltr" style="unicode-bidi:isolate;">Paymob · Zoho Sign · Resend · n8n</span>).</li>
-            <li>أسست الحوكمة الهندسية: 19 قرار معماري موثق (<span dir="ltr" style="unicode-bidi:isolate;">ADR</span>)، بوابات جودة <span dir="ltr" style="unicode-bidi:isolate;">CI</span> إلزامية، وقائمة أمان متوافقة مع نظام حماية البيانات الشخصية (<span dir="ltr" style="unicode-bidi:isolate;">PDPL</span>).</li>
-          </ul>
-        </div>
+  <div class="section">
+    <h2 class="section-title">المهارات</h2>
+    <p class="skill-line"><span class="ltr" dir="ltr"><strong>Backend:</strong> Python, Django, FastAPI, PostgreSQL, REST APIs</span></p>
+    <p class="skill-line"><span class="ltr" dir="ltr"><strong>Frontend:</strong> Next.js, React, TypeScript, Tailwind CSS</span></p>
+    <p class="skill-line"><strong>الذكاء الاصطناعي:</strong> <span class="ltr" dir="ltr">LLM APIs, Arabic OCR, Ollama (self-hosted models)</span></p>
+    <p class="skill-line"><strong>التكاملات:</strong> <span class="ltr" dir="ltr">Paymob, Zoho Sign, Resend, Webhooks</span></p>
+    <p class="skill-line"><strong>الصلاحيات والأمان:</strong> <span class="ltr" dir="ltr">Roles &amp; permissions, 2FA, Supabase RLS, Audit logging</span></p>
+    <p class="skill-line"><strong>السحابة والنشر:</strong> <span class="ltr" dir="ltr">Azure, Vercel, Cloudflare Workers, Docker, CI/CD, Git</span></p>
+  </div>
 
-        <div class="exp">
-          <div class="exp-top">
-            <span class="exp-role">مطوّر تكامل <span dir="ltr" style="unicode-bidi:isolate;">API</span></span>
-            <span class="exp-date">يوليو 2026 – الحاضر</span>
-          </div>
-          <div class="exp-org">قاول تيك (Qawel Tech) &nbsp;·&nbsp; السعودية</div>
-          <ul class="bullets">
-            <li>أتولى ربط أنظمة الشركة عبر واجهات برمجة التطبيقات: تصميم النقاط، المصادقة <span dir="ltr" style="unicode-bidi:isolate;">JWT</span>، التحقق من المدخلات، والتوثيق.</li>
-            <li>مثّلت الشركة في هاكاثون أمد 2026 بمشروع <span dir="ltr" style="unicode-bidi:isolate;">Qawel.fin</span> بدور <strong>مدير المشروع</strong>: قدت فريقًا من أربعة، ووزعت العمل عبر <span dir="ltr" style="unicode-bidi:isolate;">PRD</span> وقرارات معمارية وخطة تسليم يومية.</li>
-            <li>سلّمنا منصة مباشرة كاملة خلال 6 أيام — من التسجيل حتى توصية التمويل — مع نموذج تقييم مخاطر يعمل في الإنتاج قبل إغلاق التسليم.</li>
-          </ul>
-        </div>
+  <div class="section">
+    <h2 class="section-title">أبرز المشاريع</h2>
 
-        <div class="exp">
-          <div class="exp-top">
-            <span class="exp-role">مطوّر <span dir="ltr" style="unicode-bidi:isolate;">Full-Stack</span> ومؤسس</span>
-            <span class="exp-date">2025 – الحاضر</span>
-          </div>
-          <div class="exp-org">مستقبل حلول التقنية (HuloolFuture) &nbsp;·&nbsp; الرياض</div>
-          <ul class="bullets">
-            <li>أطلقت <span dir="ltr" style="unicode-bidi:isolate;">AILine</span> للإنتاج — مساعد أكاديمي بالذكاء الاصطناعي مباشر على <span dir="ltr" style="unicode-bidi:isolate;">huloolfuture.sa</span> لطلاب الجامعات.</li>
-            <li>أجريت مراجعة أمنية شاملة على أكثر من 167 نقطة نهاية وكشفت وأغلقت ثغرتين حرجتين في مصادقة المستخدمين قبل الإطلاق.</li>
-            <li>أدير البنية التحتية كاملة: <span dir="ltr" style="unicode-bidi:isolate;">Apple Developer Organization، EAS Build، Vercel، Cloudflare R2، وGoogle Cloud</span>.</li>
-          </ul>
-        </div>
-      </section>
+    <div class="proj">
+      <div class="row">
+        <span class="proj-name">منصة حجز موارد الفعاليات</span>
+        <span class="exp-date">تدريب تعاوني · تشغيل تجريبي داخلي · مستودع خاص</span>
+      </div>
+      <div class="proj-stack">شركة رؤيتك — <span class="ltr" dir="ltr">Django, PostgreSQL, Azure, GitHub Actions, 2FA</span></div>
+      <p>يتصفح العميل الكتالوج ويبني طلبه لتواريخ فعاليته، ثم يصله عرض سعر من فريق الشركة ليوافق عليه. التوفّر محسوم في قاعدة البيانات نفسها، فلا يُحجز المورد نفسه لعميلين في فترة واحدة حتى لو وصل الطلبان في اللحظة ذاتها.</p>
+    </div>
 
-      <!-- PROJECTS -->
-      <section class="sec">
-        <div class="sec-title">أبرز المشاريع</div>
+    <div class="proj">
+      <div class="row">
+        <span class="proj-name"><span class="ltr" dir="ltr">AILine</span> — مساعد دراسي لطلاب الجامعات</span>
+        <span class="exp-date">متاح الآن: <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="ltr" dir="ltr">huloolfuture.sa</a></span>
+      </div>
+      <div class="proj-stack">منتج مؤسستي — <span class="ltr" dir="ltr">Next.js, TypeScript, Supabase, LLM APIs</span></div>
+      <p>يقرأ جدول الطالب من صورة أو ملف، يربط مواعيد الاختبارات بالمواد، ويبني خطة مذاكرة يومية، مع مساعد نصي يعرف مواد الطالب.</p>
+    </div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">Qawel.fin — جسر تمويلي بالذكاء الاصطناعي</span>
-            <a class="proj-link" href="https://qawelfin.vercel.app" target="_blank" rel="noopener noreferrer">مباشر — qawelfin.vercel.app ↗</a>
-          </div>
-          <div class="proj-stack">FastAPI · Next.js · PostgreSQL · Ollama (LLaMA 3.1) · OCR عربي &nbsp;·&nbsp; <em>هاكاثون أمد 2026 · مدير المشروع</em></div>
-          <div class="proj-desc">
-            منصة تحلّل عقود البناء تلقائيًا (<span dir="ltr" style="unicode-bidi:isolate;">OCR</span> عربي + نموذج لغوي مستضاف ذاتيًا)، تتحقق من المستندات الإلزامية بالذكاء الاصطناعي وتكشف التلاعب،
-            وتحسب مؤشر مخاطر شفافًا من 100 مع توصية تمويل معلّلة بالعربية. بُنيت بفريق من أربعة يضم زميلًا من الجامعة —
-            سيادة بيانات كاملة: لا تغادر بيانات العملاء بنيتنا التحتية.
-          </div>
-        </div>
+    <div class="proj">
+      <div class="row">
+        <span class="proj-name"><span class="ltr" dir="ltr">Qawel.fin</span> — تقييم مخاطر تمويل البناء</span>
+        <span class="exp-date"><a href="https://qawelfin.vercel.app" target="_blank" rel="noopener noreferrer" class="ltr" dir="ltr">qawelfin.vercel.app</a></span>
+      </div>
+      <div class="proj-stack">هاكاثون أمد 2026 · قائد المشروع — <span class="ltr" dir="ltr">FastAPI, Next.js, PostgreSQL, Ollama, Arabic OCR</span></div>
+      <p>يقرأ عقد البناء بالعربية، يتحقق من المستندات ويكشف التلاعب فيها، ويعطي درجة مخاطر من 100 مع توصية تمويل مكتوبة بأسبابها. النموذج اللغوي كان مستضافًا ذاتيًا، فلم تُرسل المستندات إلى مزوّد خارجي.</p>
+    </div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">AILine — منصة دراسة بالذكاء الاصطناعي</span>
-            <a class="proj-link" href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer">مباشر — huloolfuture.sa ↗</a>
-          </div>
-          <div class="proj-stack">Next.js 15 · TypeScript · AI APIs · Supabase Auth</div>
-          <div class="proj-desc">
-            منصة أكاديمية لطلاب الجامعات السعودية — تحلّل الجداول المرفوعة، وتولّد خططاً دراسية مخصصة عبر نموذج لغوي،
-            وتوفّر مساعداً دراسياً يعرف مواد الطالب. ثنائي عربي/إنجليزي، مباشر الآن.
-          </div>
-        </div>
+    <p><strong>هاكاثون روشن 2025:</strong> المُرشّح، مساعد بحث عقاري بالعربية بُني ضمن فريق من أربعة.</p>
+  </div>
 
-        <div class="proj">
-          <div class="proj-top">
-            <span class="proj-name">المُرشّح — مساعد عقاري بالذكاء الاصطناعي</span>
-            <a class="proj-link" href="https://technyaty.com" target="_blank" rel="noopener noreferrer">مباشر — technyaty.com ↗</a>
-          </div>
-          <div class="proj-stack">FastAPI · GraphQL · NLP · Python &nbsp;·&nbsp; <em>هاكاثون روشن 2025 · فريق 4</em></div>
-          <div class="proj-desc">
-            مساعد ذكاء اصطناعي يطابق الطلاب والموظفين الجدد مع خيارات السكن الأنسب. بُني بفريق من أربعة لهاكاثون روشن 2025،
-            ثم واصل الفريق التطوير مستقلاً وأطلق المنتج على <span dir="ltr" style="unicode-bidi:isolate;">technyaty.com</span>.
-          </div>
-        </div>
+  <div class="section">
+    <h2 class="section-title">التعليم</h2>
+    <div class="edu-item">
+      <div class="row">
+        <span class="edu-name">بكالوريوس علوم الحاسب</span>
+        <span class="edu-date">2024 – الآن</span>
+      </div>
+      <div class="edu-school">الجامعة العربية المفتوحة — الرياض</div>
+    </div>
+    <p><strong>نائب رئيس اللجنة التقنية</strong> — نادي الذكاء الاصطناعي بالجامعة — أكتوبر 2026 – الآن</p>
+  </div>
 
-      </section>
-
-    </main>
-
-    <!-- ── SIDEBAR ── -->
-    <aside class="cv-aside">
-
-      <!-- SKILLS -->
-      <section class="sec">
-        <div class="sec-title">المهارات</div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">الواجهة الأمامية</div>
-          <div class="skill-tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Tailwind CSS</span>
-            <span class="tag">React Native</span>
-            <span class="tag">Shadcn/ui</span>
-          </div>
-        </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">الخلفية</div>
-          <div class="skill-tags">
-            <span class="tag">FastAPI</span>
-            <span class="tag">Python</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">REST APIs</span>
-          </div>
-        </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">ذكاء اصطناعي</div>
-          <div class="skill-tags">
-            <span class="tag">Ollama · LLaMA</span>
-            <span class="tag">OCR عربي</span>
-            <span class="tag">Claude API</span>
-            <span class="tag">NLP عربي</span>
-            <span class="tag">Prompt Eng.</span>
-          </div>
-        </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">التكاملات</div>
-          <div class="skill-tags">
-            <span class="tag">Paymob</span>
-            <span class="tag">Zoho Sign</span>
-            <span class="tag">Resend</span>
-            <span class="tag">n8n</span>
-            <span class="tag">Webhooks</span>
-          </div>
-        </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">النشر والتشغيل</div>
-          <div class="skill-tags">
-            <span class="tag">Vercel</span>
-            <span class="tag">Railway</span>
-            <span class="tag">Docker</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">EAS Build</span>
-            <span class="tag">Cloudflare</span>
-          </div>
-        </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">الأمن</div>
-          <div class="skill-tags">
-            <span class="tag">JWT</span>
-            <span class="tag">Supabase RLS</span>
-            <span class="tag">تدقيق Auth</span>
-            <span class="tag">Rate Limiting</span>
-            <span class="tag">PDPL</span>
-          </div>
-        </div>
-
-        <div class="skill-grp">
-          <div class="skill-cat">تخصصات</div>
-          <div class="skill-tags">
-            <span class="tag">RTL عربي</span>
-            <span class="tag">ثنائي اللغة</span>
-            <span class="tag">إدارة مشاريع</span>
-            <span class="tag">توثيق ADR</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section class="sec">
-        <div class="sec-title">التعليم</div>
-
-        <div class="edu-item">
-          <div class="edu-degree">بكالوريوس علوم الحاسب</div>
-          <div class="edu-school">الجامعة العربية المفتوحة</div>
-          <div class="edu-date">2024 – الحاضر · الرياض</div>
-        </div>
-
-      </section>
-
-      <!-- CERTIFICATIONS -->
-      <section class="sec">
-        <div class="sec-title">دورات تدريبية</div>
-        <ul class="cert-list">
-          <li>الأمن السيبراني</li>
-          <li>أمن المعلومات</li>
-          <li>إدارة البيانات والتحليل</li>
-          <li>البرمجة</li>
-        </ul>
-      </section>
-
-
-    </aside>
+  <div class="section">
+    <h2 class="section-title">اللغات</h2>
+    <p class="lang-line">العربية — اللغة الأم</p>
+    <p class="lang-line">الإنجليزية — لغة عمل</p>
   </div>
 
 </div>

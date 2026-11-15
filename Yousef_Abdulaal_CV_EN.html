@@ -6,297 +6,212 @@
 <title>Yousef Abdulaal — CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --accent: #8A6D2F;
-    --accent-light: #A98A45;
+    --accent: #6b5423;
     --text: #111827;
     --text-muted: #4b5563;
     --text-light: #6b7280;
-    --border: #e5e7eb;
+    --border: #d1d5db;
     --bg: #ffffff;
   }
-
-  html { font-size: 10.5pt; }
-
+  html { font-size: 11pt; }
   body {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
     color: var(--text);
     background: var(--bg);
     line-height: 1.5;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+  a { color: inherit; text-decoration: underline; }
+  .page { max-width: 760px; margin: 0 auto; padding: 26px 12px; }
 
-  .page {
-    width: 210mm;
-    min-height: 297mm;
-    max-height: 297mm;
-    overflow: hidden;
-    padding: 14mm 14mm 12mm 14mm;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* ── HEADER ─────────────────────────── */
-  .header { margin-bottom: 10px; }
-  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
-  .name { font-size: 22pt; font-weight: 700; letter-spacing: -0.5px; color: var(--text); }
-  .name span { color: var(--accent); }
-  .title { font-size: 9.5pt; font-weight: 400; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.2px; }
+  .name { font-size: 20pt; font-weight: 700; }
+  .title { font-size: 11pt; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
   .contacts {
-    display: flex; flex-wrap: wrap; gap: 3px 14px;
-    font-size: 8pt; color: var(--text-muted);
-    margin-top: 7px;
-    border-top: 1.5px solid var(--accent);
-    padding-top: 6px;
+    font-size: 9.5pt; color: var(--text-muted);
+    margin-top: 9px; padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--border);
   }
-  .contact-item { display: flex; align-items: center; gap: 4px; }
-  .contact-item a { color: var(--text-muted); text-decoration: none; }
+  .contacts a { color: var(--text-muted); }
 
-  /* ── LAYOUT ─────────────────────────── */
-  .body { display: grid; grid-template-columns: 1fr 195px; gap: 0 18px; flex: 1; }
-  .main { display: flex; flex-direction: column; gap: 0; }
-  .sidebar { display: flex; flex-direction: column; gap: 0; border-left: 1.5px solid var(--border); padding-left: 14px; }
-
-  /* ── SECTIONS ───────────────────────── */
-  .section { margin-bottom: 9px; }
-  .section-title {
-    font-size: 7.5pt; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 1.2px; color: var(--accent);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2px; margin-bottom: 7px;
+  h2.section-title {
+    font-size: 11pt; font-weight: 700; text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 16px; margin-bottom: 7px;
+    padding-bottom: 2px; border-bottom: 1px solid var(--border);
+    break-after: avoid;
   }
+  .section:first-of-type h2.section-title { margin-top: 14px; }
 
-  /* ── PROFILE ────────────────────────── */
-  .profile p { font-size: 9pt; color: var(--text); line-height: 1.55; }
+  p { font-size: 10pt; color: var(--text); margin-bottom: 4px; }
+  .job, .project, .edu-item { margin-bottom: 10px; break-inside: avoid; }
+  .job:last-child, .project:last-child { margin-bottom: 0; }
 
-  /* ── EXPERIENCE ─────────────────────── */
-  .job { margin-bottom: 8px; }
-  .job:last-child { margin-bottom: 0; }
-  .job-header { display: flex; justify-content: space-between; align-items: baseline; }
-  .job-title { font-size: 9.5pt; font-weight: 600; color: var(--text); }
-  .job-date { font-size: 8pt; color: var(--text-light); white-space: nowrap; }
-  .job-company { font-size: 8.5pt; color: var(--text-muted); margin-bottom: 3px; }
-  .job ul { padding-left: 11px; }
-  .job li { font-size: 8.5pt; color: var(--text); margin-bottom: 2px; line-height: 1.5; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .job-title, .project-name, .edu-name { font-size: 10.5pt; font-weight: 600; }
+  .job-date, .edu-date { font-size: 9.5pt; color: var(--text-light); white-space: nowrap; }
+  .job-company, .project-stack, .edu-school { font-size: 9.5pt; color: var(--text-muted); margin-bottom: 3px; }
 
-  /* ── PROJECTS ───────────────────────── */
-  .project { margin-bottom: 7px; }
-  .project:last-child { margin-bottom: 0; }
-  .project-header { display: flex; justify-content: space-between; align-items: baseline; }
-  .project-name { font-size: 9pt; font-weight: 600; color: var(--text); }
-  .project-status {
-    font-size: 7pt; font-weight: 600; padding: 1px 6px;
-    border-radius: 3px; white-space: nowrap;
-  }
-  .status-live { background: #dcfce7; color: #15803d; }
-  .status-dev { background: #fef3c7; color: #92400e; }
-  .status-oss { background: #eff6ff; color: #1d4ed8; }
-  .project-stack { font-size: 7.5pt; color: var(--text-light); margin-bottom: 2px; font-style: italic; }
-  .project p { font-size: 8.5pt; color: var(--text); line-height: 1.45; }
+  ul { margin: 4px 0 0 20px; }
+  li { font-size: 10pt; margin-bottom: 3px; line-height: 1.45; }
 
-  /* ── SIDEBAR SECTIONS ───────────────── */
-  .sidebar .section-title { font-size: 7pt; }
-  .skill-group { margin-bottom: 7px; }
-  .skill-group:last-child { margin-bottom: 0; }
-  .skill-label { font-size: 7.5pt; font-weight: 600; color: var(--text-muted); margin-bottom: 2px; }
-  .skill-list { font-size: 8pt; color: var(--text); line-height: 1.55; }
+  .skill-line { font-size: 10pt; margin-bottom: 4px; }
+  .skill-line strong { font-weight: 600; }
+  .lang-line { font-size: 10pt; margin-bottom: 2px; }
 
-  .edu-name { font-size: 9pt; font-weight: 600; color: var(--text); }
-  .edu-school { font-size: 8pt; color: var(--text-muted); }
-  .edu-date { font-size: 7.5pt; color: var(--text-light); margin-top: 1px; }
-
-  .training-list { padding-left: 0; list-style: none; }
-  .training-list li { font-size: 8pt; color: var(--text); padding: 1px 0; }
-  .training-list li::before { content: "✓  "; color: var(--accent); font-size: 7pt; }
-
-  .lang-row { display: flex; justify-content: space-between; font-size: 8.5pt; margin-bottom: 3px; }
-  .lang-name { font-weight: 500; color: var(--text); }
-  .lang-level { color: var(--text-light); }
-
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 15mm 16mm; }
   @media print {
-    html, body { width: 210mm; }
-    .page { margin: 0; padding: 14mm 14mm 12mm 14mm; }
-    .status-live { background: #dcfce7 !important; color: #15803d !important; }
-    .status-dev { background: #fef3c7 !important; color: #92400e !important; }
-    .status-oss { background: #eff6ff !important; color: #1d4ed8 !important; }
+    .job, .project, .edu-item { break-inside: avoid; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="name">Yousef <span>Abdulaal</span></div>
-    <div class="title">Full-Stack Developer &nbsp;·&nbsp; AI Product Builder &nbsp;·&nbsp; Founder</div>
-    <div class="contacts">
-      <span class="contact-item">+966 57 044 5012</span>
-      <span class="contact-item"><a href="mailto:yousefabdulaal2@gmail.com">yousefabdulaal2@gmail.com</a></span>
-      <span class="contact-item"><a href="https://linkedin.com/in/yousef-abdulaal">linkedin.com/in/yousef-abdulaal</a></span>
-      <span class="contact-item"><a href="https://github.com/jdf55">github.com/jdf55</a></span>
-      <span class="contact-item">Riyadh, Saudi Arabia</span>
+  <div class="name">Yousef Abdulaal</div>
+  <div class="title">Computer Science Student — Full-Stack Developer</div>
+  <div class="contacts">
+    +966 57 044 5012 &nbsp;·&nbsp;
+    <a href="mailto:yousefabdulaal2@gmail.com">yousefabdulaal2@gmail.com</a> &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/yousef-abdulaal" target="_blank" rel="noopener noreferrer">linkedin.com/in/yousef-abdulaal</a> &nbsp;·&nbsp;
+    <a href="https://github.com/jdf55" target="_blank" rel="noopener noreferrer">github.com/jdf55</a> &nbsp;·&nbsp;
+    Riyadh, Saudi Arabia
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Summary</h2>
+    <p>Computer science student at Arab Open University and co-op trainee at Your Vision, where I built most of the backend of an event-resource booking platform. Most of my work is in booking and operations systems, and I run one live product of my own, AILine.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="job">
+      <div class="row">
+        <span class="job-title">E-commerce store manager · Operations and development</span>
+        <span class="job-date">Nov 2026 – Present</span>
+      </div>
+      <div class="job-company">Supermarket, Riyadh — Store on the Salla platform</div>
+      <ul>
+        <li>Reorganized the product catalogue, configured delivery and a free-delivery policy with custom theme JavaScript, and used the Salla Admin API to build a full inventory file, automate product-image resizing, and prepare an operations guide for management</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="job-title">Backend developer · Co-op trainee</span>
+        <span class="job-date">Oct 2026 – Present</span>
+      </div>
+      <div class="job-company">Your Vision — Event production — Riyadh</div>
+      <ul>
+        <li>Wrote most of the backend of the company's event-resource booking platform, built in a team of two: the data model, the request lifecycle from submission to quote and acceptance, and double-booking prevention enforced by a PostgreSQL constraint</li>
+        <li>Built roles and permissions with two-factor sign-in and an append-only audit trail; the platform has 1,470 automated tests, and I set up CI and the Azure deployment, now running as an internal trial</li>
+        <li>Built an internal attendance and task system for trainees, and added the phone pages for referees and door staff, live bracket updates and a camera QR scanner to the company's e-sports event site</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="job-title">Lead developer · WashX platform</span>
+        <span class="job-date">Aug 2026 – Present</span>
+      </div>
+      <div class="job-company">WashX — Drone-based facade and solar-panel cleaning — Client project</div>
+      <ul>
+        <li>Sole developer of the company's platform: step-by-step service requests, quoting, a service agreement in Arabic and English signed electronically, payment tracking, scheduling and an internal operations dashboard</li>
+        <li>Modelled the order lifecycle as a state machine, put every external provider behind a replaceable interface, and wrote 23 architecture decisions, with automated checks required before any merge</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="job-title">Platform and API integration developer</span>
+        <span class="job-date">Jul – Sep 2026</span>
+      </div>
+      <div class="job-company">Qawel Tech — Saudi Arabia</div>
+      <ul>
+        <li>Built most of the first version of an AI-assisted procurement platform for the construction sector: Next.js front end and FastAPI back end, integrated with the Arabic contract-analysis engine developed by a teammate</li>
+        <li>Led the Qawel.fin project on the company's behalf at the Amad 2026 Hackathon with a team of four, then handed the work over, documented, in September</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="row">
+        <span class="job-title">Founder and full-stack developer</span>
+        <span class="job-date">2025 – Present</span>
+      </div>
+      <div class="job-company">Mustaqbal Hulul AlTaqniyah Est. (HuloolFuture) — Riyadh</div>
+      <ul>
+        <li>Launched AILine at huloolfuture.sa, a study companion for university students in Arabic and English</li>
+        <li>Reviewed the security of the API before launch and fixed two critical authentication flaws; manage deployment and the cloud accounts myself</li>
+      </ul>
     </div>
   </div>
 
-  <!-- BODY -->
-  <div class="body">
+  <div class="section">
+    <h2 class="section-title">Skills</h2>
+    <p class="skill-line"><strong>Backend:</strong> Python, Django, FastAPI, PostgreSQL, REST APIs</p>
+    <p class="skill-line"><strong>Frontend:</strong> Next.js, React, TypeScript, Tailwind CSS</p>
+    <p class="skill-line"><strong>AI:</strong> LLM APIs, Ollama (self-hosted models), Arabic OCR</p>
+    <p class="skill-line"><strong>Integrations:</strong> Paymob, Zoho Sign, Resend, Webhooks</p>
+    <p class="skill-line"><strong>Access &amp; security:</strong> Roles &amp; permissions, 2FA, Supabase RLS, Audit logging</p>
+    <p class="skill-line"><strong>Cloud &amp; delivery:</strong> Azure, Vercel, Cloudflare Workers, Docker, CI/CD, Git</p>
+  </div>
 
-    <!-- MAIN COLUMN -->
-    <div class="main">
+  <div class="section">
+    <h2 class="section-title">Projects</h2>
 
-      <!-- PROFILE -->
-      <div class="section profile">
-        <div class="section-title">Profile</div>
-        <p>Full-stack developer leading production platforms from idea to launch. Currently handling API integration at Qawel Tech and leading the build of the full WashX platform (booking, e-signed agreements, payments), alongside founder products under Mustaqbal Hulul AlTaqniyah. Specializes in AI-integrated, Arabic-first applications — from architecture to production.</p>
+    <div class="project">
+      <div class="row">
+        <span class="project-name">Event-resource booking platform</span>
+        <span class="job-date">Co-op · Internal trial · Private repository</span>
       </div>
+      <div class="project-stack">Your Vision — Django, PostgreSQL, Azure, GitHub Actions, 2FA</div>
+      <p>The customer browses a catalogue, builds a request for their event dates, and receives a quote from the company's team to accept. Availability is enforced in the database itself, so a resource cannot be reserved for two customers in the same period even when both requests arrive at once.</p>
+    </div>
 
-      <!-- EXPERIENCE -->
-      <div class="section">
-        <div class="section-title">Experience</div>
-
-        <div class="job">
-          <div class="job-header">
-            <span class="job-title">Technical Lead — WashX Platform</span>
-            <span class="job-date">Aug 2026 – Present</span>
-          </div>
-          <div class="job-company">WashX — drone-based facade &amp; solar panel cleaning &nbsp;·&nbsp; Saudi Arabia</div>
-          <ul>
-            <li>Leading the build of the company's full platform: multi-step booking, bilingual service agreements with e-signature, payment tracking, and an internal operations dashboard</li>
-            <li>Designed the architecture — Next.js + TypeScript + Supabase (RLS everywhere), an order-lifecycle state machine, and adapter interfaces for every external provider (Paymob, Zoho Sign, Resend, n8n)</li>
-            <li>Established engineering governance: 19 documented architecture decision records, mandatory CI quality gates, and a PDPL-compliant security checklist</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-header">
-            <span class="job-title">API Integration Developer</span>
-            <span class="job-date">Jul 2026 – Present</span>
-          </div>
-          <div class="job-company">Qawel Tech &nbsp;·&nbsp; Saudi Arabia</div>
-          <ul>
-            <li>Own API integration across the company's systems — endpoint design, JWT authentication, input validation, and documentation</li>
-            <li>Represented the company at the Amad 2026 Hackathon with Qawel.fin as <strong>Project Manager</strong> — led a team of four, driving delivery through a PRD, architecture decision records, and a daily delivery plan</li>
-            <li>Delivered a fully live end-to-end platform in 6 days — from registration to financing recommendation — with a risk-scoring model running in production before submission closed</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-header">
-            <span class="job-title">Full-Stack Developer &amp; Founder</span>
-            <span class="job-date">2025 – Present</span>
-          </div>
-          <div class="job-company">Mustaqbal Hulul AlTaqniyah (HuloolFuture) &nbsp;·&nbsp; Riyadh, SA</div>
-          <ul>
-            <li>Shipped AILine to production — AI-powered academic assistant live at huloolfuture.sa, serving university students</li>
-            <li>Conducted a security audit across 167+ API endpoints; identified and patched 2 critical authentication vulnerabilities pre-launch</li>
-            <li>Manages full cloud infrastructure: Apple Developer Organization, EAS Build (iOS/Android), Vercel, Cloudflare R2, Google Cloud</li>
-          </ul>
-        </div>
-
+    <div class="project">
+      <div class="row">
+        <span class="project-name">AILine — Study companion for university students</span>
+        <span class="job-date">Live: <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer">huloolfuture.sa</a></span>
       </div>
+      <div class="project-stack">A HuloolFuture product — Next.js, TypeScript, Supabase, LLM APIs</div>
+      <p>Reads a student's timetable from a photo or file, links exam dates to courses, and builds a day-by-day study plan, with a chat assistant that knows the student's courses.</p>
+    </div>
 
-      <!-- PROJECTS -->
-      <div class="section">
-        <div class="section-title">Projects</div>
-
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">Qawel.fin — AI Financing Bridge</span>
-            <span class="project-status status-live">Live · qawelfin.vercel.app</span>
-          </div>
-          <div class="project-stack">FastAPI · Next.js · PostgreSQL · Ollama (LLaMA 3.1) · Arabic OCR &nbsp;·&nbsp; Amad 2026 · Project Manager</div>
-          <p>Analyzes construction contracts automatically (Arabic OCR + self-hosted LLM), AI-verifies documents with tamper detection, and computes a transparent 0–100 risk score with an Arabic financing recommendation. Built with a team of four including a university colleague — client data never leaves our infrastructure.</p>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">AILine — AI Study Platform</span>
-            <span class="project-status status-live">Live · huloolfuture.sa</span>
-          </div>
-          <div class="project-stack">Next.js 15 · TypeScript · Supabase · LLM APIs</div>
-          <p>Parses student schedules, generates personalized study plans via LLM, and provides a course-aware study chatbot. Bilingual Arabic/English.</p>
-        </div>
-
-        <div class="project">
-          <div class="project-header">
-            <span class="project-name">Almorashih — Property AI Assistant</span>
-            <span class="project-status status-live">Live · technyaty.com</span>
-          </div>
-          <div class="project-stack">FastAPI · GraphQL · NLP · Python &nbsp;·&nbsp; ROSHN Hackathon 2025 · Team of 4</div>
-          <p>AI assistant matching students and new employees to suitable housing. Built for the ROSHN Hackathon 2025, then shipped independently at technyaty.com.</p>
-        </div>
-
+    <div class="project">
+      <div class="row">
+        <span class="project-name">Qawel.fin — Construction-finance risk assessment</span>
+        <span class="job-date"><a href="https://qawelfin.vercel.app" target="_blank" rel="noopener noreferrer">qawelfin.vercel.app</a></span>
       </div>
+      <div class="project-stack">Amad 2026 Hackathon · Project lead — FastAPI, Next.js, PostgreSQL, Ollama, Arabic OCR</div>
+      <p>Reads Arabic construction contracts, checks the supporting documents for tampering, and returns a 0–100 risk score with a written, reasoned financing recommendation. The language model was self-hosted, so documents were not sent to an outside provider.</p>
+    </div>
 
-    </div><!-- /main -->
+    <p><strong>ROSHN Hackathon 2025:</strong> Almorashih, an Arabic real-estate search assistant built in a team of four.</p>
+  </div>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-
-      <!-- SKILLS -->
-      <div class="section">
-        <div class="section-title">Skills</div>
-
-        <div class="skill-group">
-          <div class="skill-label">Frontend</div>
-          <div class="skill-list">Next.js, TypeScript, Tailwind CSS, React Native, Shadcn/ui</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">Backend</div>
-          <div class="skill-list">FastAPI, Python, PostgreSQL, Supabase, Node.js, REST APIs</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">AI &amp; LLM</div>
-          <div class="skill-list">Ollama (self-hosted LLaMA), Arabic OCR, Claude API, Arabic NLP, Prompt Engineering</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">Integrations</div>
-          <div class="skill-list">Paymob, Zoho Sign, Resend, n8n, Webhooks</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">Deploy &amp; Ops</div>
-          <div class="skill-list">Vercel, Railway, Docker, CI/CD, EAS Build, Cloudflare</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">Security</div>
-          <div class="skill-list">JWT, Supabase RLS, Auth Auditing, Rate Limiting, PDPL</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-label">Specialties</div>
-          <div class="skill-list">Arabic RTL UI, Bilingual AR/EN, Project Management, ADR Documentation</div>
-        </div>
+  <div class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-item">
+      <div class="row">
+        <span class="edu-name">B.Sc. Computer Science</span>
+        <span class="edu-date">2024 – Present</span>
       </div>
+      <div class="edu-school">Arab Open University — Riyadh</div>
+    </div>
+    <p><strong>Vice head, technical committee</strong> — University AI Club — Oct 2026 – Present</p>
+  </div>
 
-      <!-- EDUCATION -->
-      <div class="section">
-        <div class="section-title">Education</div>
-        <div class="edu-name">B.Sc. Computer Science</div>
-        <div class="edu-school">Arab Open University (AOU)</div>
-        <div class="edu-date">2024 – Present · Riyadh</div>
-      </div>
+  <div class="section">
+    <h2 class="section-title">Languages</h2>
+    <p class="lang-line">Arabic — Native</p>
+    <p class="lang-line">English — Working</p>
+  </div>
 
-      <!-- TRAINING -->
-      <div class="section">
-        <div class="section-title">Training</div>
-        <ul class="training-list">
-          <li>Cybersecurity Fundamentals</li>
-          <li>Information Security</li>
-          <li>Data Management &amp; Analysis</li>
-          <li>Programming</li>
-        </ul>
-      </div>
-
-    </div><!-- /sidebar -->
-
-  </div><!-- /body -->
-
-</div><!-- /page -->
+</div>
 </body>
 </html>

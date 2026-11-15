@@ -5,33 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"/>
 <meta name="referrer" content="no-referrer"/>
+<script>
+/* Apply the saved theme and language before first paint. */
+(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme'),l=localStorage.getItem('lang');
+if(t==='light'||t==='dark')d.setAttribute('data-theme',t);
+if(l==='en'){d.setAttribute('data-lang','en');d.lang='en';d.dir='ltr';}}catch(e){}})();
+</script>
 
 <!-- Identity & SEO -->
-<title>يوسف عبدالعال — مطوّر برمجيات ومنشئ منتجات AI</title>
-<meta name="description" content="Yousef Abdulaal — Full-Stack Engineer and founder shipping production AI products: SaaS platforms, mobile apps, and Arabic-first software built for real users."/>
+<title>يوسف عبدالعال — مطوّر Full-Stack</title>
+<meta name="description" content="يوسف عبدالعال، طالب علوم حاسب ومطوّر Full-Stack في الرياض: منصات حجز وتشغيل، ومزايا ذكاء اصطناعي داخل المنتجات. Yousef Abdulaal — computer science student and full-stack developer in Riyadh."/>
 <meta name="author" content="Yousef Abdulaal"/>
 <meta name="theme-color" content="#070B12" id="metaThemeColor"/>
+<link rel="canonical" href="https://yousef-abdulaal.vercel.app/"/>
 
-<!-- Favicon — inline SVG, no external dependency -->
+<!-- Favicon — inline SVG, plus a PNG for iOS home screen -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C9A557'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Inter%2Csans-serif' font-size='13' font-weight='700' letter-spacing='.04em' fill='%23070B12'%3EYA%3C/text%3E%3C/svg%3E"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile"/>
-<meta property="og:title" content="Yousef Abdulaal — Full-Stack Engineer & AI Product Builder"/>
-<meta property="og:description" content="Software engineer and founder shipping production AI products — SaaS platforms, mobile apps, and Arabic-first software used by real people."/>
+<meta property="og:url" content="https://yousef-abdulaal.vercel.app/"/>
+<meta property="og:title" content="يوسف عبدالعال — مطوّر Full-Stack"/>
+<meta property="og:description" content="طالب علوم حاسب ومطوّر Full-Stack في الرياض. منصات حجز وتشغيل، ومزايا ذكاء اصطناعي داخل المنتجات."/>
 <meta property="og:site_name" content="Yousef Abdulaal"/>
 <meta property="og:locale" content="ar_SA"/>
 <meta property="og:locale:alternate" content="en_US"/>
+<meta property="og:image" content="https://yousef-abdulaal.vercel.app/og.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Yousef Abdulaal — Full-stack developer, Riyadh"/>
+<meta property="profile:first_name" content="Yousef"/>
+<meta property="profile:last_name" content="Abdulaal"/>
 
 <!-- Twitter / X Card -->
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Yousef Abdulaal — Full-Stack Engineer & AI Product Builder"/>
-<meta name="twitter:description" content="Software engineer and founder shipping production AI products — SaaS platforms, mobile apps, and Arabic-first software."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Yousef Abdulaal — Full-stack developer"/>
+<meta name="twitter:description" content="Computer science student and full-stack developer in Riyadh. Booking and operations platforms, and AI features built into products."/>
+<meta name="twitter:image" content="https://yousef-abdulaal.vercel.app/og.jpg"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yousef Abdulaal",
+  "alternateName": "يوسف عبدالعال",
+  "url": "https://yousef-abdulaal.vercel.app/",
+  "image": "https://yousef-abdulaal.vercel.app/og.jpg",
+  "jobTitle": "Full-stack developer",
+  "address": { "@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA" },
+  
+  "knowsLanguage": ["ar", "en"],
+  "sameAs": [
+    "https://www.linkedin.com/in/yousef-abdulaal",
+    "https://github.com/jdf55",
+    "https://qabilah.com/profile/yousef-abdulaal/professional-profile"
+  ]
+}
+</script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet"/>
 <style>
 /* ─── TOKENS ─── */
 :root {
@@ -51,7 +87,7 @@
   --bg4:         #152238;
   --text:        #E2E7EF;
   --text-muted:  #8593A9;
-  --text-dim:    #45526A;
+  --text-dim:    #7A88A0;
   --border:      rgba(226,231,239,0.08);
   --border-dim:  rgba(226,231,239,0.05);
   --shadow:      0 20px 60px rgba(0,0,0,0.60);
@@ -65,10 +101,10 @@
 }
 
 [data-theme="light"] {
-  --accent:        #8A6D2F;
-  --accent-light:  #A98A45;
-  --accent-dim:    rgba(138,109,47,0.08);
-  --accent-border: rgba(138,109,47,0.28);
+  --accent:        #7A5F24;
+  --accent-light:  #8A6D2F;
+  --accent-dim:    rgba(122,95,36,0.08);
+  --accent-border: rgba(122,95,36,0.30);
   --bg:         #F8F7F4;
   --bg2:        #F0EEE9;
   --bg3:        #E7E4DD;
@@ -92,19 +128,19 @@
 [data-theme="light"] .skill-row{border-color:rgba(16,20,29,0.1);}
 [data-theme="light"] .contact-link{border-color:rgba(16,20,29,0.12);background:rgba(255,255,255,0.6);}
 [data-theme="light"] .contact-link:hover{background:rgba(138,109,47,0.08);}
-[data-theme="light"] .tag,[data-theme="light"] [class*="tag"]{background:rgba(16,20,29,0.06)!important;border:1px solid rgba(16,20,29,0.10)!important;color:#4A4128!important;}
+[data-theme="light"] .tag{background:rgba(16,20,29,0.06)!important;border:1px solid rgba(16,20,29,0.10)!important;color:#4A4128!important;}
 
 
 /* ─── RESET ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;overflow-x:hidden;}
+html{scroll-behavior:smooth;overflow-x:hidden;scroll-padding-top:84px;}
 body{
   background:var(--bg);
   color:var(--text);font-family:var(--font-ar);
   line-height:1.7;overflow-x:hidden;
   overscroll-behavior-x:none;
-  transition:background-color .3s,color .3s;
 }
+.ready body{transition:background-color .3s,color .3s;}
 [data-lang="en"] body{font-family:var(--font-en);}
 
 /* language */
@@ -112,9 +148,18 @@ body{
 [data-lang="en"] .ar{display:none!important;}
 
 
-::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar{width:8px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+::-webkit-scrollbar-thumb{background:var(--accent-border);border-radius:4px;}
+
+/* ─── GRAIN ─── */
+.grain{
+  position:fixed;inset:0;z-index:240;pointer-events:none;
+  opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:140px 140px;
+}
+[data-theme="light"] .grain{opacity:.025;mix-blend-mode:multiply;}
 
 /* ─── NAV ─── */
 nav{
@@ -122,7 +167,7 @@ nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:18px 60px;
   background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--border-dim);transition:all .3s;
+  border-bottom:1px solid var(--border-dim);transition:padding .3s,box-shadow .3s;
 }
 nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
 
@@ -148,7 +193,6 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
   height:1.5px;background:var(--accent);
   transform:scaleX(0);
   transition:transform .18s ease-out;
-  transform-origin:start;
 }
 .nav-links a:hover{color:var(--accent);}
 .nav-links a:hover::after{transform:scaleX(1);}
@@ -182,11 +226,13 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
 .mobile-menu{
   display:none;position:fixed;top:0;left:0;right:0;bottom:0;
   background:var(--bg);z-index:190;
-  flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  flex-direction:column;align-items:center;justify-content:safe center;gap:6px;
+  padding:76px 0 24px;overflow-y:auto;
 }
+html:has(body.menu-open),body.menu-open{overflow:hidden;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{
-  color:var(--text-dim);text-decoration:none;
+  color:var(--text-muted);text-decoration:none;
   font-size:1.3rem;font-weight:500;letter-spacing:.02em;
   padding:14px 48px;border-radius:10px;
   width:100%;max-width:300px;text-align:center;
@@ -207,8 +253,9 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
   align-items:center;gap:3rem;
   max-width:1100px;width:100%;
 }
+.hero-photo{width:fit-content;max-width:100%;justify-self:center;}
 .hero-photo img{
-  width:100%;max-width:380px;
+  width:100%;max-width:380px;height:auto;
   border-radius:20px;display:block;
 }
 
@@ -221,7 +268,7 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
   padding:8px 20px;border-radius:6px;margin-bottom:32px;
   opacity:0;animation:fadeUp .8s .2s forwards;
 }
-[data-lang="ar"] .hero-eyebrow{font-family:var(--font-ar);letter-spacing:0;font-size:.8rem;}
+[data-lang="ar"] .hero-eyebrow{font-family:var(--font-ar);letter-spacing:0;font-size:.8rem;text-transform:none;}
 .hero-eyebrow::before{
   content:'';width:6px;height:6px;background:var(--accent);
   border-radius:50%;flex-shrink:0;
@@ -229,19 +276,20 @@ nav.scrolled{padding:12px 60px;box-shadow:var(--shadow-sm);}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
 
 .hero-name{
-  font-family:var(--font-ar);font-size:clamp(2.8rem,6.5vw,5.75rem);font-weight:800;
+  font-family:var(--font-ar);font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:800;
   line-height:1.05;color:var(--text);letter-spacing:-.02em;
-  margin-bottom:10px;opacity:0;animation:fadeUp .8s .4s forwards;
+  margin-bottom:10px;opacity:0;animation:fadeUpBlur 1s .4s forwards;
 }
 [data-lang="en"] .hero-name{font-family:var(--font-en);font-size:clamp(2.4rem,6vw,5.25rem);}
 .hero-name .hl{color:var(--accent);}
 
 .hero-title{
-  font-family:var(--font-en);font-size:clamp(.9rem,1.8vw,1.1rem);font-weight:300;
-  color:var(--text-muted);letter-spacing:.05em;margin-bottom:28px;
+  font-family:var(--font-en);font-size:clamp(1rem,1.9vw,1.2rem);font-weight:500;
+  color:var(--text);letter-spacing:.01em;margin-bottom:22px;
   opacity:0;animation:fadeUp .8s .6s forwards;
 }
 [data-lang="ar"] .hero-title{font-family:var(--font-ar);letter-spacing:0;}
+[data-lang="ar"] .card-sub{font-family:var(--font-ar);}
 
 .hero-desc{
   font-size:1.05rem;font-weight:400;color:var(--text-muted);
@@ -354,7 +402,7 @@ section{
 /* ─── PROJECTS ─── */
 #projects{background:var(--bg);}
 .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;}
-.projects-header .section-sub{text-align:right;}
+.projects-header .section-sub{text-align:end;}
 
 .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;}
 .project-card{
@@ -365,6 +413,7 @@ section{
 }
 .project-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:var(--shadow);}
 .project-card.live{border-top:2px solid var(--emerald);}
+.project-card.live:hover{border-color:var(--emerald-dim);box-shadow:0 20px 50px rgba(52,211,153,.14),var(--shadow);}
 .project-card.dev{border-top:2px solid var(--accent-border);}
 
 .card-inner{padding:0;display:flex;flex-direction:column;flex:1;}
@@ -381,7 +430,7 @@ section{
 .badge-project{background:rgba(255,255,255,.05);color:var(--text-dim);border:1px solid var(--border-dim);}
 
 .card-title{font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3;}
-.card-title-en{font-family:var(--font-en);font-size:.77rem;color:var(--text-dim);margin-bottom:16px;font-style:italic;}
+.card-sub{font-size:.8rem;color:var(--text-dim);margin-bottom:16px;}
 .card-desc{font-size:.9rem;color:var(--text-muted);line-height:1.85;margin-bottom:24px;flex:1;}
 .card-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;}
 .tag{
@@ -420,13 +469,23 @@ section{
   color:var(--accent);
 }
 .small-card-icon svg{width:20px;height:20px;}
-.small-card-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px;margin-top:10px;}
+.small-card-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px;margin-top:0;}
+.small-card{display:flex;flex-direction:column;}
+.small-card .card-badge{font-size:.64rem;padding:3px 10px;margin-bottom:14px;}
+.small-card-desc{flex:1;}
+.small-link{
+  display:inline-flex;align-items:center;gap:6px;align-self:flex-start;
+  font-size:.78rem;font-weight:500;color:var(--accent);text-decoration:none;
+  border-bottom:1px solid var(--accent-border);padding-bottom:1px;
+}
+.small-link:hover{border-bottom-color:var(--accent);}
 .small-card-desc{font-size:.82rem;color:var(--text-dim);line-height:1.75;}
-.small-card .card-tags{margin-top:12px;}
+.small-card .card-tags{margin-top:14px;margin-bottom:14px;}
+.small-card .card-tags:last-child{margin-bottom:0;}
 
 /* ─── EXPERIENCE ─── */
 #experience{background:var(--bg);}
-.xp-list{margin-top:48px;max-width:780px;display:flex;flex-direction:column;}
+.xp-list{margin-top:48px;max-width:900px;display:flex;flex-direction:column;}
 .xp-item{
   display:grid;grid-template-columns:170px 1fr;gap:24px;
   padding:28px 0;border-bottom:1px solid var(--border-dim);
@@ -446,8 +505,8 @@ section{
 /* ─── SKILLS ─── */
 #skills{background:var(--bg2);}
 .skills-two-col{
-  display:block;
-  margin-top:48px;max-width:600px;
+  display:grid;grid-template-columns:1.25fr 1fr;gap:64px;
+  margin-top:48px;align-items:start;
 }
 .skill-col-head{
   font-family:var(--font-mono);font-size:.68rem;font-weight:500;
@@ -456,23 +515,36 @@ section{
 }
 [data-lang="ar"] .skill-col-head{font-family:var(--font-ar);letter-spacing:0;font-size:.8rem;font-weight:600;text-transform:none;}
 .skill-row{
-  display:grid;grid-template-columns:90px 1fr;gap:16px;
-  padding:11px 0;border-bottom:1px solid var(--border-dim);
+  display:grid;grid-template-columns:132px 1fr;gap:16px;
+  padding:13px 0;border-bottom:1px solid var(--border-dim);
   align-items:baseline;
 }
+.skill-row:first-child{border-top:1px solid var(--border-dim);}
 .skill-row:last-child{border-bottom:none;}
 .skill-cat{
   font-family:var(--font-en);font-size:.63rem;font-weight:600;
   letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);
   padding-top:2px;
 }
+[data-lang="ar"] .skill-cat{font-family:var(--font-ar);letter-spacing:0;text-transform:none;font-size:.78rem;}
 .skill-vals{
-  font-family:var(--font-en);font-size:.83rem;
-  color:var(--text-muted);line-height:1.65;
+  font-family:var(--font-en);font-size:.85rem;
+  color:var(--text-muted);line-height:1.65;text-align:start;
+}
+[dir="rtl"] .skill-vals{text-align:right;}
+[data-lang="ar"] .skill-vals{font-family:'IBM Plex Sans','Cairo',sans-serif;}
+.edu-col .edu-card{margin-top:0;}
+.edu-notes{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px;}
+.edu-notes li{
+  position:relative;padding-inline-start:18px;
+  font-size:.86rem;color:var(--text-muted);line-height:1.7;
+}
+.edu-notes li::before{
+  content:'';position:absolute;inset-inline-start:0;top:.72em;
+  width:6px;height:1px;background:var(--accent);
 }
 
 /* ─── EDUCATION ─── */
-#education{background:var(--bg);}
 .edu-card{
   display:flex;align-items:center;gap:24px;
   background:var(--bg2);border:1px solid var(--border-dim);
@@ -487,10 +559,9 @@ section{
 }
 .edu-logo svg{width:24px;height:24px;}
 .edu-info{flex:1;}
-.edu-uni{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+.edu-uni{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:4px;}
 .edu-degree{font-size:.84rem;color:var(--text-muted);margin-bottom:12px;font-family:var(--font-en);}
 [data-lang="ar"] .edu-degree{font-family:var(--font-ar);}
-[data-theme="light"] .tag{background:var(--bg2);}
 .edu-year{
   display:inline-block;font-family:var(--font-en);font-size:.72rem;font-weight:500;
   color:var(--accent);background:var(--accent-dim);
@@ -532,25 +603,28 @@ section{
   box-shadow:0 8px 24px rgba(201,165,87,.14);
 }
 .contact-link svg{width:16px;height:16px;flex-shrink:0;}
-.footer-copy{
-  margin-top:60px;font-family:var(--font-en);
-  font-size:.74rem;color:var(--text-dim);padding-bottom:40px;
+.contact-sub{margin:0 auto;text-align:center;max-width:520px;}
+.site-footer{
+  background:var(--bg2);border-top:1px solid var(--border-dim);
+  text-align:center;padding:26px 22px 30px;
+  font-size:.76rem;color:var(--text-dim);
 }
 
 /* ─── REVEAL ─── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-delay-1{transition-delay:.1s;}
-.reveal-delay-2{transition-delay:.2s;}
-.reveal-delay-3{transition-delay:.3s;}
-.reveal-delay-4{transition-delay:.4s;}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.js .reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.09s;}
+.reveal-delay-2{transition-delay:.17s;}
+.reveal-delay-3{transition-delay:.28s;}
+.reveal-delay-4{transition-delay:.36s;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUpBlur{from{opacity:0;transform:translateY(20px);filter:blur(10px);}to{opacity:1;transform:translateY(0);filter:blur(0);}}
 
 /* ─── CV VIEWER ─── */
 #cv{background:var(--bg);}
 
-.cv-viewer{margin-top:48px;max-width:860px;}
+.cv-viewer{margin-top:48px;max-width:868px;}
 
 .cv-toolbar{
   display:flex;align-items:center;justify-content:space-between;
@@ -563,7 +637,7 @@ section{
 }
 .pill-opt{
   font-family:var(--font-en);font-size:.75rem;font-weight:600;
-  padding:7px 22px;border-radius:7px;border:none;
+  padding:10px 22px;border-radius:7px;border:none;
   background:transparent;color:var(--text-muted);
   cursor:pointer;transition:all .18s;letter-spacing:.04em;
 }
@@ -587,6 +661,7 @@ section{
 [data-theme="light"] .cv-stage{background:#E9E6DF;}
 
 .cv-paper{
+  direction:ltr;
   max-width:794px;width:100%;margin:0 auto;
   border-radius:3px;overflow:hidden;
   box-shadow:
@@ -605,7 +680,7 @@ section{
 
 .cv-frame{
   width:794px;height:1123px;
-  border:none;display:block;
+  border:none;display:block;overflow:hidden;
   transform-origin:top left;pointer-events:none;
 }
 
@@ -636,7 +711,11 @@ section{
   background:var(--accent-dim);transform:translateY(-1px);
 }
 
+[data-lang="ar"] .cv-meta-line{font-family:var(--font-ar);letter-spacing:0;text-transform:none;font-size:.76rem;}
 @media(max-width:900px){
+  .cv-stage{padding:16px;}
+}
+@media(max-width:640px){
   .cv-stage{display:none;}
   .cv-toolbar{justify-content:center;}
   .cv-meta-line{display:none;}
@@ -644,7 +723,7 @@ section{
 
 /* ─── SCROLL PROGRESS ─── */
 #scroll-progress{
-  position:fixed;top:0;left:0;z-index:200;
+  position:fixed;top:0;inset-inline-start:0;z-index:210;
   height:2px;width:0%;
   background:linear-gradient(90deg,var(--accent),var(--accent-light));
   pointer-events:none;
@@ -666,14 +745,40 @@ section{
 /* ─── SECTION LABEL LINE DRAW ─── */
 .reveal.visible .section-label::after{width:20px;}
 
-/* ─── SKILL ROW STAGGER ─── */
-.skill-col .skill-row{
-  transform:translateY(8px);
-  transition:transform .4s cubic-bezier(.16,1,.3,1);
+/* ─── ABOUT: WHAT I WORK ON ─── */
+.work-head{
+  margin-top:34px;margin-bottom:14px;
+  font-size:.95rem;font-weight:700;color:var(--text);
 }
-.skill-col.reveal.visible .skill-row:nth-child(2){transform:translateY(0);transition-delay:.06s;}
-.skill-col.reveal.visible .skill-row:nth-child(3){transform:translateY(0);transition-delay:.14s;}
-.skill-col.reveal.visible .skill-row:nth-child(4){transform:translateY(0);transition-delay:.22s;}
+.work-list{list-style:none;display:flex;flex-direction:column;}
+.work-list li{
+  padding:13px 0;border-top:1px solid var(--border-dim);
+  font-size:.93rem;color:var(--text-muted);line-height:1.8;
+}
+.work-list li:last-child{border-bottom:1px solid var(--border-dim);}
+.work-list strong{color:var(--text);font-weight:600;}
+
+/* ─── ARABIC TEXT IN LATIN-FONT COMPONENTS ─── */
+[data-lang="ar"] .hero-pill,[data-lang="ar"] .card-badge,[data-lang="ar"] .card-link,
+[data-lang="ar"] .contact-link,[data-lang="ar"] .pill-opt,[data-lang="ar"] .edu-year,
+[data-lang="ar"] .small-link{font-family:var(--font-ar);letter-spacing:0;text-transform:none;}
+[data-lang="ar"] .card-badge{font-size:.72rem;}
+[data-lang="ar"] .hero-pill{font-size:.72rem;}
+
+/* ─── FOCUS + SKIP LINK ─── */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+.skip-link{
+  position:fixed;top:8px;inset-inline-start:8px;z-index:300;
+  background:var(--accent);color:#070B12;font-weight:700;font-size:.85rem;
+  padding:10px 16px;border-radius:8px;text-decoration:none;
+  transform:translateY(-200%);
+}
+.skip-link:focus{transform:none;}
+main:focus{outline:none;}
+
+/* ─── LIGHT THEME: BUTTON TEXT CONTRAST ─── */
+[data-theme="light"] .btn-primary,[data-theme="light"] .cv-dl-btn,[data-theme="light"] .skip-link{color:#FFFFFF;}
+[data-theme="light"] .nav-logo:hover .logo-mark{color:#FFFFFF;}
 
 /* ─── REDUCED MOTION ─── */
 @media(prefers-reduced-motion:reduce){
@@ -682,10 +787,11 @@ section{
     animation-iteration-count:1!important;
     transition-duration:.01ms!important;
   }
-  .reveal{opacity:1;transform:none;}
   .hero-eyebrow,.hero-name,.hero-title,.hero-desc,.hero-cta,.hero-photo img{opacity:1;animation:none;}
   .section-label::after{width:20px;transition:none;}
-  .skill-col .skill-row{transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+  html .hero-pill{animation:none;opacity:1;}
+  .js .reveal{opacity:1;transform:none;}
 }
 
 /* ─── RESPONSIVE ─── */
@@ -703,8 +809,11 @@ section{
   #about{grid-template-columns:1fr;gap:40px;}
   .featured-grid{grid-template-columns:1fr;}
   .small-grid{grid-template-columns:1fr 1fr;}
+  .skills-two-col{grid-template-columns:1fr;gap:36px;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
+  .ctrl-btn,.hamburger{width:44px;height:44px;}
+  .lang-btn{width:auto;min-width:44px;}
   .projects-header{flex-direction:column;align-items:flex-start;gap:12px;}
   .projects-header .section-sub{text-align:start;}
 }
@@ -712,7 +821,7 @@ section{
   .small-grid{grid-template-columns:1fr;}
   .hero-cta{flex-direction:column;align-items:center;}
   .dl-row{grid-template-columns:64px 1fr;}
-  .skill-row{grid-template-columns:80px 1fr;}
+  .skill-row{grid-template-columns:1fr;gap:4px;}
   .contact-links{grid-template-columns:1fr;}
 }
 
@@ -737,11 +846,10 @@ section{
   background:var(--accent);flex-shrink:0;
 }
 [data-theme="light"] .hero-pill{background:#FFFFFF;box-shadow:0 4px 14px rgba(16,20,29,.13);}
-.hp1{top:9%;   right:-2px;  animation-delay:.85s,.85s;}
-.hp2{top:43%;  left:-12px;  animation-delay:1.05s,.55s;}
-.hp3{bottom:15%;right:5%;   animation-delay:1.25s,1.25s;}
-.hp4{top:20px; left:24%;    animation-delay:1.45s,.35s;}
-@media(max-width:900px){.hero-pill{display:none;}}
+.hp1{top:9%;   inset-inline-end:-14px;   animation-delay:.85s,.85s;}
+.hp2{top:43%;  inset-inline-start:-18px; animation-delay:1.05s,.55s;}
+.hp3{bottom:15%;inset-inline-end:-6px;   animation-delay:1.25s,1.25s;}
+.hp4{top:-8px; inset-inline-start:18%;   animation-delay:1.45s,.35s;}
 
 
 /* ─── ABOUT STATS ─── */
@@ -753,7 +861,7 @@ section{
 .big-stat-num{
   display:block;
   font-family:var(--font-en);font-size:clamp(2.8rem,5vw,4rem);
-  font-weight:800;color:var(--accent);line-height:1;letter-spacing:-.04em;
+  font-weight:700;color:var(--accent);line-height:1;letter-spacing:-.04em;
 }
 .big-stat-label{
   margin-top:6px;font-size:.72rem;font-weight:500;
@@ -804,25 +912,21 @@ section{
   }
   .hero-title{font-size:.85rem;text-align:center;}
   .hero-desc{font-size:.9rem;margin-bottom:28px;text-align:center;}
-  /* Eyebrow pill: truncate long text to one clean line */
+  /* Eyebrow pill: wrap instead of truncating */
   .hero-eyebrow{
-    max-width:calc(100vw - 44px);overflow:hidden;
-    align-self:center;
-  }
-  .hero-eyebrow .ar,.hero-eyebrow .en{
-    white-space:nowrap;overflow:hidden;
-    text-overflow:ellipsis;min-width:0;
+    max-width:100%;align-self:center;text-align:center;
+    line-height:1.6;letter-spacing:.08em;padding:8px 16px;margin-bottom:22px;
   }
   /* Hero photo: shrink-wrap to image so pills position correctly */
   .hero-photo{width:fit-content;margin:0 auto;}
   .hero-photo img{max-width:240px;width:240px;}
   /* Hero pills: show on mobile, scaled down */
-  .hero-pill{display:inline-flex;font-size:.52rem;padding:5px 10px;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.32);}
+  .hero-pill{display:inline-flex;font-size:.62rem;padding:5px 10px;gap:5px;box-shadow:0 3px 10px rgba(0,0,0,.32);}
+  [data-lang="ar"] .hero-pill{font-size:.66rem;}
+  .hp3,.hp4{display:none;}
   .hero-pill::before{width:4px;height:4px;}
-  .hp1{top:5%;right:4px;}
-  .hp2{top:40%;left:4px;}
-  .hp3{bottom:10%;right:6%;}
-  .hp4{top:12px;left:20%;}
+  .hp1{top:6%;inset-inline-end:-6px;}
+  .hp2{top:44%;inset-inline-start:-10px;}
   /* Smaller section headings */
   .section-title{font-size:clamp(1.5rem,6.5vw,2rem);}
   /* About stats: center the row on mobile */
@@ -843,18 +947,20 @@ section{
   #hero{padding-top:64px;padding-bottom:36px;}
   .hero-name{font-size:clamp(1.75rem,9.5vw,2.3rem);}
   .big-stat-num{font-size:1.8rem;}
-  .about-stats{gap:12px;padding-top:18px;}
+  .about-stats{gap:16px;padding-top:18px;flex-direction:column;align-items:flex-start;}
 }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main"><span class="ar">انتقل إلى المحتوى</span><span class="en">Skip to content</span></a>
 <div id="scroll-progress" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
 
 <!-- ═══ NAV ═══ -->
-<nav id="navbar">
+<nav id="navbar" aria-label="Primary">
   <a href="#hero" class="nav-logo">
-    <div class="logo-mark">YA</div>
+    <div class="logo-mark" aria-hidden="true">YA</div>
     <span class="logo-name">
       <span class="ar">يوسف عبدالعال</span>
       <span class="en">Yousef Abdulaal</span>
@@ -866,27 +972,27 @@ section{
     <li><a href="#experience"><span class="ar">الخبرة</span><span class="en">Experience</span></a></li>
     <li><a href="#projects"><span class="ar">المشاريع</span><span class="en">Projects</span></a></li>
     <li><a href="#skills">  <span class="ar">المهارات</span><span class="en">Skills</span>   </a></li>
-    <li><a href="#cv">      <span class="ar">السيرة</span>  <span class="en">Resume</span>   </a></li>
+    <li><a href="#cv">      <span class="ar">السيرة</span>  <span class="en">CV</span>   </a></li>
     <li><a href="#contact"> <span class="ar">تواصل</span>   <span class="en">Contact</span>  </a></li>
   </ul>
 
   <div class="nav-controls">
-    <button class="ctrl-btn lang-btn" id="langToggle" title="Switch language">
-      <span class="ar">EN</span><span class="en">AR</span>
+    <button type="button" class="ctrl-btn lang-btn" id="langToggle" title="Switch language" aria-label="Switch language">
+      <span class="ar">EN</span><span class="en">ع</span>
     </button>
-    <button class="ctrl-btn" id="themeToggle" title="Toggle theme">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button type="button" class="ctrl-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+      <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="5"/>
         <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
         <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
         <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
       </svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+      <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
         <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
       </svg>
     </button>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -898,26 +1004,27 @@ section{
   <a href="#experience"><span class="ar">الخبرة</span> <span class="en">Experience</span></a>
   <a href="#projects"> <span class="ar">المشاريع</span><span class="en">Projects</span></a>
   <a href="#skills">   <span class="ar">المهارات</span><span class="en">Skills</span>   </a>
-  <a href="#cv">      <span class="ar">السيرة</span>  <span class="en">Resume</span>  </a>
+  <a href="#cv">      <span class="ar">السيرة</span>  <span class="en">CV</span>  </a>
   <a href="#contact">  <span class="ar">تواصل</span>   <span class="en">Contact</span>  </a>
 </div>
 
 <!-- ═══ HERO ═══ -->
+<main id="main" tabindex="-1">
 <section id="hero">
   <div class="hero-inner">
 
     <div class="hero-photo">
-      <img src="yousef_photo.png" alt="Yousef Abdulaal" loading="eager"/>
-      <span class="hero-pill hp1"><span class="ar">تكامل API</span><span class="en">API Integration</span></span>
-      <span class="hero-pill hp2">Full-Stack</span>
-      <span class="hero-pill hp3"><span class="ar">مدير مشروع</span><span class="en">Project Manager</span></span>
-      <span class="hero-pill hp4"><span class="ar">AI · عربي أولاً</span><span class="en">AI-Powered</span></span>
+      <img src="yousef_photo.webp" alt="يوسف عبدالعال — Yousef Abdulaal" width="855" height="1280" fetchpriority="high" decoding="async"/>
+      <span class="hero-pill hp1" aria-hidden="true"><span class="ar">أنظمة حجز وتشغيل</span><span class="en">Booking &amp; operations</span></span>
+      <span class="hero-pill hp2" aria-hidden="true">Full-Stack</span>
+      <span class="hero-pill hp3" aria-hidden="true">Django · Next.js</span>
+      <span class="hero-pill hp4" aria-hidden="true"><span class="ar">تكامل الذكاء الاصطناعي</span><span class="en">AI integration</span></span>
     </div>
 
     <div class="hero-text">
       <div class="hero-eyebrow">
-        <span class="ar">مطوّر برمجيات · مؤسس · الرياض، المملكة العربية السعودية</span>
-        <span class="en">Software Engineer · Founder · Riyadh, Saudi Arabia</span>
+        <span class="ar">طالب علوم حاسب · مطوّر Full-Stack · الرياض</span>
+        <span class="en">Computer science student · Full-stack developer · Riyadh</span>
       </div>
 
       <h1 class="hero-name">
@@ -926,29 +1033,30 @@ section{
       </h1>
 
       <p class="hero-title">
-        <span class="ar">مطوّر Full-Stack · منشئ منتجات AI · برمجيات عربية أولاً</span>
-        <span class="en">Full-Stack Engineer · AI Product Builder · Arabic-First Software</span>
+        <span class="ar">أبني منصات ويب متكاملة ومنتجات فيها مزايا ذكاء اصطناعي</span>
+        <span class="en">I build full-stack web platforms and AI-integrated products</span>
       </p>
 
       <p class="hero-desc">
         <span class="ar">
-          أقود منصات إنتاجية من الفكرة إلى الإطلاق — تكامل أنظمة عبر الـ API مع قاول تيك،
-          قيادة بناء منصة WashX، ومنتجات AI عربية أولاً تحت مظلتي الخاصة.
+          أدرس علوم الحاسب في الجامعة العربية المفتوحة، وأتدرّب في شركة رؤيتك ضمن برنامج التدريب التعاوني، حيث بنيت معظم النظام الخلفي لمنصة حجز موارد الفعاليات.
+          أغلب عملي في أنظمة الحجز والتشغيل، ولي منتج يعمل اليوم هو AILine أطلقته عبر مؤسستي.
         </span>
         <span class="en">
-          I lead production platforms from idea to launch — API integration at Qawel Tech,
-          leading the WashX platform build, and shipping Arabic-first AI products under my own establishment.
+          I study computer science at Arab Open University and work as a co-op trainee at Your Vision,
+          where I built most of the backend of an event-resource booking platform.
+          Most of my work is in booking and operations systems, and I run one live product, AILine, launched through my own establishment.
         </span>
       </p>
 
       <div class="hero-cta">
-        <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          <span class="ar">زيارة Hulool Future ↗</span>
-          <span class="en">Visit Hulool Future ↗</span>
-        </a>
-        <a href="#projects" class="btn-secondary">
+        <a href="#projects" class="btn-primary">
           <span class="ar">استعراض المشاريع</span>
-          <span class="en">View Projects</span>
+          <span class="en">View projects</span>
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <span class="ar">تواصل معي</span>
+          <span class="en">Get in touch</span>
         </a>
       </div>
     </div>
@@ -961,74 +1069,82 @@ section{
   <div class="about-text reveal">
     <div class="section-label"><span class="ar">نبذة</span><span class="en">About</span></div>
     <h2 class="section-title">
-      <span class="ar">مطوّر يبني<br/><span style="color:var(--accent)">حلولاً تُحدث أثراً</span></span><span class="en">A Developer Who Builds<br/><span style="color:var(--accent)">Solutions That Matter</span></span>
+      <span class="ar">نبذة عني</span><span class="en">About me</span>
     </h2>
     <p>
       <span class="ar">
-        أنا <strong>يوسف عبدالعال</strong> — مطوّر برمجيات ومؤسس، أطلق منتجات AI تحت مظلة
-        <strong>مؤسسة مستقبل حلول التقنية</strong>.
+        أنا <strong>يوسف عبدالعال</strong>، طالب علوم حاسب في الجامعة العربية المفتوحة بالرياض،
+        وأعمل في تطوير الويب منذ 2025.
       </span>
       <span class="en">
-        I'm <strong>Yousef Abdulaal</strong> — software engineer and founder, shipping production
-        AI products under <strong>Mustaqbal Hulul AlTaqniyah Establishment</strong>.
+        I'm <strong>Yousef Abdulaal</strong>, a computer science student at Arab Open University in Riyadh.
+        I have been building for the web since 2025.
       </span>
     </p>
     <p>
       <span class="ar">
-        اليوم أعمل مع <strong>قاول تيك</strong> على ربط أنظمة الشركة عبر الـ <span class="hl">API</span>،
-        وشاركت معهم في هاكاثون أمد 2026 بدور <strong>مدير المشروع</strong> لمنصة Qawel.fin —
-        وسلّمنا منصة مباشرة كاملة خلال ستة أيام.
-        كما أقود بناء منصة <strong>WashX</strong> الضخمة: حجوزات، عقود بتوقيع إلكتروني، مدفوعات، وعمليات.
+        أغلب ما بنيته أنظمة يمرّ فيها الطلب من الحجز إلى التشغيل:
+        منصة حجز موارد الفعاليات في شركة <strong>رؤيتك</strong> خلال تدريبي التعاوني،
+        ومنصة <strong>WashX</strong> للحجوزات والعقود ومتابعة الدفع.
+        ولي كذلك منتج <strong>AILine</strong> الذي أطلقته عبر مؤسستي «مستقبل حلول التقنية».
       </span>
       <span class="en">
-        Today I handle <span class="hl">API integration</span> at <strong>Qawel Tech</strong>,
-        and represented them at the Amad 2026 Hackathon as <strong>Project Manager</strong> of Qawel.fin —
-        shipping a fully live platform in six days.
-        I also lead the build of the full <strong>WashX</strong> platform: booking, e-signed agreements, payments, and operations.
+        Most of what I have built takes a request from booking through to operations:
+        the event-resource booking platform at <strong>Your Vision</strong> during my co-op
+        and the <strong>WashX</strong> platform for bookings, agreements and payment tracking.
+        I also launched <strong>AILine</strong> through my own establishment, HuloolFuture.
       </span>
     </p>
     <p>
       <span class="ar">
-        العمل يبدأ من المشكلة — لا من التقنية.
-        كل منتج أطلقه له مبرر وجوده قبل أي سطر كود.
+        أستخدم الذكاء الاصطناعي حين يختصر عملًا على المستخدم أو على فريق التشغيل،
+        مثل قراءة المستندات واستخراج بياناتها، وأصمّم الواجهة العربية من البداية ولا أترجمها لاحقًا.
       </span>
       <span class="en">
-        The work starts with the problem — not the stack.
-        Every product I ship has a clear reason to exist before a line of code is written.
+        I use AI where it removes work for the user or the operations team, such as reading documents
+        and extracting their data, and I design the Arabic interface from the start rather than translating it afterwards.
       </span>
     </p>
-    <p>
-      <span class="ar">
-        أركز على ثغرات البرمجيات التي لا تزال قائمة:
-        واجهات عربية أولاً، سياق محلي حقيقي، وذكاء اصطناعي مطبّق على مشكلات يومية فعلية.
-      </span>
-      <span class="en">
-        I focus on software gaps that still matter: Arabic-first interfaces,
-        local context, and AI applied to problems people actually have.
-      </span>
-    </p>
+
+    <h3 class="work-head">
+      <span class="ar">ما أعمل عليه</span><span class="en">What I work on</span>
+    </h3>
+    <ul class="work-list">
+      <li>
+        <span class="ar"><strong>منصات الحجز:</strong> من الكتالوج والتوفّر إلى عرض السعر وقبوله، مع منع الحجز المزدوج.</span>
+        <span class="en"><strong>Booking platforms:</strong> catalogue and availability through quote and acceptance, with double-booking prevention.</span>
+      </li>
+      <li>
+        <span class="ar"><strong>أنظمة التشغيل الداخلية:</strong> لوحات متابعة الطلبات، والأدوار والصلاحيات، وسجل لكل عملية.</span>
+        <span class="en"><strong>Internal operations systems:</strong> order dashboards, roles and permissions, and a record of every action.</span>
+      </li>
+      <li>
+        <span class="ar"><strong>الذكاء الاصطناعي داخل المنتج:</strong> قراءة المستندات، والمساعدات النصية، وأتمتة الخطوات المتكررة.</span>
+        <span class="en"><strong>AI inside a product:</strong> document reading, text assistants, and automation of repeated steps.</span>
+      </li>
+    </ul>
   </div>
 
   <div class="about-stats reveal reveal-delay-1">
     <div class="big-stat">
-      <span class="big-stat-num">3+</span>
+      <span class="big-stat-num">1,470</span>
       <div class="big-stat-label">
-        <span class="ar">منصات في الإنتاج</span>
-        <span class="en">Live Production<br/>Platforms</span>
+        <span class="ar">اختبارًا آليًا<br/>في منصة الحجز لدى رؤيتك</span>
+        <span class="en">Automated tests<br/>in the Your Vision booking platform</span>
       </div>
     </div>
     <div class="big-stat">
-      <span class="big-stat-num">6</span>
+      <span class="big-stat-num">23</span>
       <div class="big-stat-label">
-        <span class="ar">أيام لتسليم<br/>Qawel.fin مباشرة</span>
-        <span class="en">Days to Ship<br/>Qawel.fin Live</span>
+        <span class="ar">قرارًا معماريًا موثّقًا<br/>في منصة WashX</span>
+        <span class="en">Written architecture<br/>decisions in WashX</span>
       </div>
     </div>
     <div class="big-stat">
-      <span class="big-stat-num">19</span>
+      <span class="big-stat-num">2</span>
       <div class="big-stat-label">
-        <span class="ar">قرار معماري موثق<br/>في WashX</span>
-        <span class="en">Architecture<br/>Decisions · WashX</span>
+        <span class="ar">هاكاثونان<br/>روشن 2025 · أمد 2026</span>
+        <span class="en">Hackathons<br/>ROSHN 2025 · Amad 2026</span>
       </div>
     </div>
   </div>
@@ -1040,106 +1156,215 @@ section{
   <div class="reveal">
     <div class="section-label"><span class="ar">الخبرة</span><span class="en">Experience</span></div>
     <h2 class="section-title">
-      <span class="ar">أين أعمل<br/><span style="color:var(--accent)">الآن</span></span><span class="en">Where I Work<br/><span style="color:var(--accent)">Right Now</span></span>
+      <span class="ar">الخبرة العملية</span><span class="en">Experience</span>
     </h2>
   </div>
 
   <div class="xp-list">
 
-    <div class="xp-item reveal reveal-delay-1">
+    <div class="xp-item reveal">
+      <div class="xp-date">
+        <span class="ar">نوفمبر 2026 – الآن</span>
+        <span class="en">Nov 2026 – Present</span>
+      </div>
+      <div>
+        <h3 class="xp-role">
+          <span class="ar">مسؤول المتجر الإلكتروني · تشغيل وتطوير</span>
+          <span class="en">E-commerce store manager · Operations and development</span>
+        </h3>
+        <div class="xp-org">
+          <span class="ar">سوبرماركت في الرياض · متجر على منصة سلة</span>
+          <span class="en">Supermarket, Riyadh · Store on the Salla platform</span>
+        </div>
+        <div class="xp-desc">
+          <span class="ar">
+            أتولى تجهيز وتشغيل متجر سوبرماركت إلكتروني على منصة سلة.
+            أعدت تنظيم كتالوج المنتجات في أقسام رئيسية، وضبطت إعدادات التوصيل وسياسة التوصيل المجاني،
+            وبرمجت نافذة ترحيبية وشريط تقدّم للمتجر عبر JavaScript مخصص في الثيم، يوضح للعميل المبلغ المتبقي ليصل إلى التوصيل المجاني.
+            تعاملت مع البيانات عبر Salla Admin API، فبنيت ملف جرد شامل للمخزون، ووحّدت مقاسات صور المنتجات آليًا،
+            وأعددت للإدارة دليل تشغيل ومقترحًا للعروض.
+          </span>
+          <span class="en">
+            I handle the day-to-day setup and operation of a supermarket's online store on the Salla platform.
+            I reorganized the product catalogue into main sections, configured delivery settings and a free-delivery policy,
+            and added custom JavaScript to the theme for a welcome banner and a progress bar showing customers how close they are to free delivery.
+            Using the Salla Admin API, I built a full inventory file and automated product-image resizing,
+            and prepared an operations guide and a promotions proposal for management.
+          </span>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Salla</span><span class="tag">Salla Admin API</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">Excel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item reveal">
+      <div class="xp-date">
+        <span class="ar">أكتوبر 2026 – الآن</span>
+        <span class="en">Oct 2026 – Present</span>
+      </div>
+      <div>
+        <h3 class="xp-role">
+          <span class="ar">مطوّر Backend · تدريب تعاوني</span>
+          <span class="en">Backend developer · Co-op trainee</span>
+        </h3>
+        <div class="xp-org">
+          <span class="ar">شركة رؤيتك (Your Vision) · تنظيم الفعاليات · الرياض</span>
+          <span class="en">Your Vision · Event production · Riyadh</span>
+        </div>
+        <div class="xp-desc">
+          <span class="ar">
+            أبني ضمن فريق من اثنين منصة الشركة لحجز موارد الفعاليات، وكتبت معظم نظامها الخلفي:
+            نموذج البيانات، ودورة الطلب من الإرسال إلى عرض السعر والقبول، ومنع الحجز المزدوج بقيد في قاعدة البيانات،
+            والأدوار والصلاحيات مع التحقق بخطوتين، وسجل تدقيق لا يقبل التعديل.
+            بنيت كذلك نظامًا داخليًا لحضور المتدربين ومهامهم، وأعددت الفحوصات الآلية ونشر النسخة التجريبية الداخلية على Azure.
+            وفي موقع فعالية الرياضات الإلكترونية للشركة، الذي بنى زميلي أساسه، أضفت صفحات الجوال للحكّام وموظفي الدخول،
+            والتحديث الحيّ لجدول الإقصاء، وماسح رموز QR بالكاميرا لتسجيل الدخول.
+            بدأت العمل مع الشركة في أكتوبر، ثم انتقلت إلى عقد التدريب التعاوني في نوفمبر.
+          </span>
+          <span class="en">
+            In a team of two, I am building the company's event-resource booking platform and wrote most of its backend:
+            the data model, the request lifecycle from submission to quote and acceptance, double-booking prevention
+            enforced by a database constraint, roles and permissions with two-factor sign-in, and an append-only audit trail.
+            I also built an internal attendance and task system for trainees, and set up the automated checks and the internal-trial deployment on Azure.
+            On the company's e-sports event site, whose core a teammate built, I added the phone pages for referees and door staff,
+            live updates to the bracket, and a camera QR scanner for door check-in.
+            I started working with the company in October and moved onto the co-op contract in November.
+          </span>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Python</span><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span><span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item reveal">
       <div class="xp-date">
         <span class="ar">أغسطس 2026 – الآن</span>
         <span class="en">Aug 2026 – Present</span>
       </div>
       <div>
-        <div class="xp-role">
-          <span class="ar">قائد تقني — منصة WashX</span>
-          <span class="en">Technical Lead — WashX Platform</span>
-        </div>
+        <h3 class="xp-role">
+          <span class="ar">المطوّر الرئيسي · منصة WashX</span>
+          <span class="en">Lead developer · WashX platform</span>
+        </h3>
         <div class="xp-org">
-          <span class="ar">WashX · تنظيف الواجهات والألواح الشمسية بالدرون · السعودية</span>
-          <span class="en">WashX · Drone-based facade &amp; solar panel cleaning · KSA</span>
+          <span class="ar">WashX · تنظيف الواجهات والألواح الشمسية بالدرون · مشروع لعميل</span>
+          <span class="en">WashX · Drone-based facade and solar-panel cleaning · Client project</span>
         </div>
         <div class="xp-desc">
           <span class="ar">
-            أقود بناء منصة الشركة الكاملة: حجوزات متعددة الخطوات، عقود خدمة ثنائية اللغة
-            بتوقيع إلكتروني، تتبع مدفوعات، ولوحة عمليات داخلية.
-            صممت المعمارية بآلة حالات لدورة الطلب وواجهات Adapter لكل مزود خارجي،
-            مع 19 قرار معماري موثق وبوابات جودة CI إلزامية.
+            أبني منصة الشركة منفردًا: طلب الخدمة على مراحل، وعرض السعر، وعقد خدمة بالعربية والإنجليزية يُوقَّع إلكترونيًا، ومتابعة الدفع، والجدولة، ولوحة تشغيل داخلية.
+            صمّمت دورة الطلب على هيئة حالات محددة (state machine)، وعزلت كل مزوّد خارجي خلف واجهة يسهل استبدالها،
+            ووثّقت 23 قرارًا معماريًا، مع فحوصات آلية إلزامية قبل أي دمج.
           </span>
           <span class="en">
-            Leading the build of the company's full platform: multi-step booking, bilingual
-            e-signed service agreements, payment tracking, and an internal operations dashboard.
-            Designed the architecture around an order-lifecycle state machine and adapter
-            interfaces for every external provider — 19 documented ADRs and mandatory CI quality gates.
+            I am the sole developer of the company's platform: step-by-step service requests, quoting, a service agreement
+            in Arabic and English signed electronically, payment tracking, scheduling, and an internal operations dashboard.
+            I modelled the order lifecycle as a state machine, put every external provider behind a replaceable interface,
+            and wrote 23 architecture decisions, with automated checks required before any merge.
           </span>
         </div>
         <div class="card-tags">
-          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase RLS</span><span class="tag">Paymob</span><span class="tag">Zoho Sign</span><span class="tag">n8n</span>
+          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase RLS</span><span class="tag">Paymob</span><span class="tag">Zoho Sign</span>
         </div>
       </div>
     </div>
 
-    <div class="xp-item reveal reveal-delay-2">
+    <div class="xp-item reveal">
       <div class="xp-date">
-        <span class="ar">يوليو 2026 – الآن</span>
-        <span class="en">Jul 2026 – Present</span>
+        <span class="ar">يوليو – سبتمبر 2026</span>
+        <span class="en">Jul – Sep 2026</span>
       </div>
       <div>
-        <div class="xp-role">
-          <span class="ar">مطوّر تكامل API</span>
-          <span class="en">API Integration Developer</span>
-        </div>
+        <h3 class="xp-role">
+          <span class="ar">مطوّر المنصة وتكامل API</span>
+          <span class="en">Platform and API integration developer</span>
+        </h3>
         <div class="xp-org">
           <span class="ar">قاول تيك (Qawel Tech) · السعودية</span>
-          <span class="en">Qawel Tech · KSA</span>
+          <span class="en">Qawel Tech · Saudi Arabia</span>
         </div>
         <div class="xp-desc">
           <span class="ar">
-            أتولى ربط أنظمة الشركة عبر واجهات برمجة التطبيقات — تصميم النقاط، مصادقة JWT،
-            والتوثيق. مثّلت الشركة في هاكاثون أمد 2026 بمشروع Qawel.fin بدور مدير المشروع:
-            قدت فريقًا من أربعة وسلّمنا منصة مباشرة كاملة خلال ستة أيام.
+            بنيت معظم النسخة الأولى من منصة مشتريات لقطاع البناء تعتمد على الذكاء الاصطناعي:
+            واجهة Next.js وخلفية FastAPI، وربطتها بمحرّك تحليل العقود العربية الذي طوّره زميل في الفريق.
+            قدت مشروع Qawel.fin باسم الشركة في هاكاثون أمد 2026 ضمن فريق من أربعة أعضاء،
+            ثم سلّمت العمل موثّقًا للفريق في سبتمبر.
           </span>
           <span class="en">
-            Own API integration across the company's systems — endpoint design, JWT auth,
-            and documentation. Represented the company at the Amad 2026 Hackathon with Qawel.fin
-            as Project Manager: led a team of four and delivered a fully live platform in six days.
+            I built most of the first version of an AI-assisted procurement platform for the construction sector:
+            a Next.js frontend and a FastAPI backend, integrated with the Arabic contract-analysis engine developed by a teammate.
+            I led the Qawel.fin project on the company's behalf at the Amad 2026 Hackathon with a team of four,
+            then handed the work over, documented, in September.
           </span>
         </div>
         <div class="card-tags">
-          <span class="tag">REST APIs</span><span class="tag">FastAPI</span><span class="tag">JWT</span><span class="tag">PostgreSQL</span><span class="tag">Project Management</span>
+          <span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">REST APIs</span>
         </div>
       </div>
     </div>
 
-    <div class="xp-item reveal reveal-delay-3">
+    <div class="xp-item reveal">
       <div class="xp-date">
         <span class="ar">2025 – الآن</span>
         <span class="en">2025 – Present</span>
       </div>
       <div>
-        <div class="xp-role">
-          <span class="ar">مطوّر Full-Stack ومؤسس</span>
-          <span class="en">Full-Stack Developer &amp; Founder</span>
-        </div>
+        <h3 class="xp-role">
+          <span class="ar">مؤسس ومطوّر Full-Stack</span>
+          <span class="en">Founder and full-stack developer</span>
+        </h3>
         <div class="xp-org">
-          <span class="ar">مستقبل حلول التقنية (HuloolFuture) · الرياض</span>
-          <span class="en">Mustaqbal Hulul AlTaqniyah (HuloolFuture) · Riyadh</span>
+          <span class="ar">مؤسسة مستقبل حلول التقنية (HuloolFuture) · الرياض</span>
+          <span class="en">Mustaqbal Hulul AlTaqniyah Est. (HuloolFuture) · Riyadh</span>
         </div>
         <div class="xp-desc">
           <span class="ar">
-            أطلقت AILine للإنتاج على huloolfuture.sa، وأجريت مراجعة أمنية على أكثر من 167
-            نقطة نهاية أغلقت خلالها ثغرتين حرجتين قبل الإطلاق، وأدير البنية التحتية كاملة
-            من Apple Developer وEAS Build إلى Vercel وGoogle Cloud.
+            أطلقت AILine على huloolfuture.sa، وهو مساعد دراسي لطلاب الجامعات بالعربية والإنجليزية.
+            راجعت أمان واجهات الـ API قبل الإطلاق وأغلقت ثغرتين حرجتين في المصادقة،
+            وأدير النشر والحسابات السحابية بنفسي.
           </span>
           <span class="en">
-            Shipped AILine to production at huloolfuture.sa, ran a security audit across 167+
-            endpoints closing two critical auth vulnerabilities pre-launch, and manage the full
-            infrastructure — Apple Developer, EAS Build, Vercel, and Google Cloud.
+            I launched AILine at huloolfuture.sa, a study companion for university students in Arabic and English.
+            I reviewed the security of the API before launch and fixed two critical authentication flaws,
+            and I manage deployment and the cloud accounts myself.
           </span>
         </div>
         <div class="card-tags">
-          <span class="tag">Next.js 15</span><span class="tag">AI APIs</span><span class="tag">React Native</span><span class="tag">Vercel</span>
+          <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">LLM APIs</span><span class="tag">Vercel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="xp-item reveal">
+      <div class="xp-date">
+        <span class="ar">أكتوبر 2026 – الآن</span>
+        <span class="en">Oct 2026 – Present</span>
+      </div>
+      <div>
+        <h3 class="xp-role">
+          <span class="ar">نائب رئيس اللجنة التقنية</span>
+          <span class="en">Vice head, technical committee</span>
+        </h3>
+        <div class="xp-org">
+          <span class="ar">نادي الذكاء الاصطناعي · الجامعة العربية المفتوحة</span>
+          <span class="en">AI Club · Arab Open University</span>
+        </div>
+        <div class="xp-desc">
+          <span class="ar">
+            أشارك في إدارة العمل التقني للنادي وفعالياته.
+            بنيت تطبيق شهادات الإتمام: يمسح الزائر رمز QR ويكتب اسمه فتصدر له شهادة بالعربية والإنجليزية على جهازه،
+            وتُحذف الأسماء تلقائيًا بعد ثلاثين يومًا من الفعالية.
+          </span>
+          <span class="en">
+            I help run the club's technical work and events.
+            I built its completion-certificate app: a visitor scans a QR code, types a name and receives a certificate
+            in Arabic and English on their own device, and names are deleted automatically thirty days after the event.
+          </span>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Cloudflare Workers</span><span class="tag">D1</span><span class="tag">JavaScript</span>
         </div>
       </div>
     </div>
@@ -1151,82 +1376,88 @@ section{
 <section id="projects">
   <div class="projects-header reveal">
     <div>
-      <div class="section-label"><span class="ar">مشاريع</span><span class="en">Projects</span></div>
+      <div class="section-label"><span class="ar">المشاريع</span><span class="en">Projects</span></div>
       <h2 class="section-title">
-        <span class="ar">ما بنيته<br/><span style="color:var(--accent)">فعلياً</span></span><span class="en">What I've<br/><span style="color:var(--accent)">Actually Built</span></span>
+        <span class="ar">أبرز المشاريع</span><span class="en">Selected projects</span>
       </h2>
     </div>
-    <p class="section-sub" style="max-width:300px;">
-      <span class="ar">كل مشروع هنا موجود على GitHub أو مباشر على الإنترنت</span><span class="en">Every project here is on GitHub or live on the internet</span>
+    <p class="section-sub" style="max-width:320px;">
+      <span class="ar">أعمال الشركات والعملاء مستودعاتها خاصة، وما كان منها متاحًا للعموم أرفقت رابطه.</span><span class="en">Company and client work lives in private repositories; public projects are linked.</span>
     </p>
   </div>
 
   <div class="featured-grid">
 
-    <!-- Qawel.fin -->
-    <div class="project-card live reveal reveal-delay-1">
+    <!-- Your Vision booking platform -->
+    <article class="project-card dev reveal">
       <div class="card-inner">
-        <span class="card-badge badge-hackathon"><span class="ar">هاكاثون أمد 2026 · مدير المشروع</span><span class="en">Amad 2026 Hackathon · Project Manager</span></span>
+        <span class="card-badge badge-dev"><span class="ar">تدريب تعاوني · تشغيل تجريبي داخلي</span><span class="en">Co-op · Internal trial</span></span>
         <h3 class="card-title">
-          <span class="ar">Qawel.fin — جسر تمويلي بالذكاء الاصطناعي</span>
-          <span class="en">Qawel.fin — AI Financing Bridge</span>
+          <span class="ar">منصة حجز موارد الفعاليات</span>
+          <span class="en">Event-resource booking platform</span>
         </h3>
-        <p class="card-title-en">with Qawel Tech · qawelfin.vercel.app</p>
+        <p class="card-sub">
+          <span class="ar">شركة رؤيتك · مطوّر Backend ضمن فريق من اثنين</span>
+          <span class="en">Your Vision · Backend developer in a team of two</span>
+        </p>
         <p class="card-desc">
           <span class="ar">
-            منصة تحلّل عقود البناء تلقائيًا (OCR عربي + نموذج لغوي مستضاف ذاتيًا)،
-            تتحقق من المستندات بالذكاء الاصطناعي وتكشف التلاعب، وتحسب مؤشر مخاطر
-            شفافًا من 100 مع توصية تمويل معلّلة بالعربية.
-            قدت فريقًا من أربعة — يضم زميلًا من الجامعة — وسلّمنا منصة مباشرة كاملة خلال ستة أيام،
-            بسيادة بيانات كاملة: لا تغادر بيانات العملاء بنيتنا التحتية.
+            منصة لحجز تجهيزات الفعاليات وخدماتها، تعمل حاليًا نسخةً تجريبية داخلية.
+            يتصفح العميل الكتالوج ويبني طلبه لتواريخ فعاليته، ثم يصله عرض سعر من فريق الشركة ليوافق عليه.
+            منع الحجز المزدوج مبني ومختبَر في قاعدة البيانات نفسها: عند تأكيد الحجز لا يُحجز المورد نفسه لعميلين
+            في فترة واحدة ولو وصل الطلبان في اللحظة ذاتها.
+            لكل دور صلاحياته، وكل تغيير في الطلب مسجَّل باسم من أجراه ووقته.
+            كتبت معظم النظام الخلفي، وفي المنصة 1,470 اختبارًا آليًا.
           </span>
           <span class="en">
-            Analyzes construction contracts automatically (Arabic OCR + self-hosted LLM),
-            AI-verifies documents with tamper detection, and computes a transparent 0–100
-            risk score with a reasoned Arabic financing recommendation.
-            Led a team of four — including a university colleague — and shipped a fully live
-            platform in six days, with full data sovereignty: client data never leaves our infrastructure.
+            A platform for booking the equipment and services an event needs, currently running as an internal trial.
+            The customer browses a catalogue, builds a request for their event dates, and receives a quote from the company's team to accept.
+            Double-booking prevention is built and tested in the database itself: at confirmation, the same unit cannot be reserved
+            for two customers in the same period, even when both requests arrive at once.
+            Each role has its own permissions, and every change to a request is recorded with who made it and when.
+            I wrote most of the backend; the platform has 1,470 automated tests.
           </span>
         </p>
         <div class="card-tags">
-          <span class="tag">FastAPI</span>
-          <span class="tag">Next.js</span>
+          <span class="tag">Django</span>
           <span class="tag">PostgreSQL</span>
-          <span class="tag">Ollama · LLaMA 3.1</span>
-          <span class="tag">Arabic OCR</span>
-          <span class="tag">Railway</span>
+          <span class="tag">Azure</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">2FA</span>
         </div>
-        <a href="https://qawelfin.vercel.app" target="_blank" rel="noopener noreferrer" class="card-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-            <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        <div class="card-link card-link-muted">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0110 0v4"/>
           </svg>
-          <span class="ar">زيارة المنصة — qawelfin.vercel.app</span>
-          <span class="en">Visit Platform — qawelfin.vercel.app</span>
-        </a>
+          <span class="ar">مستودع خاص · عمل لدى الشركة</span>
+          <span class="en">Private repository · Company work</span>
+        </div>
       </div>
-    </div>
+    </article>
 
     <!-- WashX -->
-    <div class="project-card dev reveal reveal-delay-2">
+    <article class="project-card dev reveal reveal-delay-1">
       <div class="card-inner">
-        <span class="card-badge badge-dev"><span class="ar">منصة عميل · قيد البناء</span><span class="en">Client Platform · In Build</span></span>
+        <span class="card-badge badge-dev"><span class="ar">مشروع لعميل · قيد التطوير</span><span class="en">Client project · In development</span></span>
         <h3 class="card-title">
-          <span class="ar">WashX — منصة الحجوزات والعمليات</span>
-          <span class="en">WashX — Booking &amp; Operations Platform</span>
+          <span class="ar">WashX — منصة الحجوزات والتشغيل</span>
+          <span class="en">WashX — Booking and operations platform</span>
         </h3>
-        <p class="card-title-en">Technical Lead · Drone facade &amp; solar cleaning · KSA</p>
+        <p class="card-sub">
+          <span class="ar">المطوّر الرئيسي · تنظيف الواجهات والألواح الشمسية بالدرون</span>
+          <span class="en">Lead developer · Drone-based facade and solar-panel cleaning</span>
+        </p>
         <p class="card-desc">
           <span class="ar">
-            أقود بناء المنصة الكاملة لشركة WashX لتنظيف الواجهات والألواح الشمسية بالدرون:
-            حجوزات متعددة الخطوات، عقود خدمة ثنائية اللغة بتوقيع إلكتروني، تتبع مدفوعات،
-            ولوحة عمليات داخلية — بمعمارية Adapter لكل مزود خارجي وبوابات جودة CI إلزامية.
+            منصة لشركة WashX لتنظيف الواجهات والألواح الشمسية بالدرون.
+            مسار العميل: يطلب الخدمة على مراحل، ويوقّع عقد الخدمة إلكترونيًا بالعربية والإنجليزية، ويتابع الدفع.
+            ويدير فريق التشغيل الطلبات والجدولة من لوحة داخلية.
           </span>
           <span class="en">
-            Leading the build of WashX's full platform for drone-based facade and solar panel
-            cleaning: multi-step booking, bilingual e-signed service agreements, payment tracking,
-            and an internal operations dashboard — adapter architecture for every external
-            provider, with mandatory CI quality gates.
+            A platform for WashX, a drone-based facade and solar-panel cleaning company.
+            The customer flow: request the service in steps, sign the service agreement electronically in Arabic and English,
+            and track payment. The operations team manages orders and scheduling from an internal dashboard.
           </span>
         </p>
         <div class="card-tags">
@@ -1235,137 +1466,232 @@ section{
           <span class="tag">Supabase RLS</span>
           <span class="tag">Paymob</span>
           <span class="tag">Zoho Sign</span>
-          <span class="tag">n8n</span>
         </div>
         <div class="card-link card-link-muted">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
             <path d="M7 11V7a5 5 0 0110 0v4"/>
           </svg>
           <span class="ar">مستودع خاص · عمل لعميل</span>
-          <span class="en">Private Repository · Client Work</span>
+          <span class="en">Private repository · Client work</span>
         </div>
       </div>
-    </div>
+    </article>
 
     <!-- AILine -->
-    <div class="project-card live reveal reveal-delay-3">
+    <article class="project-card live reveal">
       <div class="card-inner">
-        <span class="card-badge badge-live"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
+        <span class="card-badge badge-live"><span class="ar">متاح الآن</span><span class="en">Live</span></span>
         <h3 class="card-title">
-          <span class="ar">AILine — منصة الجدول الذكي</span>
-          <span class="en">AILine — Smart Scheduler</span>
+          <span class="ar">AILine — مساعد دراسي لطلاب الجامعات</span>
+          <span class="en">AILine — Study companion for university students</span>
         </h3>
-        <p class="card-title-en">by Mustaqbal Hulul AlTaqniyah · huloolfuture.sa</p>
+        <p class="card-sub">
+          <span class="ar">منتج مؤسستي HuloolFuture</span>
+          <span class="en">A HuloolFuture product</span>
+        </p>
         <p class="card-desc">
           <span class="ar">
-            منصة SaaS لطلاب الجامعات — يقرأ الذكاء الاصطناعي الجدول المرفوع،
-            يعيّن مواعيد الاختبارات، ويبني خطة مذاكرة يومية.
-            منشورة على huloolfuture.sa، عربي وإنجليزي.
+            يقرأ جدول الطالب من صورة أو ملف، يربط مواعيد الاختبارات بالمواد، ويبني خطة مذاكرة يومية،
+            مع مساعد نصي يعرف مواد الطالب.
+            متاح بالعربية والإنجليزية على huloolfuture.sa.
           </span>
           <span class="en">
-            SaaS platform for university students — the AI reads the uploaded timetable,
-            maps exam dates, and generates a day-by-day study plan.
-            Deployed at huloolfuture.sa, fully bilingual.
+            Reads a student's timetable from a photo or file, links exam dates to courses, and builds a day-by-day study plan,
+            with a chat assistant that knows the student's courses.
+            Available in Arabic and English at huloolfuture.sa.
           </span>
         </p>
         <div class="card-tags">
-          <span class="tag">Next.js 15</span>
+          <span class="tag">Next.js</span>
           <span class="tag">TypeScript</span>
-          <span class="tag">Tailwind CSS</span>
-          <span class="tag">AI APIs</span>
-          <span class="tag">Supabase Auth</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">LLM APIs</span>
         </div>
         <a href="https://huloolfuture.sa" target="_blank" rel="noopener noreferrer" class="card-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
             <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
           </svg>
-          <span class="ar">زيارة المنتج المباشر — huloolfuture.sa</span>
-          <span class="en">Visit Live Product — huloolfuture.sa</span>
+          <span class="ar">زيارة AILine</span>
+          <span class="en">Visit AILine</span>
         </a>
       </div>
-    </div>
+    </article>
 
-    <!-- Almorashih -->
-    <div class="project-card live reveal reveal-delay-4">
+    <!-- Qawel.fin -->
+    <article class="project-card dev reveal reveal-delay-1">
       <div class="card-inner">
-        <span class="card-badge badge-live"><span class="ar">منتج مباشر</span><span class="en">Live</span></span>
+        <span class="card-badge badge-hackathon"><span class="ar">هاكاثون أمد 2026 · قائد المشروع</span><span class="en">Amad 2026 Hackathon · Project lead</span></span>
         <h3 class="card-title">
-          <span class="ar">المُرشّح — مساعد عقاري بالذكاء الاصطناعي</span>
-          <span class="en">Almorashih — Property AI Assistant</span>
+          <span class="ar">Qawel.fin — تقييم مخاطر تمويل البناء</span>
+          <span class="en">Qawel.fin — Construction-finance risk assessment</span>
         </h3>
-        <p class="card-title-en">ROSHN Hackathon 2025 · Team of 4 · technyaty.com</p>
+        <p class="card-sub">
+          <span class="ar">مع قاول تيك · فريق من أربعة</span>
+          <span class="en">With Qawel Tech · Team of four</span>
+        </p>
         <p class="card-desc">
           <span class="ar">
-            مساعد ذكاء اصطناعي يطابق الطلاب والموظفين الجدد مع السكن الأنسب —
-            بُني لهاكاثون روشن 2025 بفريق من أربعة، ثم واصل الفريق التطوير مستقلاً
-            وأطلق المنتج على technyaty.com.
+            يقرأ عقد البناء بالعربية، يتحقق من المستندات ويكشف التلاعب فيها،
+            ويعطي درجة مخاطر من 100 مع توصية تمويل مكتوبة بأسبابها.
+            النموذج اللغوي كان مستضافًا ذاتيًا، فلم تُرسل المستندات إلى مزوّد خارجي.
+            قدت المشروع، وسلّمنا نسخة تعمل من التسجيل إلى توصية التمويل.
           </span>
           <span class="en">
-            AI assistant matching students and new employees to suitable housing —
-            built for the ROSHN Hackathon 2025 with a team of four, then the team kept
-            building independently and shipped it at technyaty.com.
+            Reads Arabic construction contracts, checks the supporting documents for tampering,
+            and returns a 0–100 risk score with a written, reasoned financing recommendation.
+            The language model was self-hosted, so documents were not sent to an outside provider.
+            I led the project, and we delivered a working build, from registration to financing recommendation.
           </span>
         </p>
         <div class="card-tags">
           <span class="tag">FastAPI</span>
-          <span class="tag">GraphQL</span>
-          <span class="tag">NLP</span>
-          <span class="tag">Python</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Ollama · LLaMA 3.1</span>
+          <span class="tag">Arabic OCR</span>
         </div>
-        <a href="https://technyaty.com" target="_blank" rel="noopener noreferrer" class="card-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="https://qawelfin.vercel.app" target="_blank" rel="noopener noreferrer" class="card-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
             <polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
           </svg>
-          <span class="ar">زيارة المنتج — technyaty.com</span>
-          <span class="en">Visit Live Product — technyaty.com</span>
+          <span class="ar">زيارة Qawel.fin</span>
+          <span class="en">Visit Qawel.fin</span>
         </a>
       </div>
-    </div>
+    </article>
+
+  </div>
+
+  <div class="small-grid">
+
+    <article class="small-card reveal">
+      <span class="card-badge badge-project"><span class="ar">رؤيتك · عمل مشترك</span><span class="en">Your Vision · Joint work</span></span>
+      <h3 class="small-card-title">
+        <span class="ar">موقع فعالية الرياضات الإلكترونية</span>
+        <span class="en">E-sports event site</span>
+      </h3>
+      <div class="small-card-desc">
+        <span class="ar">تصويت على الألعاب، وتسجيل اللاعبين، وجدول إقصاء حيّ، ودعوات يُتحقق منها برمز QR. بنى زميلي أساس الموقع، وأضفت صفحات الجوال للحكّام وموظفي الدخول، والتحديث الحيّ لجدول الإقصاء، وماسح QR بالكاميرا.</span>
+        <span class="en">Game voting, player registration, live elimination brackets and QR-checked invitations. A teammate built the core; I added the phone pages for referees and door staff, live bracket updates and the camera QR scanner.</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">Three.js</span>
+      </div>
+    </article>
+
+    <article class="small-card reveal reveal-delay-1">
+      <span class="card-badge badge-project"><span class="ar">نادي الذكاء الاصطناعي</span><span class="en">AI Club</span></span>
+      <h3 class="small-card-title">
+        <span class="ar">تطبيق شهادات الإتمام</span>
+        <span class="en">Completion-certificate app</span>
+      </h3>
+      <div class="small-card-desc">
+        <span class="ar">يمسح الزائر رمز QR ويكتب اسمه فتصدر شهادته بالعربية والإنجليزية على جهازه، مع صفحة إدارة وتقييم للفعالية، وحذف تلقائي للأسماء بعد ثلاثين يومًا من الفعالية.</span>
+        <span class="en">A visitor scans a QR code, types a name and gets a certificate in Arabic and English on their device, with an admin page, event feedback, and automatic deletion of names after thirty days.</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">Cloudflare Workers</span><span class="tag">D1</span><span class="tag">JavaScript</span>
+      </div>
+    </article>
+
+    <article class="small-card reveal reveal-delay-2">
+      <span class="card-badge badge-project"><span class="ar">هاكاثون روشن 2025</span><span class="en">ROSHN Hackathon 2025</span></span>
+      <h3 class="small-card-title">
+        <span class="ar">المُرشّح — مساعد بحث عقاري</span>
+        <span class="en">Almorashih — Real-estate search assistant</span>
+      </h3>
+      <div class="small-card-desc">
+        <span class="ar">مساعد بحث عقاري بالعربية: يفهم طلب المستخدم المكتوب، ويجمع العروض ويرتّبها بحسب الملاءمة والميزانية. بُني ضمن فريق من أربعة في هاكاثون روشن 2025.</span>
+        <span class="en">An Arabic real-estate search assistant: it interprets a written request, gathers listings and ranks them by relevance and budget. Built in a team of four at the ROSHN Hackathon 2025.</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Python</span>
+      </div>
+      <a class="small-link" href="https://github.com/jdf55/roshn-hackathon-2025" target="_blank" rel="noopener noreferrer">
+        <span class="ar">الكود على GitHub</span><span class="en">Code on GitHub</span>
+      </a>
+    </article>
 
   </div>
 </section>
 
-<!-- ═══ SKILLS ═══ -->
+<!-- ═══ SKILLS + EDUCATION ═══ -->
 <section id="skills">
   <div class="reveal">
-    <div class="section-label"><span class="ar">مهارات</span><span class="en">Skills</span></div>
+    <div class="section-label"><span class="ar">المهارات</span><span class="en">Skills</span></div>
     <h2 class="section-title">
-      <span class="ar">المهارات التقنية</span><span class="en">Technical Skills</span>
+      <span class="ar">المهارات والتعليم</span><span class="en">Skills and education</span>
     </h2>
     <p class="section-sub">
-      <span class="ar">الأدوات المستخدمة فعلياً عبر جميع المشاريع المذكورة</span><span class="en">Tools actively used across all listed projects</span>
+      <span class="ar">أدوات استخدمتها في المشاريع أعلاه</span><span class="en">Tools I have used in the projects above</span>
     </p>
   </div>
 
   <div class="skills-two-col">
     <div class="skill-col reveal reveal-delay-1">
-      <div class="skill-col-head">
-        <span class="ar">ما أبني به</span>
-        <span class="en">What I ship with</span>
+      <div class="skill-row">
+        <span class="skill-cat"><span class="ar" dir="ltr">Backend</span><span class="en">Backend</span></span>
+        <span class="skill-vals" dir="ltr">Python · Django · FastAPI · PostgreSQL · REST APIs</span>
       </div>
       <div class="skill-row">
-        <span class="skill-cat">Frontend</span>
-        <span class="skill-vals">Next.js · TypeScript · Tailwind CSS · React Native · Shadcn/ui</span>
+        <span class="skill-cat"><span class="ar" dir="ltr">Frontend</span><span class="en">Frontend</span></span>
+        <span class="skill-vals" dir="ltr">Next.js · React · TypeScript · Tailwind CSS</span>
       </div>
       <div class="skill-row">
-        <span class="skill-cat">Backend</span>
-        <span class="skill-vals">Python · FastAPI · PostgreSQL · Supabase · REST APIs · JWT Auth</span>
+        <span class="skill-cat"><span class="ar">الذكاء الاصطناعي</span><span class="en">AI</span></span>
+        <span class="skill-vals"><span class="ar"><bdi>LLM APIs</bdi> · <bdi>Ollama</bdi> (نماذج مستضافة ذاتيًا) · <bdi>OCR</bdi> للعربية</span><span class="en">LLM APIs · Ollama (self-hosted models) · Arabic OCR</span></span>
       </div>
       <div class="skill-row">
-        <span class="skill-cat">AI</span>
-        <span class="skill-vals">Ollama · Self-hosted LLaMA · Arabic OCR · Claude API · Prompt Engineering</span>
+        <span class="skill-cat"><span class="ar">التكاملات</span><span class="en">Integrations</span></span>
+        <span class="skill-vals" dir="ltr">Paymob · Zoho Sign · Resend · Webhooks</span>
       </div>
       <div class="skill-row">
-        <span class="skill-cat">Deploy</span>
-        <span class="skill-vals">Vercel · Railway · Docker · CI/CD · EAS Build · Git</span>
+        <span class="skill-cat"><span class="ar">الصلاحيات والأمان</span><span class="en">Access &amp; security</span></span>
+        <span class="skill-vals"><span class="ar">الأدوار والصلاحيات · التحقق بخطوتين · Supabase RLS · سجل التدقيق</span><span class="en">Roles &amp; permissions · 2FA · Supabase RLS · Audit logging</span></span>
       </div>
       <div class="skill-row">
-        <span class="skill-cat">Integrations</span>
-        <span class="skill-vals">Paymob · Zoho Sign · Resend · n8n · Webhooks</span>
+        <span class="skill-cat"><span class="ar">السحابة والنشر</span><span class="en">Cloud &amp; delivery</span></span>
+        <span class="skill-vals" dir="ltr">Azure · Vercel · Cloudflare Workers · Docker · CI/CD · Git</span>
       </div>
+    </div>
+
+    <div class="edu-col reveal reveal-delay-2" id="education">
+      <div class="edu-card">
+        <div class="edu-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="edu-info">
+          <h3 class="edu-uni">
+            <span class="ar">بكالوريوس علوم الحاسب</span>
+            <span class="en">B.Sc. Computer Science</span>
+          </h3>
+          <div class="edu-degree">
+            <span class="ar">الجامعة العربية المفتوحة · الرياض</span>
+            <span class="en">Arab Open University · Riyadh</span>
+          </div>
+          <span class="edu-year"><span class="ar">2024 – الآن</span><span class="en">2024 – Present</span></span>
+        </div>
+      </div>
+      <ul class="edu-notes">
+        <li>
+          <span class="ar">تدريب تعاوني في شركة رؤيتك منذ نوفمبر 2026</span>
+          <span class="en">Co-op training at Your Vision since November 2026</span>
+        </li>
+        <li>
+          <span class="ar">نائب رئيس اللجنة التقنية في نادي الذكاء الاصطناعي بالجامعة</span>
+          <span class="en">Vice head of the technical committee, university AI Club</span>
+        </li>
+        <li>
+          <span class="ar">العربية لغتي الأم، وأعمل بالإنجليزية</span>
+          <span class="en">Native Arabic; working English</span>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1373,26 +1699,26 @@ section{
 <!-- ═══ CV ═══ -->
 <section id="cv">
   <div class="reveal">
-    <div class="section-label"><span class="ar">السيرة الذاتية</span><span class="en">Resume</span></div>
+    <div class="section-label"><span class="ar">السيرة</span><span class="en">CV</span></div>
     <h2 class="section-title">
-      <span class="ar">السيرة الذاتية</span><span class="en">Resume</span>
+      <span class="ar">السيرة الذاتية</span><span class="en">Curriculum vitae</span>
     </h2>
     <p class="section-sub">
-      <span class="ar">اعرض، حمّل، أو افتح السيرة الذاتية في نافذة جديدة</span><span class="en">View, download, or open the resume in a new tab</span>
+      <span class="ar">بالعربية والإنجليزية</span><span class="en">In Arabic and English</span>
     </p>
   </div>
 
   <div class="cv-viewer reveal reveal-delay-1">
     <div class="cv-toolbar">
-      <div class="cv-lang-pill">
-        <button class="pill-opt active" id="tab-ar">
+      <div class="cv-lang-pill" role="group" aria-label="CV language">
+        <button type="button" class="pill-opt active" id="tab-ar" aria-pressed="true">
           <span class="ar">عربي</span><span class="en">Arabic</span>
         </button>
-        <button class="pill-opt" id="tab-en">
+        <button type="button" class="pill-opt" id="tab-en" aria-pressed="false">
           <span class="ar">إنجليزي</span><span class="en">English</span>
         </button>
       </div>
-      <span class="cv-meta-line">A4 · 1 page · Aug 2026</span>
+      <span class="cv-meta-line"><span class="ar">A4 · نوفمبر 2026</span><span class="en">A4 · Nov 2026</span></span>
     </div>
 
     <div class="cv-stage">
@@ -1400,8 +1726,10 @@ section{
         <iframe id="cvFrame"
           class="cv-frame"
           src="Yousef_Abdulaal_CV_AR.html"
-          title="CV Preview"
+          title="CV preview"
           sandbox="allow-same-origin"
+          loading="lazy"
+          tabindex="-1"
           scrolling="no">
         </iframe>
       </div>
@@ -1409,7 +1737,7 @@ section{
 
     <div class="cv-actions">
       <a id="cvDownload" href="Yousef_Abdulaal_CV_AR.pdf" download class="cv-dl-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
@@ -1418,13 +1746,13 @@ section{
         <span class="en">Download PDF</span>
       </a>
       <a id="cvNewTab" href="Yousef_Abdulaal_CV_AR.html" target="_blank" rel="noopener noreferrer" class="cv-open-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
           <polyline points="15 3 21 3 21 9"/>
           <line x1="10" y1="14" x2="21" y2="3"/>
         </svg>
-        <span class="ar">فتح في نافذة جديدة</span>
-        <span class="en">Open in New Tab</span>
+        <span class="ar">فتح في صفحة جديدة</span>
+        <span class="en">Open in a new tab</span>
       </a>
     </div>
   </div>
@@ -1435,60 +1763,83 @@ section{
   <div class="reveal">
     <div class="section-label"><span class="ar">تواصل</span><span class="en">Contact</span></div>
     <h2 class="section-title">
-      <span class="ar">تواصل معي</span><span class="en">Get in Touch</span>
+      <span class="ar">تواصل معي</span><span class="en">Get in touch</span>
     </h2>
+    <p class="section-sub contact-sub">
+      <span class="ar">للتدريب أو العمل أو مشروع تودّ مناقشته، راسلني على البريد وسأرد خلال يوم عمل.</span>
+      <span class="en">For a traineeship, a role, or a project you would like to discuss, email me. I reply within one working day.</span>
+    </p>
   </div>
 
   <div class="contact-links reveal reveal-delay-1">
     <a href="mailto:yousefabdulaal2@gmail.com" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
-      yousefabdulaal2@gmail.com
+      <span dir="ltr">yousefabdulaal2@gmail.com</span>
     </a>
     <a href="https://www.linkedin.com/in/yousef-abdulaal" target="_blank" rel="noopener noreferrer" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="currentColor">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
         <circle cx="4" cy="4" r="2"/>
       </svg>
       LinkedIn
     </a>
     <a href="https://github.com/jdf55" target="_blank" rel="noopener noreferrer" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="currentColor">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
       </svg>
-      GitHub — jdf55
+      <span dir="ltr">GitHub · jdf55</span>
     </a>
     <a href="https://qabilah.com/profile/yousef-abdulaal/professional-profile" target="_blank" rel="noopener noreferrer" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <rect x="2" y="7" width="20" height="14" rx="2"/>
         <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
         <line x1="12" y1="12" x2="12" y2="16"/>
         <line x1="10" y1="14" x2="14" y2="14"/>
       </svg>
-      <span class="ar">قبيلة — الملف المهني</span>
-      <span class="en">Qabilah — Professional Profile</span>
+      <span class="ar">قبيلة · الملف المهني</span>
+      <span class="en">Qabilah profile</span>
     </a>
   </div>
 
 </section>
+</main>
+
+<footer class="site-footer">
+  <span class="ar">© 2026 يوسف عبدالعال · الرياض · آخر تحديث: نوفمبر 2026</span>
+  <span class="en">© 2026 Yousef Abdulaal · Riyadh · Updated November 2026</span>
+</footer>
 
 <script>
 (function () {
   'use strict';
 
+  const root       = document.documentElement;
   const navbar     = document.getElementById('navbar');
   const themeBtn   = document.getElementById('themeToggle');
   const langToggle = document.getElementById('langToggle');
   const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
 
-  // Accepted values — anything else from localStorage is treated as the default.
+  // Accepted values — anything else from storage is treated as the default.
   const VALID_THEMES  = new Set(['dark', 'light']);
   const VALID_LANGS   = new Set(['ar', 'en']);
   // Only internal section IDs are valid scroll targets.
   const VALID_ANCHORS = new Set(['#hero', '#about', '#experience', '#projects', '#skills', '#cv', '#contact']);
+  const SECTION_IDS   = ['about', 'experience', 'projects', 'skills', 'cv', 'contact'];
+
+  // Storage can throw (private mode, blocked cookies); the page must keep working.
+  const store = {
+    get(k)    { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } },
+  };
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Mark each language run so screen readers and fonts pick the right language.
+  document.querySelectorAll('.ar').forEach(el => el.setAttribute('lang', 'ar'));
+  document.querySelectorAll('.en').forEach(el => el.setAttribute('lang', 'en'));
 
   // ── CV VIEWER ─────────────────────────────────────────────────────────────
   const CV_FILES = {
@@ -1503,144 +1854,197 @@ section{
   const tabAr      = document.getElementById('tab-ar');
   const tabEn      = document.getElementById('tab-en');
 
-  let _cvLang = 'ar';
+  let cvLang = 'ar';
+  let cvNaturalH = 1123;
 
   function scaleCVFrame() {
     if (!cvPaper || !cvFrame) return;
     const w = cvPaper.offsetWidth;
-    const scale = w / 794;
+    if (!w) return;
+    const scale = Math.min(1, w / 794);
     cvFrame.style.transform = 'scale(' + scale + ')';
-    cvPaper.style.height = Math.round(1123 * scale) + 'px';
+    cvPaper.style.height = Math.round(cvNaturalH * scale) + 'px';
+  }
+
+  function measureCVFrame() {
+    try {
+      const doc = cvFrame.contentDocument;
+      if (doc && doc.documentElement) {
+        cvNaturalH = Math.max(doc.documentElement.scrollHeight, doc.body ? doc.body.scrollHeight : 0, 1123);
+        cvFrame.style.height = cvNaturalH + 'px';
+      }
+    } catch (e) { cvNaturalH = 1123; }
+    scaleCVFrame();
+  }
+
+  function markCVTabs(l) {
+    if (tabAr) { tabAr.classList.toggle('active', l === 'ar'); tabAr.setAttribute('aria-pressed', String(l === 'ar')); }
+    if (tabEn) { tabEn.classList.toggle('active', l === 'en'); tabEn.setAttribute('aria-pressed', String(l === 'en')); }
   }
 
   function switchCV(lang) {
     const l = VALID_LANGS.has(lang) ? lang : 'ar';
-    if (_cvLang === l) {
-      if (tabAr) tabAr.classList.toggle('active', l === 'ar');
-      if (tabEn) tabEn.classList.toggle('active', l === 'en');
-      return;
-    }
-    _cvLang = l;
+    markCVTabs(l);
+    if (cvLang === l) return;
+    cvLang = l;
     const files = CV_FILES[l];
     if (cvFrame)    cvFrame.src = files.html;
     if (cvDownload) { cvDownload.href = files.pdf; cvDownload.download = files.pdf; }
     if (cvNewTab)   cvNewTab.href = files.html;
-    if (tabAr) tabAr.classList.toggle('active', l === 'ar');
-    if (tabEn) tabEn.classList.toggle('active', l === 'en');
   }
 
+  if (cvFrame) cvFrame.addEventListener('load', measureCVFrame);
   if (cvPaper) {
     scaleCVFrame();
-    new ResizeObserver(scaleCVFrame).observe(cvPaper);
+    if ('ResizeObserver' in window) new ResizeObserver(scaleCVFrame).observe(cvPaper);
+    else window.addEventListener('resize', scaleCVFrame);
   }
   if (tabAr) tabAr.addEventListener('click', () => switchCV('ar'));
   if (tabEn) tabEn.addEventListener('click', () => switchCV('en'));
 
-  // ── SCROLL PROGRESS BAR ──────────────────────────────────────────────────
+  // ── SCROLL: PROGRESS BAR, NAV SHRINK, ACTIVE LINK ─────────────────────────
   const progressBar = document.getElementById('scroll-progress');
-  function updateProgress() {
-    const scrollable = document.body.scrollHeight - window.innerHeight;
-    progressBar.style.width = (scrollable > 0 ? (window.scrollY / scrollable * 100) : 0) + '%';
-  }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-
-  // ── NAV SHRINK ON SCROLL ──────────────────────────────────────────────────
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
-
-  // ── SCROLL REVEAL ─────────────────────────────────────────────────────────
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  // ── NAV ACTIVE SECTION INDICATOR ──────────────────────────────────────────
   const navLinkMap = {};
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
     const id = a.getAttribute('href').slice(1);
     if (VALID_ANCHORS.has('#' + id)) navLinkMap[id] = a;
   });
-  const activeObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (navLinkMap[e.target.id]) navLinkMap[e.target.id].classList.toggle('active', e.isIntersecting);
-    });
-  }, { rootMargin: '-25% 0px -65% 0px' });
-  ['about','experience','projects','skills','cv','contact'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) activeObs.observe(el);
-  });
+  const sections = SECTION_IDS.map(id => document.getElementById(id)).filter(Boolean);
 
-  // ── SMOOTH SCROLL ─────────────────────────────────────────────────────────
+  function setActive(id) {
+    Object.keys(navLinkMap).forEach(key => {
+      const on = key === id;
+      navLinkMap[key].classList.toggle('active', on);
+      if (on) navLinkMap[key].setAttribute('aria-current', 'true');
+      else navLinkMap[key].removeAttribute('aria-current');
+    });
+  }
+
+  let ticking = false;
+  function onScroll() {
+    ticking = false;
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar) progressBar.style.width = (max > 0 ? Math.min(100, y / max * 100) : 0) + '%';
+    navbar.classList.toggle('scrolled', y > 50);
+
+    // The section whose top has passed the upper third of the viewport is current;
+    // at the very bottom the last section wins even if it is short.
+    let current = '';
+    const line = y + window.innerHeight * 0.33;
+    sections.forEach(sec => { if (sec.offsetTop <= line) current = sec.id; });
+    if (max > 0 && y >= max - 2 && sections.length) current = sections[sections.length - 1].id;
+    setActive(current);
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // ── SCROLL REVEAL ─────────────────────────────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
+
+  // ── IN-PAGE LINKS ─────────────────────────────────────────────────────────
   // Only scroll to known section IDs; use getElementById to avoid CSS selector injection.
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const href = a.getAttribute('href');
       if (!VALID_ANCHORS.has(href)) return;
-      e.preventDefault();
       const target = document.getElementById(href.slice(1));
-      if (target) {
-        const top = target.getBoundingClientRect().top + window.scrollY - (navbar.offsetHeight + 16);
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+      if (!target) return;
+      e.preventDefault();
+      const top = href === '#hero'
+        ? 0
+        : target.getBoundingClientRect().top + window.scrollY - (navbar.offsetHeight + 16);
+      window.scrollTo({ top, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+      try { history.replaceState(null, '', href === '#hero' ? location.pathname : href); } catch (err) { /* ignore */ }
     });
   });
 
   // ── THEME ─────────────────────────────────────────────────────────────────
   const iconSun  = themeBtn.querySelector('.icon-sun');
   const iconMoon = themeBtn.querySelector('.icon-moon');
+  const LABELS = {
+    ar: { toLight: 'التبديل إلى الوضع الفاتح', toDark: 'التبديل إلى الوضع الداكن', lang: 'Switch to English', menu: 'القائمة' },
+    en: { toLight: 'Switch to light theme', toDark: 'Switch to dark theme', lang: 'التبديل إلى العربية', menu: 'Menu' },
+  };
+
+  function currentLang()  { return root.getAttribute('data-lang') === 'en' ? 'en' : 'ar'; }
+  function currentTheme() { return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
+
+  function refreshLabels() {
+    const t = LABELS[currentLang()];
+    const themeLabel = currentTheme() === 'dark' ? t.toLight : t.toDark;
+    themeBtn.setAttribute('aria-label', themeLabel);
+    themeBtn.setAttribute('title', themeLabel);
+    langToggle.setAttribute('aria-label', t.lang);
+    langToggle.setAttribute('title', t.lang);
+    hamburger.setAttribute('aria-label', t.menu);
+  }
 
   function applyTheme(t) {
     const theme = VALID_THEMES.has(t) ? t : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    root.setAttribute('data-theme', theme);
+    store.set('theme', theme);
     iconSun.style.display  = theme === 'dark'  ? '' : 'none';
     iconMoon.style.display = theme === 'light' ? '' : 'none';
     const metaTheme = document.getElementById('metaThemeColor');
     if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#070B12' : '#F8F7F4');
+    refreshLabels();
   }
-  applyTheme(localStorage.getItem('theme') || 'dark');
-  themeBtn.addEventListener('click', () => {
-    applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-  });
 
   // ── LANGUAGE ──────────────────────────────────────────────────────────────
   function applyLang(l) {
     const lang = VALID_LANGS.has(l) ? l : 'ar';
-    const html = document.documentElement;
-    html.setAttribute('data-lang', lang);
-    html.lang = lang;
-    html.dir  = lang === 'ar' ? 'rtl' : 'ltr';
-    localStorage.setItem('lang', lang);
+    root.setAttribute('data-lang', lang);
+    root.lang = lang;
+    root.dir  = lang === 'ar' ? 'rtl' : 'ltr';
+    store.set('lang', lang);
     document.title = lang === 'ar'
-      ? 'يوسف عبدالعال — مطوّر برمجيات ومنشئ منتجات AI'
-      : 'Yousef Abdulaal — Full-Stack Engineer & AI Product Builder';
+      ? 'يوسف عبدالعال — مطوّر Full-Stack'
+      : 'Yousef Abdulaal — Full-stack developer';
     switchCV(lang);
+    refreshLabels();
+    onScroll();
   }
-  applyLang(localStorage.getItem('lang') || 'ar');
-  langToggle.addEventListener('click', () => {
-    applyLang(document.documentElement.getAttribute('data-lang') === 'ar' ? 'en' : 'ar');
-  });
+
+  applyTheme(store.get('theme') || currentTheme());
+  applyLang(store.get('lang') || 'ar');
+
+  themeBtn.addEventListener('click', () => applyTheme(currentTheme() === 'dark' ? 'light' : 'dark'));
+  langToggle.addEventListener('click', () => applyLang(currentLang() === 'ar' ? 'en' : 'ar'));
 
   // ── MOBILE MENU ───────────────────────────────────────────────────────────
-  function closeMobileMenu() {
-    mobileMenu.classList.remove('open');
-    hamburger.classList.remove('open');
+  function setMenu(open) {
+    mobileMenu.classList.toggle('open', open);
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
   }
+  function menuIsOpen() { return mobileMenu.classList.contains('open'); }
 
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open');
+  hamburger.addEventListener('click', () => setMenu(!menuIsOpen()));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menuIsOpen()) { setMenu(false); hamburger.focus(); }
   });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMobileMenu();
+    if (window.innerWidth > 900 && menuIsOpen()) setMenu(false);
   });
 
-
+  // Transitions are held back until the saved theme and language are applied.
+  window.requestAnimationFrame(() => root.classList.add('ready'));
 }());
 </script>
 </body>
